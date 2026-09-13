@@ -1,0 +1,59 @@
+{
+  "_comment": "ВСЕ ТВОИ ДАННЫЕ ЗДЕСЬ. Поменял -> запустил build.py -> залил на GitHub. Ничего больше трогать не надо.",
+
+  "brand": "ВАШ БРЕНД",
+  "brandSlug": "your-brand",
+  "siteUrl": "https://USERNAME.github.io/REPO/",
+
+  "phonePretty": "+7 (000) 000-00-00",
+  "phoneRaw": "+70000000000",
+  "email": "info@example.com",
+
+  "city": {
+    "nom": "Москва",
+    "gen": "Москвы",
+    "prep": "Москве",
+    "acc": "Москву",
+    "abl": "Москвой"
+  },
+
+  "address": "Цветной бул., 15, стр. 1",
+  "workHours": "с 9:00 до 21:00",
+  "openingHours": "Mo-Su 09:00-21:00",
+
+  "geo": {
+    "lat": 55.779919,
+    "lon": 37.601771
+  },
+
+  "rating": 4.9,
+  "reviews": 738,
+
+  "logo": "assets/logo.svg",
+
+  "tagline": "Сервисный центр",
+  "policyDate": "2026-09-13",
+
+  "map": {
+    "mode": "iframe",
+    "_modes": "iframe - без ключа API (по умолчанию) | api - оригинальный Яндекс.Карты 2.0 | off - убрать карту"
+  },
+
+  "counters": {
+    "yandex": [],
+    "gtag": "",
+    "_comment": "Свои счётчики: yandex: [\"12345678\"], gtag: \"G-XXXXXXX\". Пусто = чужие счётчики вырезаны."
+  },
+
+  "leads": {
+    "mode": "telegram",
+    "_modes": "telegram | endpoint | mailto",
+    "telegramBotToken": "",
+    "telegramChatId": "",
+    "endpoint": "",
+    "_comment": "Пути заявок: telegram (нужен токен бота + chat_id), endpoint (Formspree/свой URL), mailto (открывает почтовик)"
+  },
+
+  "internalLinks": "#",
+  "_internalLinks_comment": "Куда ведут ссылки меню на НЕсуществующие страницы (прайсы других брендов и т.п.). '#' = никуда."
+}

@@ -1,0 +1,2572 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!-- t74 rev: 2026-09-03-5 (ФИКС ПРОДА: класс через глобальный псевдоним, привязки к папке dev нет) -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" /><title>О компании re:device в Москве</title><meta name='description' content='re:device Москве - флагманский сервис-центр ремонту электроники. Моментальный ремонт, оригинальные запчасти, скидки до 10% при заказе на сайте. Нужно качество - выбирайте re:device!' /><!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(98907332, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/98907332" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter --><meta name="yandex-verification" content="931f650cc6e89e7a" /><meta name="yandex-verification" content="4cb139c27586ad1a" /><!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(110825937, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110825937" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter --><link rel="preconnect" href="//api-maps.yandex.ru"><link rel="dns-prefetch" href="//api-maps.yandex.ru">        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGMJX78W67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EGMJX78W67');
+</script>  
+  <link rel="icon" type="image/x-icon" href="/public/images/icons/favicon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- вывод canonical -->
+                <link rel="canonical" href="https://re-device.ru/about" />
+      
+  <link rel="stylesheet" href="/public/css/style.css"><link rel="stylesheet" href="/public/css/custom.css"><link rel="stylesheet" href="/public/css/t74-main.css">
+
+
+
+  <!-- микроразметка для head -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "re:device",
+      "url": "https://re-device.ru/",
+            "logo": "https://re-device.ru/public/images/logo/logo-header.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+                "telephone": "+74951062137",
+        "contactType": "Основной"
+      },
+      "email": "info@re-device.ru",
+      "description": "Ремонт цифровой и бытовой техники re:device с выездом на дом или в офис в Москве. Гарантия до 12 месяцев на все виды работ.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": " Цветной бул., 15, стр. 1",
+        "addressLocality": "Москва",
+        "addressCountry": "Russia"
+      }
+    }
+  </script>
+
+    <!-- Open Graph -->
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:type" content="website" />
+    <meta property="og:title" content="О компании re:device в Москве" />
+    <meta property="og:description" content="re:device Москве - флагманский сервис-центр ремонту электроники. Моментальный ремонт, оригинальные запчасти, скидки до 10% при заказе на сайте. Нужно качество - выбирайте re:device!" />
+  <meta property="og:url" content="https://re-device.ru/about" />
+  <meta property="og:site_name" content="re:device" />
+  <meta property="og:image" content="https://re-device.ru/public/images/og/og-default.jpg" />
+  <meta property="og:image:secure_url" content="https://re-device.ru/public/images/og/og-default.jpg" />
+        <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="re:device — сервисный центр по ремонту цифровой и бытовой техники в Москве" />
+  <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="О компании re:device в Москве" />
+  <meta name="twitter:description" content="re:device Москве - флагманский сервис-центр ремонту электроники. Моментальный ремонт, оригинальные запчасти, скидки до 10% при заказе на сайте. Нужно качество - выбирайте re:device!" />
+  <meta name="twitter:image" content="https://re-device.ru/public/images/og/og-default.jpg" />
+
+</head>
+
+<body>
+
+  <input id="url-ajax-form" type="hidden" value="/sendform">
+
+  <div class="page">
+
+    
+<header id="head" class="header scrolled" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="container">
+    <div class="header_topper">
+            <nav class="header-nav">
+        <ul class="text-14 w-600">
+                      <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+              <a class="text-14 darkgray w-600" itemprop="url" href="/delivery"><span itemprop="name">Доставка</span></a>
+            </li>
+                      <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+              <a class="text-14 darkgray w-600" itemprop="url" href="#"><span itemprop="name">О компании</span></a>
+            </li>
+                      <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+              <a class="text-14 darkgray w-600" itemprop="url" href="/reviews"><span itemprop="name">Отзывы</span></a>
+            </li>
+                      <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+              <a class="text-14 darkgray w-600" itemprop="url" href="/price"><span itemprop="name">Цены</span></a>
+            </li>
+                      <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+              <a class="text-14 darkgray w-600" itemprop="url" href="/contacts"><span itemprop="name">Контакты</span></a>
+            </li>
+                  </ul>
+      </nav>
+      <div class="topper-icons">
+        <div class="topper-icons-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.6 11.22L17 7.52V5C17.0245 4.49494 16.8477 4.00078 16.5084 3.62587C16.1691 3.25095 15.695 3.02588 15.19 3H3.78998C3.28855 3.03096 2.8195 3.25823 2.48446 3.63258C2.14941 4.00693 1.97535 4.49822 1.99998 5V15C1.9907 15.3971 2.09987 15.788 2.31359 16.1228C2.5273 16.4576 2.83588 16.7212 3.19998 16.88C3.01581 17.3305 2.94404 17.8191 2.99085 18.3036C3.03765 18.7881 3.20164 19.2539 3.46865 19.6609C3.73566 20.0678 4.09769 20.4037 4.52348 20.6395C4.94927 20.8753 5.42605 21.004 5.91267 21.0144C6.39929 21.0249 6.88114 20.9167 7.31665 20.6994C7.75215 20.482 8.12823 20.1619 8.41243 19.7668C8.69663 19.3717 8.88042 18.9133 8.94794 18.4313C9.01546 17.9492 8.96468 17.458 8.79998 17H15.16C14.9955 17.4531 14.9427 17.9392 15.0059 18.4171C15.0692 18.895 15.2466 19.3506 15.5233 19.7454C15.8 20.1401 16.1677 20.4624 16.5953 20.6849C17.023 20.9074 17.4979 21.0235 17.98 21.0235C18.462 21.0235 18.937 20.9074 19.3646 20.6849C19.7923 20.4624 20.16 20.1401 20.4367 19.7454C20.7133 19.3506 20.8908 18.895 20.954 18.4171C21.0173 17.9392 20.9644 17.4531 20.8 17H21C21.2652 17 21.5196 16.8946 21.7071 16.7071C21.8946 16.5196 22 16.2652 22 16V12C21.9969 11.8481 21.9593 11.699 21.89 11.5638C21.8207 11.4287 21.7215 11.3111 21.6 11.22ZM20 12.48V15H17V10.08L20 12.48ZM6.99998 18C6.99998 18.1978 6.94133 18.3911 6.83145 18.5556C6.72157 18.72 6.56539 18.8482 6.38266 18.9239C6.19994 18.9996 5.99887 19.0194 5.80489 18.9808C5.61091 18.9422 5.43273 18.847 5.29287 18.7071C5.15302 18.5673 5.05778 18.3891 5.01919 18.1951C4.98061 18.0011 5.00041 17.8 5.0761 17.6173C5.15179 17.4346 5.27996 17.2784 5.44441 17.1685C5.60886 17.0586 5.8022 17 5.99998 17C6.2652 17 6.51955 17.1054 6.70709 17.2929C6.89462 17.4804 6.99998 17.7348 6.99998 18ZM19 18C19 18.1978 18.9413 18.3911 18.8314 18.5556C18.7216 18.72 18.5654 18.8482 18.3827 18.9239C18.1999 18.9996 17.9989 19.0194 17.8049 18.9808C17.6109 18.9422 17.4327 18.847 17.2929 18.7071C17.153 18.5673 17.0578 18.3891 17.0192 18.1951C16.9806 18.0011 17.0004 17.8 17.0761 17.6173C17.1518 17.4346 17.28 17.2784 17.4444 17.1685C17.6089 17.0586 17.8022 17 18 17C18.2652 17 18.5196 17.1054 18.7071 17.2929C18.8946 17.4804 19 17.7348 19 18Z" fill="#000" />
+          </svg>
+          Выезд курьера бесплатно
+        </div>
+        <div class="topper-icons-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 6C11.7348 6 11.4804 6.10536 11.2929 6.29289C11.1054 6.48043 11 6.73478 11 7V12C11.0001 12.2652 11.1055 12.5195 11.293 12.707L14.293 15.707C14.4816 15.8892 14.7342 15.99 14.9964 15.9877C15.2586 15.9854 15.5094 15.8802 15.6948 15.6948C15.8802 15.5094 15.9854 15.2586 15.9877 14.9964C15.99 14.7342 15.8892 14.4816 15.707 14.293L13 11.586V7C13 6.73478 12.8946 6.48043 12.7071 6.29289C12.5196 6.10536 12.2652 6 12 6Z" fill="#000" />
+          </svg>
+          Работаем ежедневно с 9:00 до 21:00
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header_top custom">
+    <div class="container">
+      <div class="header_top_inner">
+        <div class="logo-block">
+          <a href="/" class="logo-img">
+            <img src="/public/images/logo/logo-header.png" alt="re-device">
+          </a>
+          <div class=" dropdown logo-text darkgray text-14 w-500">
+            Сервисный центр <span class="dropbtn colored-text w-600">в Москве</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M12.6667 6L8.02463 10.6421L3.38252 6" stroke="url(#paint0_linear_307_146)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <defs>
+                <linearGradient id="paint0_linear_307_146" x1="12.6667" y1="6" x2="11.2078" y2="12.4204" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#000" />
+                  <stop offset="1" stop-color="#000" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="dropdown-content header">
+                              <a href="https://re-device.ru" class="text-14 w-500 Gray">Москва</a>
+                              <a href="https://spb.re-device.ru" class="text-14 w-500 Gray">Санкт-Петербург</a>
+                              <a href="https://krd.re-device.ru" class="text-14 w-500 Gray">Краснодар</a>
+                              <a href="https://rnd.re-device.ru" class="text-14 w-500 Gray">Ростов-на-Дону</a>
+                              <a href="https://nnv.re-device.ru" class="text-14 w-500 Gray">Нижний Новгород</a>
+                              <a href="https://nsk.re-device.ru" class="text-14 w-500 Gray">Новосибирск</a>
+                              <a href="https://chl.re-device.ru" class="text-14 w-500 Gray">Челябинск</a>
+                              <a href="https://ekb.re-device.ru" class="text-14 w-500 Gray">Екатеринбург</a>
+                              <a href="https://kzn.re-device.ru" class="text-14 w-500 Gray">Казань</a>
+                              <a href="https://ufa.re-device.ru" class="text-14 w-500 Gray">Уфа</a>
+                              <a href="https://vrn.re-device.ru" class="text-14 w-500 Gray">Воронеж</a>
+                              <a href="https://vlg.re-device.ru" class="text-14 w-500 Gray">Волгоград</a>
+                              <a href="https://brn.re-device.ru" class="text-14 w-500 Gray">Барнаул</a>
+                              <a href="https://izh.re-device.ru" class="text-14 w-500 Gray">Ижевск</a>
+                              <a href="https://tol.re-device.ru" class="text-14 w-500 Gray">Тольятти</a>
+                              <a href="https://yrs.re-device.ru" class="text-14 w-500 Gray">Ярославль</a>
+                              <a href="https://srt.re-device.ru" class="text-14 w-500 Gray">Саратов</a>
+                              <a href="https://hbr.re-device.ru" class="text-14 w-500 Gray">Хабаровск</a>
+                              <a href="https://tms.re-device.ru" class="text-14 w-500 Gray">Томск</a>
+                              <a href="https://tmn.re-device.ru" class="text-14 w-500 Gray">Тюмень</a>
+                              <a href="https://irk.re-device.ru" class="text-14 w-500 Gray">Иркутск</a>
+                              <a href="https://smr.re-device.ru" class="text-14 w-500 Gray">Самара</a>
+                              <a href="https://oms.re-device.ru" class="text-14 w-500 Gray">Омск</a>
+                              <a href="https://krn.re-device.ru" class="text-14 w-500 Gray">Красноярск</a>
+                              <a href="https://prm.re-device.ru" class="text-14 w-500 Gray">Пермь</a>
+                              <a href="https://uly.re-device.ru" class="text-14 w-500 Gray">Ульяновск</a>
+                              <a href="https://kir.re-device.ru" class="text-14 w-500 Gray">Киров</a>
+                          </div>
+          </div>
+        </div>
+        <button class="main-btn custom first open-popup">
+          Срочный-ремонт
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.493 3.659C13.5277 3.39545 13.4774 3.12769 13.3496 2.89464C13.2217 2.66158 13.0229 2.47535 12.782 2.363C12.5342 2.24673 12.254 2.21904 11.9883 2.28457C11.7225 2.3501 11.4873 2.50486 11.322 2.723L3.51799 12.736C3.37634 12.9184 3.28669 13.1357 3.25852 13.3649C3.23035 13.5942 3.26472 13.8267 3.35799 14.038C3.52999 14.431 3.92799 14.779 4.47399 14.779H11.156L10.506 20.341C10.4713 20.6046 10.5215 20.8723 10.6494 21.1054C10.7772 21.3384 10.9761 21.5246 11.217 21.637C11.4648 21.7533 11.745 21.781 12.0107 21.7154C12.2765 21.6499 12.5117 21.4951 12.677 21.277L20.48 11.264C20.6216 11.0816 20.7113 10.8643 20.7395 10.6351C20.7676 10.4058 20.7333 10.1733 20.64 9.962C20.5465 9.74308 20.3911 9.55629 20.1928 9.42462C19.9945 9.29296 19.762 9.22218 19.524 9.221H12.842L13.493 3.659Z" fill="white" />
+          </svg>
+        </button>
+        <button class="main-btn custom second open-popup">Позвонить
+        </button>
+        <button class="top mobile-menu  burger-menu pc-none">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.33325 5.83333H16.6666" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M6.66675 14.1667H16.6667" stroke="white" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div class="phone-block custom text-14 w-500">
+          <a class="colored-text text-18 w-600" href="tel:+74951062137">+7 (495) 106-21-37</a>
+          <div class="address-block text-14 w-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+              <path d="M22 11C22 15.346 15.8077 20.9022 13.1687 23.0727C12.4838 23.636 11.5162 23.636 10.8313 23.0727C8.19234 20.9022 2 15.346 2 11C2 5.47715 6.47715 1 12 1C17.5228 1 22 5.47715 22 11Z" stroke="url(#paint0_linear_307_164)" stroke-width="2" />
+              <circle cx="12" cy="11" r="3" stroke="url(#paint1_linear_307_164)" stroke-width="2" />
+              <defs>
+                <linearGradient id="paint0_linear_307_164" x1="2" y1="1" x2="27.16" y2="10.9434" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#000" />
+                  <stop offset="1" stop-color="#000" />
+                </linearGradient>
+                <linearGradient id="paint1_linear_307_164" x1="9" y1="8" x2="16.2329" y2="11.2873" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#000" />
+                  <stop offset="1" stop-color="#000" />
+                </linearGradient>
+              </defs>
+            </svg>
+             Цветной бул., 15, стр. 1          </div>
+          <span class="pc-none">Ежедневно с 9:00 до 21:00</span>
+        </div>
+        <button class="main-btn header open-popup">Вызвать мастера</button>
+        <div class="topper-icons-item time custom text-14 w-500">
+          Ежедневно с 9:00 до 21:00        </div>
+        <div class="topper-icons-item custom text-14 w-500">
+           Цветной бул., 15, стр. 1        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="header_bottom">
+      <ul class="bottom-menu">
+        <!-- Бургер  -->
+        <div class="cat-button-grad custom">
+          <button class="cat-button has-parent">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M4 7H20" stroke="url(#paint0_linear_307_177)" stroke-width="2" stroke-linecap="round" />
+              <path d="M4 17H16" stroke="url(#paint1_linear_307_177)" stroke-width="2" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="paint0_linear_307_177" x1="4" y1="7" x2="4.43193" y2="10.1409" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#000" />
+                  <stop offset="1" stop-color="#000" />
+                </linearGradient>
+                <linearGradient id="paint1_linear_307_177" x1="4" y1="17" x2="4.56771" y2="20.0962" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#000" />
+                  <stop offset="1" stop-color="#000" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="colored-text text-16 w-600">Каталог</span>
+          </button>
+        </div>
+        <!-- /* Бургер  -->
+
+        
+            <li class="dropdown added-category">Ремонт ноутбуков              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6666 6L8.02451 10.6421L3.3824 6" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="dropdown-content header">
+                                                                        <a href="/noutbuk/acer" class="text-14 w-500 Gray">Acer</a>
+                                                                                          <a href="/noutbuk/asus" class="text-14 w-500 Gray">Asus</a>
+                                                                                          <a href="/noutbuk/hp" class="text-14 w-500 Gray">HP</a>
+                                                                                          <a href="/noutbuk/huawei" class="text-14 w-500 Gray">Huawei</a>
+                                                                                          <a href="/noutbuk/honor" class="text-14 w-500 Gray">Honor</a>
+                                                                                          <a href="/noutbuk/lenovo" class="text-14 w-500 Gray">Lenovo</a>
+                                                                                          <a href="/noutbuk/msi" class="text-14 w-500 Gray">MSI</a>
+                                                                                          <a href="/noutbuk/samsung" class="text-14 w-500 Gray">Samsung</a>
+                                                                                          <a href="/noutbuk/sony" class="text-14 w-500 Gray">Sony</a>
+                                                                                          <a href="/noutbuk/toshiba" class="text-14 w-500 Gray">Toshiba</a>
+                                                                                          <a href="/noutbuk/xiaomi" class="text-14 w-500 Gray">Xiaomi</a>
+                                                                                          <a href="/noutbuk/apple" class="text-14 w-500 Gray">Apple</a>
+                                                                                          <a href="/noutbuk/dell" class="text-14 w-500 Gray">Dell</a>
+                                                                                          <a href="/noutbuk/digma" class="text-14 w-500 Gray">Digma</a>
+                                                                                          <a href="/noutbuk/haier" class="text-14 w-500 Gray">Haier</a>
+                                                                                          <a href="/noutbuk/packard-bell" class="text-14 w-500 Gray">Packard Bell</a>
+                                                                                          <a href="/noutbuk/prestigio" class="text-14 w-500 Gray">Prestigio</a>
+                                                                                          <a href="/noutbuk/microsoft" class="text-14 w-500 Gray">Microsoft</a>
+                                                                                          <a href="/noutbuk/alienware" class="text-14 w-500 Gray">Alienware</a>
+                                                                                          <a href="/noutbuk/aquarius" class="text-14 w-500 Gray">Aquarius</a>
+                                                                                          <a href="/noutbuk/gigabyte" class="text-14 w-500 Gray">Gigabyte</a>
+                                                                                          <a href="/noutbuk/aorus" class="text-14 w-500 Gray">﻿Aorus</a>
+                                                                                          <a href="/noutbuk/maibenben" class="text-14 w-500 Gray">Maibenben</a>
+                                                                                          <a href="/noutbuk/compaq" class="text-14 w-500 Gray">Compaq</a>
+                                                                                          <a href="/noutbuk/getac" class="text-14 w-500 Gray">Getac</a>
+                                                                                          <a href="/noutbuk/epson" class="text-14 w-500 Gray">Epson</a>
+                                                                                          <a href="/noutbuk/philips" class="text-14 w-500 Gray">Philips</a>
+                                                                                          <a href="/noutbuk/lg" class="text-14 w-500 Gray">LG</a>
+                                                                                          <a href="/noutbuk/panasonic" class="text-14 w-500 Gray">Panasonic</a>
+                                                                                          <a href="/noutbuk/tecno" class="text-14 w-500 Gray">Tecno</a>
+                                                                                          <a href="/noutbuk/infinix" class="text-14 w-500 Gray">Infinix</a>
+                                                                                          <a href="/noutbuk/irbis" class="text-14 w-500 Gray">Irbis</a>
+                                                                                          <a href="/noutbuk/thunderobot" class="text-14 w-500 Gray">Thunderobot</a>
+                                                                                          <a href="/noutbuk/f-plus" class="text-14 w-500 Gray">F+</a>
+                                                                                          <a href="/noutbuk/razer" class="text-14 w-500 Gray">Razer</a>
+                                                                                          <a href="/noutbuk/hasee" class="text-14 w-500 Gray">Hasee</a>
+                                                                                          <a href="/noutbuk/zte" class="text-14 w-500 Gray">ZTE</a>
+                                                                                          <a href="/noutbuk/hiper" class="text-14 w-500 Gray">Hiper</a>
+                                                                                          <a href="/noutbuk/evga" class="text-14 w-500 Gray">Evga</a>
+                                                                                          <a href="/noutbuk/google" class="text-14 w-500 Gray">Google</a>
+                                                                                          <a href="/noutbuk/echips" class="text-14 w-500 Gray">Echips</a>
+                                                                                          <a href="/noutbuk/ardor" class="text-14 w-500 Gray">Ardor</a>
+                                                                                          <a href="/noutbuk/predator" class="text-14 w-500 Gray">Predator</a>
+                                                                                          <a href="/noutbuk/iru" class="text-14 w-500 Gray">iru</a>
+                                                                                          <a href="/noutbuk/machenike" class="text-14 w-500 Gray">Machenike</a>
+                                                                                          <a href="/noutbuk/dexp" class="text-14 w-500 Gray">DEXP</a>
+                                                                                          <a href="/noutbuk/kovinastroj-kogast" class="text-14 w-500 Gray">Kovinastroj (Kogast)</a>
+                                                                                          <a href="/noutbuk/horizont" class="text-14 w-500 Gray">Horizont</a>
+                                                                                          <a href="/noutbuk/realme" class="text-14 w-500 Gray">Realme</a>
+                                                                                          <a href="/noutbuk/colorful" class="text-14 w-500 Gray">Colorful</a>
+                                                </div>
+            </li>
+                                                      
+            <li class="dropdown added-category">Ремонт планшетов              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6666 6L8.02451 10.6421L3.3824 6" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="dropdown-content header">
+                                                                        <a href="/planshet/acer" class="text-14 w-500 Gray">Acer</a>
+                                                                                          <a href="/planshet/asus" class="text-14 w-500 Gray">Asus</a>
+                                                                                          <a href="/planshet/huawei" class="text-14 w-500 Gray">Huawei</a>
+                                                                                          <a href="/planshet/honor" class="text-14 w-500 Gray">Honor</a>
+                                                                                          <a href="/planshet/lenovo" class="text-14 w-500 Gray">Lenovo</a>
+                                                                                          <a href="/planshet/msi" class="text-14 w-500 Gray">MSI</a>
+                                                                                          <a href="/planshet/samsung" class="text-14 w-500 Gray">Samsung</a>
+                                                                                          <a href="/planshet/sony" class="text-14 w-500 Gray">Sony</a>
+                                                                                          <a href="/planshet/xiaomi" class="text-14 w-500 Gray">Xiaomi</a>
+                                                                                          <a href="/planshet/alcatel" class="text-14 w-500 Gray">Alcatel</a>
+                                                                                          <a href="/planshet/apple" class="text-14 w-500 Gray">Apple</a>
+                                                                                          <a href="/planshet/nokia" class="text-14 w-500 Gray">Nokia</a>
+                                                                                          <a href="/planshet/4good" class="text-14 w-500 Gray">4Good</a>
+                                                                                          <a href="/planshet/bq" class="text-14 w-500 Gray">BQ</a>
+                                                                                          <a href="/planshet/dexp" class="text-14 w-500 Gray">DEXP</a>
+                                                                                          <a href="/planshet/digma" class="text-14 w-500 Gray">Digma</a>
+                                                                                          <a href="/planshet/haier" class="text-14 w-500 Gray">Haier</a>
+                                                                                          <a href="/planshet/irbis" class="text-14 w-500 Gray">Irbis</a>
+                                                                                          <a href="/planshet/prestigio" class="text-14 w-500 Gray">Prestigio</a>
+                                                                                          <a href="/planshet/microsoft" class="text-14 w-500 Gray">Microsoft</a>
+                                                                                          <a href="/planshet/blackview" class="text-14 w-500 Gray">BlackView</a>
+                                                                                          <a href="/planshet/amazon" class="text-14 w-500 Gray">Amazon</a>
+                                                                                          <a href="/planshet/inoi" class="text-14 w-500 Gray">INOI</a>
+                                                                                          <a href="/planshet/turbokids" class="text-14 w-500 Gray">TurboKids</a>
+                                                                                          <a href="/planshet/alldocube" class="text-14 w-500 Gray">Alldocube</a>
+                                                                                          <a href="/planshet/ursus" class="text-14 w-500 Gray">Ursus</a>
+                                                                                          <a href="/planshet/aquarius" class="text-14 w-500 Gray">Aquarius</a>
+                                                                                          <a href="/planshet/philips" class="text-14 w-500 Gray">Philips</a>
+                                                                                          <a href="/planshet/dell" class="text-14 w-500 Gray">Dell</a>
+                                                                                          <a href="/planshet/hp" class="text-14 w-500 Gray">HP</a>
+                                                                                          <a href="/planshet/getac" class="text-14 w-500 Gray">Getac</a>
+                                                                                          <a href="/planshet/compaq" class="text-14 w-500 Gray">Compaq</a>
+                                                                                          <a href="/planshet/zte" class="text-14 w-500 Gray">ZTE</a>
+                                                                                          <a href="/planshet/google" class="text-14 w-500 Gray">Google</a>
+                                                                                          <a href="/planshet/navitel" class="text-14 w-500 Gray">Navitel</a>
+                                                                                          <a href="/planshet/infinix" class="text-14 w-500 Gray">Infinix</a>
+                                                                                          <a href="/planshet/realme" class="text-14 w-500 Gray">Realme</a>
+                                                </div>
+            </li>
+                              
+            <li class="dropdown added-category">Ремонт телефонов              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6666 6L8.02451 10.6421L3.3824 6" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="dropdown-content header">
+                                                                        <a href="/smartfon/asus" class="text-14 w-500 Gray">Asus</a>
+                                                                                          <a href="/smartfon/huawei" class="text-14 w-500 Gray">Huawei</a>
+                                                                                          <a href="/smartfon/honor" class="text-14 w-500 Gray">Honor</a>
+                                                                                          <a href="/smartfon/lenovo" class="text-14 w-500 Gray">Lenovo</a>
+                                                                                          <a href="/smartfon/lg" class="text-14 w-500 Gray">LG</a>
+                                                                                          <a href="/smartfon/meizu" class="text-14 w-500 Gray">Meizu</a>
+                                                                                          <a href="/smartfon/philips" class="text-14 w-500 Gray">Philips</a>
+                                                                                          <a href="/smartfon/samsung" class="text-14 w-500 Gray">Samsung</a>
+                                                                                          <a href="/smartfon/sony" class="text-14 w-500 Gray">Sony</a>
+                                                                                          <a href="/smartfon/xiaomi" class="text-14 w-500 Gray">Xiaomi</a>
+                                                                                          <a href="/smartfon/apple" class="text-14 w-500 Gray">Apple</a>
+                                                                                          <a href="/smartfon/nokia" class="text-14 w-500 Gray">Nokia</a>
+                                                                                          <a href="/smartfon/zte" class="text-14 w-500 Gray">ZTE</a>
+                                                                                          <a href="/smartfon/fly" class="text-14 w-500 Gray">Fly</a>
+                                                                                          <a href="/smartfon/archos" class="text-14 w-500 Gray">Archos</a>
+                                                                                          <a href="/smartfon/blackberry" class="text-14 w-500 Gray">BlackBerry</a>
+                                                                                          <a href="/smartfon/bq" class="text-14 w-500 Gray">BQ</a>
+                                                                                          <a href="/smartfon/dexp" class="text-14 w-500 Gray">DEXP</a>
+                                                                                          <a href="/smartfon/digma" class="text-14 w-500 Gray">Digma</a>
+                                                                                          <a href="/smartfon/ginzzu" class="text-14 w-500 Gray">Ginzzu</a>
+                                                                                          <a href="/smartfon/highscreen" class="text-14 w-500 Gray">Highscreen</a>
+                                                                                          <a href="/smartfon/irbis" class="text-14 w-500 Gray">Irbis</a>
+                                                                                          <a href="/smartfon/kyocera" class="text-14 w-500 Gray">Kyocera</a>
+                                                                                          <a href="/smartfon/leeco" class="text-14 w-500 Gray">LeEco</a>
+                                                                                          <a href="/smartfon/micromax" class="text-14 w-500 Gray">Micromax</a>
+                                                                                          <a href="/smartfon/oneplus" class="text-14 w-500 Gray">OnePlus</a>
+                                                                                          <a href="/smartfon/texet" class="text-14 w-500 Gray">teXet</a>
+                                                                                          <a href="/smartfon/motorola" class="text-14 w-500 Gray">Motorola</a>
+                                                                                          <a href="/smartfon/prestigio" class="text-14 w-500 Gray">Prestigio</a>
+                                                                                          <a href="/smartfon/vertex" class="text-14 w-500 Gray">Vertex</a>
+                                                                                          <a href="/smartfon/microsoft" class="text-14 w-500 Gray">Microsoft</a>
+                                                                                          <a href="/smartfon/sharp" class="text-14 w-500 Gray">Sharp</a>
+                                                                                          <a href="/smartfon/elephone" class="text-14 w-500 Gray">Elephone</a>
+                                                                                          <a href="/smartfon/blackview" class="text-14 w-500 Gray">BlackView</a>
+                                                                                          <a href="/smartfon/google" class="text-14 w-500 Gray">Google</a>
+                                                                                          <a href="/smartfon/vertu" class="text-14 w-500 Gray">Vertu</a>
+                                                                                          <a href="/smartfon/finepower" class="text-14 w-500 Gray">FinePower</a>
+                                                                                          <a href="/smartfon/black-fox" class="text-14 w-500 Gray">Black Fox</a>
+                                                                                          <a href="/smartfon/inoi" class="text-14 w-500 Gray">INOI</a>
+                                                                                          <a href="/smartfon/itel" class="text-14 w-500 Gray">ITEL</a>
+                                                                                          <a href="/smartfon/viwa" class="text-14 w-500 Gray">VIWA</a>
+                                                                                          <a href="/smartfon/tp-link" class="text-14 w-500 Gray">Tp-Link</a>
+                                                                                          <a href="/smartfon/hisense" class="text-14 w-500 Gray">Hisense</a>
+                                                                                          <a href="/smartfon/turbo" class="text-14 w-500 Gray">Turbo</a>
+                                                                                          <a href="/smartfon/doogee" class="text-14 w-500 Gray">Doogee</a>
+                                                                                          <a href="/smartfon/tecno" class="text-14 w-500 Gray">Tecno</a>
+                                                                                          <a href="/smartfon/oppo" class="text-14 w-500 Gray">OPPO</a>
+                                                                                          <a href="/smartfon/realme" class="text-14 w-500 Gray">Realme</a>
+                                                                                          <a href="/smartfon/vivo" class="text-14 w-500 Gray">Vivo</a>
+                                                                                          <a href="/smartfon/oukitel" class="text-14 w-500 Gray">Oukitel</a>
+                                                                                          <a href="/smartfon/ulefone" class="text-14 w-500 Gray">Ulefone</a>
+                                                                                          <a href="/smartfon/black-shark" class="text-14 w-500 Gray">Black Shark</a>
+                                                                                          <a href="/smartfon/cubot" class="text-14 w-500 Gray">Cubot</a>
+                                                                                          <a href="/smartfon/infinix" class="text-14 w-500 Gray">Infinix</a>
+                                                                                          <a href="/smartfon/nubia" class="text-14 w-500 Gray">Nubia</a>
+                                                                                          <a href="/smartfon/torex" class="text-14 w-500 Gray">Torex</a>
+                                                                                          <a href="/smartfon/umidigi" class="text-14 w-500 Gray">Umidigi</a>
+                                                                                          <a href="/smartfon/zoji" class="text-14 w-500 Gray">Zoji</a>
+                                                                                          <a href="/smartfon/land-rover" class="text-14 w-500 Gray">Land Rover</a>
+                                                                                          <a href="/smartfon/vsmart" class="text-14 w-500 Gray">Vsmart</a>
+                                                                                          <a href="/smartfon/caterpillar" class="text-14 w-500 Gray">CATERPILLAR</a>
+                                                                                          <a href="/smartfon/acer" class="text-14 w-500 Gray">Acer</a>
+                                                                                          <a href="/smartfon/hp" class="text-14 w-500 Gray">HP</a>
+                                                                                          <a href="/smartfon/agm" class="text-14 w-500 Gray">AGM</a>
+                                                                                          <a href="/smartfon/poco" class="text-14 w-500 Gray">Poco</a>
+                                                                                          <a href="/smartfon/htc" class="text-14 w-500 Gray">HTC</a>
+                                                                                          <a href="/smartfon/blackmagic" class="text-14 w-500 Gray">Blackmagic</a>
+                                                                                          <a href="/smartfon/tcl" class="text-14 w-500 Gray">TCL</a>
+                                                                                          <a href="/smartfon/f-plus" class="text-14 w-500 Gray">F+</a>
+                                                </div>
+            </li>
+                                              
+            <li class="dropdown added-category">Ремонт фотоаппаратов              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6666 6L8.02451 10.6421L3.3824 6" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="dropdown-content header">
+                                                                        <a href="/fotoapparat/canon" class="text-14 w-500 Gray">Canon</a>
+                                                                                          <a href="/fotoapparat/nikon" class="text-14 w-500 Gray">Nikon</a>
+                                                                                          <a href="/fotoapparat/samsung" class="text-14 w-500 Gray">Samsung</a>
+                                                                                          <a href="/fotoapparat/sony" class="text-14 w-500 Gray">Sony</a>
+                                                                                          <a href="/fotoapparat/panasonic" class="text-14 w-500 Gray">Panasonic</a>
+                                                                                          <a href="/fotoapparat/fujifilm" class="text-14 w-500 Gray">Fujifilm</a>
+                                                                                          <a href="/fotoapparat/ricoh" class="text-14 w-500 Gray">Ricoh</a>
+                                                                                          <a href="/fotoapparat/olympus" class="text-14 w-500 Gray">Olympus</a>
+                                                                                          <a href="/fotoapparat/polaroid" class="text-14 w-500 Gray">Polaroid</a>
+                                                                                          <a href="/fotoapparat/leica" class="text-14 w-500 Gray">Leica</a>
+                                                                                          <a href="/fotoapparat/pentax" class="text-14 w-500 Gray">Pentax</a>
+                                                                                          <a href="/fotoapparat/yongnuo" class="text-14 w-500 Gray">YongNuo</a>
+                                                                                          <a href="/fotoapparat/sea-sea" class="text-14 w-500 Gray">Sea & Sea</a>
+                                                                                          <a href="/fotoapparat/andres" class="text-14 w-500 Gray">Andres</a>
+                                                                                          <a href="/fotoapparat/veber" class="text-14 w-500 Gray">Veber</a>
+                                                                                          <a href="/fotoapparat/blaser" class="text-14 w-500 Gray">Blaser</a>
+                                                                                          <a href="/fotoapparat/bresser" class="text-14 w-500 Gray">Bresser</a>
+                                                                                          <a href="/fotoapparat/carl-zeiss" class="text-14 w-500 Gray">Carl Zeiss</a>
+                                                                                          <a href="/fotoapparat/celestron" class="text-14 w-500 Gray">Celestron</a>
+                                                                                          <a href="/fotoapparat/discovery" class="text-14 w-500 Gray">Discovery</a>
+                                                                                          <a href="/fotoapparat/eschenbach" class="text-14 w-500 Gray">Eschenbach</a>
+                                                                                          <a href="/fotoapparat/fujinon" class="text-14 w-500 Gray">Fujinon</a>
+                                                                                          <a href="/fotoapparat/hawke" class="text-14 w-500 Gray">Hawke</a>
+                                                                                          <a href="/fotoapparat/kahles-helia" class="text-14 w-500 Gray">Kahles Helia</a>
+                                                                                          <a href="/fotoapparat/kaps-optik" class="text-14 w-500 Gray">Kaps Optik</a>
+                                                                                          <a href="/fotoapparat/kenko" class="text-14 w-500 Gray">Kenko</a>
+                                                                                          <a href="/fotoapparat/konus" class="text-14 w-500 Gray">Konus</a>
+                                                                                          <a href="/fotoapparat/levenhuk" class="text-14 w-500 Gray">Levenhuk</a>
+                                                                                          <a href="/fotoapparat/lunt" class="text-14 w-500 Gray">Lunt</a>
+                                                                                          <a href="/fotoapparat/meade" class="text-14 w-500 Gray">Meade</a>
+                                                                                          <a href="/fotoapparat/minox" class="text-14 w-500 Gray">Minox</a>
+                                                                                          <a href="/fotoapparat/steiner" class="text-14 w-500 Gray">Steiner</a>
+                                                                                          <a href="/fotoapparat/srurman" class="text-14 w-500 Gray">Srurman</a>
+                                                                                          <a href="/fotoapparat/swarovski" class="text-14 w-500 Gray">Swarovski</a>
+                                                                                          <a href="/fotoapparat/vixen" class="text-14 w-500 Gray">Vixen</a>
+                                                                                          <a href="/fotoapparat/belomo" class="text-14 w-500 Gray">БелОМО</a>
+                                                                                          <a href="/fotoapparat/farvision" class="text-14 w-500 Gray">Farvision</a>
+                                                                                          <a href="/fotoapparat/dipol" class="text-14 w-500 Gray">Dipol</a>
+                                                                                          <a href="/fotoapparat/bushnell" class="text-14 w-500 Gray">Bushnell</a>
+                                                                                          <a href="/fotoapparat/sightron" class="text-14 w-500 Gray">Sightron</a>
+                                                                                          <a href="/fotoapparat/hasselblad" class="text-14 w-500 Gray">Hasselblad</a>
+                                                                                          <a href="/fotoapparat/xiaomi" class="text-14 w-500 Gray">Xiaomi</a>
+                                                                                          <a href="/fotoapparat/zenit" class="text-14 w-500 Gray">Зенит</a>
+                                                                                          <a href="/fotoapparat/lumix" class="text-14 w-500 Gray">LUMIX</a>
+                                                                                          <a href="/fotoapparat/zenit3d" class="text-14 w-500 Gray">Zenit3D</a>
+                                                                                          <a href="/fotoapparat/samyang" class="text-14 w-500 Gray">Samyang</a>
+                                                                                          <a href="/fotoapparat/kodak" class="text-14 w-500 Gray">Kodak</a>
+                                                                                          <a href="/fotoapparat/sigma" class="text-14 w-500 Gray">Sigma</a>
+                                                                                          <a href="/fotoapparat/blackmagic" class="text-14 w-500 Gray">Blackmagic</a>
+                                                                                          <a href="/fotoapparat/tamron" class="text-14 w-500 Gray">Tamron</a>
+                                                                                          <a href="/fotoapparat/zeiss" class="text-14 w-500 Gray">Zeiss</a>
+                                                </div>
+            </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                              
+              </ul>
+    </div>
+  </div>
+</header>
+
+<div class="devices-box">
+  <div class="bg_devices-box"></div>
+  <div class="devices-menu">
+    <div class="container">
+      <ul class="multimenu">
+        
+                    <li class="multimenu-item-1">
+            <a href="#">Ремонт бытовой техники</a>
+
+            <!-- next lvl menu  -->
+            <div class="dropDown_menu">
+              <ul class="multimenu-2lv custom">
+
+                                                                                                                                                                                                                                                                                                                                
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/62b4cc4ea7d76-a508abe7f400fc6c98437cc61d15895a.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/kofemashina">Кофемашины</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/kofemashina/acs">ACS</a></li>
+                                                            <li><a href="/kofemashina/aeg">AEG</a></li>
+                                                            <li><a href="/kofemashina/arzum">ARZUM</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/kofemashina">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/62b4cc3f586c9-3cf0ed50403b5312ee74d12747b8d098.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/robot-pylesos">Роботы-пылесосы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/robot-pylesos/aeno">AENO</a></li>
+                                                            <li><a href="/robot-pylesos/anker">Anker</a></li>
+                                                            <li><a href="/robot-pylesos/aquaviva">Aquaviva</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/robot-pylesos">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fef0a3ba2-59eed2b92027ae86c29fca3607bf2b8b.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/parogenerator">Парогенераторы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/parogenerator/astralpool">Astralpool</a></li>
+                                                            <li><a href="/parogenerator/black-decker">BLACK-DECKER</a></li>
+                                                            <li><a href="/parogenerator/beko">Beko</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/parogenerator">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/6336cb2e61307-7770ee37e807cb26ff79a7b772ec370b.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/massazhnoe-kreslo">Массажные кресла</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/massazhnoe-kreslo/beurer">Beurer</a></li>
+                                                            <li><a href="/massazhnoe-kreslo/bodo">Bodo</a></li>
+                                                            <li><a href="/massazhnoe-kreslo/bork">Bork</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/massazhnoe-kreslo">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11d647552-22f468ed2865f0913c721d6b9ade398c.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/massazher-dlya-shei">Массажеры для шеи</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/massazher-dlya-shei/yamaguchi">Yamaguchi</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/massazher-dlya-shei">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11c589fb4-0b92eab1725dcb9c0354484db19d0298.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/massazher-dlya-glaz">Массажеры для глаз</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/massazher-dlya-glaz/unixfit">UNIXFIT</a></li>
+                                                            <li><a href="/massazher-dlya-glaz/yamaguchi">Yamaguchi</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/massazher-dlya-glaz">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11bac05c0-aa36683268bcf52045de188adab4a8be.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/trenazher-dlya-pressa">Тренажеры для пресса</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/trenazher-dlya-pressa/yamaguchi">Yamaguchi</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/trenazher-dlya-pressa">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11b376941-716dae899b936bb31dd5ff2f73943617.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/massazher-dlya-golovy">Массажеры для головы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/massazher-dlya-golovy/yamaguchi">Yamaguchi</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/massazher-dlya-golovy">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11a9d16b3-089d39a55520c777d82b4441552376dc.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/massazhnyy-stol">Массажные столы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/massazhnyy-stol/yamaguchi">Yamaguchi</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/massazhnyy-stol">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b117db46d5-c9d26fcaa0a2ec7c369afefb974fc5c4.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/sushilka-dlya-ovoschey-i-fruktov">Сушилки для овощей и фруктов</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/sushilka-dlya-ovoschey-i-fruktov/bbk">BBK</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/sushilka-dlya-ovoschey-i-fruktov">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b116be2b9f-f54f41f7bd683d3fee9193c5667929d8.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/ldogenerator">Льдогенераторы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/ldogenerator/hurakan">Hurakan</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/ldogenerator">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b116546e38-54de209e4f972c41e03c05112f1418dc.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/slayser">Слайсеры</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/slayser/hurakan">Hurakan</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/slayser">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b115d089a7-9f554d558353cd5b45cd7e793ccc7f4c.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/ovoscherezka">Овощерезки</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/ovoscherezka/hurakan">Hurakan</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/ovoscherezka">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b115524ff5-016a0dd6828470b5da08cd0385b6e27d.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/granitor">Граниторы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/granitor/hurakan">Hurakan</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/granitor">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11425fa41-f60c0294c8bc290cd42bdc053c45fc2c.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/parovaya-pech">Паровые печи</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/parovaya-pech/v-zug">V-ZUG</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/parovaya-pech">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11397eccb-3b03379f075b3d62aa7271691c56c351.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/pila-dlya-myasa">Пилы для мяса</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/pila-dlya-myasa/fimar">Fimar</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/pila-dlya-myasa">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+              </ul>
+            </div>
+          </li>
+
+                  
+                    <li class="multimenu-item-1">
+            <a href="#">Ремонт оргтехники</a>
+
+            <!-- next lvl menu  -->
+            <div class="dropDown_menu">
+              <ul class="multimenu-2lv custom">
+
+                                                                                                                                                                
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/62b4cb61d47fe-3ba889a5a7010858d6994f48e20ac556.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/mfu">МФУ</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/mfu/brother">Brother</a></li>
+                                                            <li><a href="/mfu/canon">Canon</a></li>
+                                                            <li><a href="/mfu/deli">Deli</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/mfu">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe464b049-10ca1decaf54bc75c81e47946e4ab237.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/printer">Принтеры</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/printer/brother">Brother</a></li>
+                                                            <li><a href="/printer/canon">Canon</a></li>
+                                                            <li><a href="/printer/deli">Deli</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/printer">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/655dfe1288e95-41dd59ac05014560a6f9eecd550d1993.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/plotter">Плоттеры</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/plotter/brother">Brother</a></li>
+                                                            <li><a href="/plotter/canon">Canon</a></li>
+                                                            <li><a href="/plotter/epson">Epson</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/plotter">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+              </ul>
+            </div>
+          </li>
+
+                  
+                    <li class="multimenu-item-1">
+            <a href="#">Ремонт видеотехники</a>
+
+            <!-- next lvl menu  -->
+            <div class="dropDown_menu">
+              <ul class="multimenu-2lv custom">
+
+                                                                                                                                                                                                                                                                                                                                                                
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/62b4cbd160ef3-d8226bbab8182be79526162ad0aba613.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/ekshen-kamera">Экшн-камеры</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/ekshen-kamera/dji">DJI</a></li>
+                                                            <li><a href="/ekshen-kamera/digma">Digma</a></li>
+                                                            <li><a href="/ekshen-kamera/drift">Drift</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/ekshen-kamera">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fea66cbcb-c12b7e24e4739df4655b78f2bc96caa9.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/videokamera">Видеокамеры</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/videokamera/asus">Asus</a></li>
+                                                            <li><a href="/videokamera/blackmagic">Blackmagic</a></li>
+                                                            <li><a href="/videokamera/canon">Canon</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/videokamera">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                  
+              </ul>
+            </div>
+          </li>
+
+                  
+                    <li class="multimenu-item-1">
+            <a href="#">Ремонт электронных устройств</a>
+
+            <!-- next lvl menu  -->
+            <div class="dropDown_menu">
+              <ul class="multimenu-2lv custom">
+
+                                                                
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe4022701-025dc0512c94bd437108bc39036f27a8.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/proektor">Проекторы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/proektor/atom">ATOM</a></li>
+                                                            <li><a href="/proektor/acer">Acer</a></li>
+                                                            <li><a href="/proektor/asus">Asus</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/proektor">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe653a3a7-c7eca3a2b054ac14b84dbf5f1b9cdef0.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/planshet">Планшеты</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/planshet/4good">4Good</a></li>
+                                                            <li><a href="/planshet/acer">Acer</a></li>
+                                                            <li><a href="/planshet/alcatel">Alcatel</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/planshet">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe6a14fdb-cacab40af56de3653be64a44afa27580.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/smartfon">Смартфоны</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/smartfon/agm">AGM</a></li>
+                                                            <li><a href="/smartfon/acer">Acer</a></li>
+                                                            <li><a href="/smartfon/apple">Apple</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/smartfon">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe39b6b2e-5c632e219b7dce4e0ee18d4632891744.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/televizor">Телевизоры</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/televizor/aceline">Aceline</a></li>
+                                                            <li><a href="/televizor/aiwa">Aiwa</a></li>
+                                                            <li><a href="/televizor/artel">Artel</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/televizor">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/655dfbdf0c613-adfd3ee1de0c2c1400b19cb3c1e028dc.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/naushniki">Наушники</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/naushniki/akg">AKG</a></li>
+                                                            <li><a href="/naushniki/alienware">Alienware</a></li>
+                                                            <li><a href="/naushniki/anker">Anker</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/naushniki">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/6336d480080c8-3c7a5b3f60b2d0e4ca74aa1746779449.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/elektrosamokat">Электросамокаты</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/elektrosamokat/aovo">AOVO</a></li>
+                                                            <li><a href="/elektrosamokat/acer">Acer</a></li>
+                                                            <li><a href="/elektrosamokat/airwheel">AirWheel</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/elektrosamokat">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/653688c2a7ea9-fa6e71dd57e9b1be4854fea74b9c1a51.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/igrovaya-pristavka">Игровые приставки</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/igrovaya-pristavka/acer">Acer</a></li>
+                                                            <li><a href="/igrovaya-pristavka/nintendo">Nintendo</a></li>
+                                                            <li><a href="/igrovaya-pristavka/sony">Sony</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/igrovaya-pristavka">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/6513ba06eda8f-a4b085f6d5a9327ed386bd9d4b1de72c.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/smart-chasy">Смарт-часы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/smart-chasy/aimoto">Aimoto</a></li>
+                                                            <li><a href="/smart-chasy/amazfit">Amazfit</a></li>
+                                                            <li><a href="/smart-chasy/apple">Apple</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/smart-chasy">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/64d22c67c3f70-b2f822be9b5ac4833c84b93934f95407.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/cifrovoy-binokl">Цифровые бинокли</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/cifrovoy-binokl/atn">ATN</a></li>
+                                                            <li><a href="/cifrovoy-binokl/andres">Andres</a></li>
+                                                            <li><a href="/cifrovoy-binokl/blaser">Blaser</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/cifrovoy-binokl">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/6336d06319b5d-a6894de2f3b787780ecd6303f83e41b9.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/teplovizor">Тепловизоры</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/teplovizor/atn">ATN</a></li>
+                                                            <li><a href="/teplovizor/arkon">Arkon</a></li>
+                                                            <li><a href="/teplovizor/bering-optics">Bering Optics</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/teplovizor">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/62b4cc65f021b-acbf757e598e87bed603cd0b7e815600.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/istochnik-bespereboynogo-pitaniya">Источники бесперебойного питания</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/istochnik-bespereboynogo-pitaniya/apc">APC</a></li>
+                                                            <li><a href="/istochnik-bespereboynogo-pitaniya/carver">Carver</a></li>
+                                                            <li><a href="/istochnik-bespereboynogo-pitaniya/cyberpower">CyberPower</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/istochnik-bespereboynogo-pitaniya">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/6336d291a6030-ac45f510b7d757cd31bdd3707d4e1ecd.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/opticheskiy-pricel">Оптические прицелы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/opticheskiy-pricel/vector-optics"> Vector Optics</a></li>
+                                                            <li><a href="/opticheskiy-pricel/atn">ATN</a></li>
+                                                            <li><a href="/opticheskiy-pricel/andres">Andres</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/opticheskiy-pricel">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/655dfd1371052-67e94ad25ac684b2d027aab0380f101f.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/elektrovelosiped">Электровелосипеды</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/elektrovelosiped/dual">Dual</a></li>
+                                                            <li><a href="/elektrovelosiped/ecoffect">Ecoffect</a></li>
+                                                            <li><a href="/elektrovelosiped/el-sport">El-Sport</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/elektrovelosiped">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/655dfd854bcab-7c56e7b9bb34fccdaf78949b56913f1b.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/eholot">Эхолоты</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/eholot/deeper">Deeper</a></li>
+                                                            <li><a href="/eholot/garmin">Garmin</a></li>
+                                                            <li><a href="/eholot/humminbird">Humminbird</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/eholot">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/655dfdc205e8f-30ee724cf2050dde5fd48d05e1bfc809.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/3d-printer">3D-принтеры</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/3d-printer/3d-systems">3D Systems</a></li>
+                                                            <li><a href="/3d-printer/3dgence">3DGence</a></li>
+                                                            <li><a href="/3d-printer/3diy">3DIY</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/3d-printer">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/64d21f66e69b8-96115b5d610b855d8ae63acd9487b34b.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/pricel-nochnogo-videniya">Прицелы ночного видения</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/pricel-nochnogo-videniya/anysmart">ANYSMART</a></li>
+                                                            <li><a href="/pricel-nochnogo-videniya/atn">ATN</a></li>
+                                                            <li><a href="/pricel-nochnogo-videniya/arkon">Arkon</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/pricel-nochnogo-videniya">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11a18cbe5-974a3bdd4d4474df2458f519351d479c.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/elektronnyy-mikroskop">Электронные микроскопы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/elektronnyy-mikroskop/bresser">Bresser</a></li>
+                                                            <li><a href="/elektronnyy-mikroskop/comet">Comet</a></li>
+                                                            <li><a href="/elektronnyy-mikroskop/eakins">Eakins</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/elektronnyy-mikroskop">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11972172e-f94aeb63bcbc297bcb2eb9237c654764.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/radar-detektor-bpla">Радар-детекторы БПЛА</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/radar-detektor-bpla/skycope">Skycope</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/radar-detektor-bpla">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b118f60c8d-7803e031ef464d9eb1602bc862b57f08.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/teplovizionnye-ochki">Тепловизионные очки</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/teplovizionnye-ochki/conotech">ConoTech</a></li>
+                                                            <li><a href="/teplovizionnye-ochki/dipol">Dipol</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/teplovizionnye-ochki">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b1188100e4-2a86b7381dadc4f8675dd7aa062ab0f3.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/teplovizionnye-nasadki">Тепловизионных насадок</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/teplovizionnye-nasadki/conotech">ConoTech</a></li>
+                                                            <li><a href="/teplovizionnye-nasadki/dipol">Dipol</a></li>
+                                                            <li><a href="/teplovizionnye-nasadki/electrooptic">ELECTROOPTIC</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/teplovizionnye-nasadki">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11752d33a-d21e7a7ba2142a5ca80a84cc2d00cbae.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/rubanok">Рубанки</a>
+                                                <a class="with-svg" href="/rubanok">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                  
+              </ul>
+            </div>
+          </li>
+
+                  
+                    <li class="multimenu-item-1">
+            <a href="#">Ремонт  фототехники</a>
+
+            <!-- next lvl menu  -->
+            <div class="dropDown_menu">
+              <ul class="multimenu-2lv custom">
+
+                                                                                                                
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe98962eb-e8158e5d3415da3b821ba8de1a267816.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/fotovspyshka">Фотовспышки</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/fotovspyshka/canon">Canon</a></li>
+                                                            <li><a href="/fotovspyshka/fujifilm">Fujifilm</a></li>
+                                                            <li><a href="/fotovspyshka/godox">Godox</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/fotovspyshka">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/62b4cb713a751-5e41028c3ec943fa831123d6315478f7.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/obektiv">Объективы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/obektiv/canon">Canon</a></li>
+                                                            <li><a href="/obektiv/eiki">Eiki</a></li>
+                                                            <li><a href="/obektiv/fujifilm">Fujifilm</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/obektiv">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe31b937a-26ece0d5d52cf264fef42df95696aa7c.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/fotoapparat">Фотоаппараты</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/fotoapparat/andres">Andres</a></li>
+                                                            <li><a href="/fotoapparat/blackmagic">Blackmagic</a></li>
+                                                            <li><a href="/fotoapparat/blaser">Blaser</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/fotoapparat">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+              </ul>
+            </div>
+          </li>
+
+                  
+                    <li class="multimenu-item-1">
+            <a href="#">Ремонт БПЛА</a>
+
+            <!-- next lvl menu  -->
+            <div class="dropDown_menu">
+              <ul class="multimenu-2lv custom">
+
+                                                                                                                                                                                                                                                                                
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe90a30fa-61f9e9ce0ae4eec250ca9d6f6f524f7a.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/kvadrokopter">Квадрокоптеры</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/kvadrokopter/4drc">4DRC</a></li>
+                                                            <li><a href="/kvadrokopter/autel">Autel</a></li>
+                                                            <li><a href="/kvadrokopter/betafpv">BETAFPV</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/kvadrokopter">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+              </ul>
+            </div>
+          </li>
+
+                  
+                    <li class="multimenu-item-1">
+            <a href="#">Ремонт компьютерной техники</a>
+
+            <!-- next lvl menu  -->
+            <div class="dropDown_menu">
+              <ul class="multimenu-2lv custom">
+
+                
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe5bcc79b-de56f1724a07a0a68b9febc0a8db5c09.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/noutbuk">Ноутбуки</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/noutbuk/acer">Acer</a></li>
+                                                            <li><a href="/noutbuk/alienware">Alienware</a></li>
+                                                            <li><a href="/noutbuk/apple">Apple</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/noutbuk">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/64d227223a3d6-d9b6f4554ead74cebd62effb6a671a52.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/netbuk">Нетбуки</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/netbuk/irbis">Irbis</a></li>
+                                                            <li><a href="/netbuk/lenovo">Lenovo</a></li>
+                                                            <li><a href="/netbuk/prestigio">Prestigio</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/netbuk">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7ff31a5303-f0217c2d8a4c013e8b807866f88024c0.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/monoblok">Моноблоки</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/monoblok/acer">Acer</a></li>
+                                                            <li><a href="/monoblok/apple">Apple</a></li>
+                                                            <li><a href="/monoblok/aquarius">Aquarius</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/monoblok">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe89c7a65-379d0422863f1ab41880358d6e68b1dc.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/pk">Компьютеры</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/pk/acer">Acer</a></li>
+                                                            <li><a href="/pk/alienware">Alienware</a></li>
+                                                            <li><a href="/pk/apple">Apple</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/pk">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe8306d1d-c0e77aac61a9f4cf9d0b527f324dccc7.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/server">Серверы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/server/asus">Asus</a></li>
+                                                            <li><a href="/server/cisco">Cisco</a></li>
+                                                            <li><a href="/server/dexp">DEXP</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/server">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/67c7fe554a964-113305d0ca384b1770545dff7962d2f3.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/monitor">Мониторы</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/monitor/aoc">AOC</a></li>
+                                                            <li><a href="/monitor/acer">Acer</a></li>
+                                                            <li><a href="/monitor/alienware">Alienware</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/monitor">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/64d929b4d7764-1aad537747900a6fcb7e0584608f62d0.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/videokarta">Видеокарты</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/videokarta/amd">AMD</a></li>
+                                                            <li><a href="/videokarta/acer">Acer</a></li>
+                                                            <li><a href="/videokarta/asus">Asus</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/videokarta">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                                                                                                                                                                                                                  
+                    <li class="multimenu-item-2 custom">
+                      <img src="/_content/content/682b11df3573d-7d03d68924d2d3c63fc2273098cd0938.webp" alt="">
+                      <div class="">
+                        <a class="link_2lv custom" href="/mnogofunkcionalnyy-displey">Многофункциональные дисплеи</a>
+                                                  <ul class="multimenu-brandList">
+                                                            <li><a href="/mnogofunkcionalnyy-displey/vivitek">Vivitek</a></li>
+                                                      </ul>
+                                                <a class="with-svg" href="/mnogofunkcionalnyy-displey">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.35788 12.6667L9.99999 8.02454L5.35788 3.38243" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          Смотреть все
+                        </a>
+                      </div>
+                    </li>
+
+                                                                                                                                                                                                                                                                                                                                  
+              </ul>
+            </div>
+          </li>
+
+                  
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <main>
+
+<section class="map block">
+    <div class="container">
+        <div class="bread">
+            <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.66699 9.4862C1.66699 8.53265 2.12031 7.63589 2.88814 7.07048L10.0003 1.83333L17.1125 7.07048C17.8803 7.63589 18.3337 8.53265 18.3337 9.4862V17.6667C18.3337 19.0474 17.2144 20.1667 15.8337 20.1667H13.5003C12.948 20.1667 12.5003 19.7189 12.5003 19.1667V14.4167C12.5003 14.1405 12.2765 13.9167 12.0003 13.9167H8.00033C7.72418 13.9167 7.50033 14.1405 7.50033 14.4167V19.1667C7.50033 19.7189 7.05261 20.1667 6.50033 20.1667H4.16699C2.78628 20.1667 1.66699 19.0474 1.66699 17.6667V9.4862Z" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <a class="bread-not-active" href="#">Главная</a>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.35742 12.6667L9.99954 8.02456L5.35742 3.38244" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <a class="bread-active" href="#">О компании</a>
+        </div>
+        <h2 class="title-submain title_center mb-28">О компании</h2>
+        <div class="about_block faq_inner">
+            <div class="faq-text pc-none  text-14 w-500">В Москва много сервис-центров, предоставляющих услуги по починке электроники. <span class="w-600">Почему Вам стоит выбрать именно наш сервис-центр?</span></div>
+            <div class="about_block-text  text-18 white">
+
+                <h1>О компании re:device в Москве</h1>
+ <p>Сервис-центр re:device в Москве выделяется следующими преимуществами:</p>
+ <ol>
+ <li>Восстанавливаем электронную технику всех брендов. Справимся с любым устройством!</li>
+ <li>Работаем по всей России. Имеем собственный склад с запчастями. Ремонтируем быстро и даем гарантию!</li>
+ <li>Осуществляем ремонт на дому, осуществляем курьерскую доставку устройств до сц и обратно. Максимальное удобство!</li>
+ <li>Собственный call-центр. Быстро отвечаем, курируем на всех этапах ремонта Вашей техники!</li>
+ <li>Скидки до 10% при оформлении ремонта на сайте. С нами выгодно!</li>
+ </ol>
+ <p>re:device Москве - надежный партнер Ваших электронных устройств. Обращайтесь в сервис-центр re:device и мы справимся с любой неисправностью в самые короткие сроки!</p>
+            </div>
+                        <div class="faq-text_inner" style=" background-image: url(/public/images/content/faq-que.png); ">
+                <div class="faq-text text-14 w-500" style="opacity:1;">В Москве много сервис-центров, предоставляющих услуги по починке электроники. <span class="w-600">Почему Вам стоит выбрать именно наш сервис-центр?</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="advantages block">
+    <div class="container">
+        <div class="advantages-cards">
+            <div class="advantages-cards-item">
+                <div class="item-title">Оригинальные детали в наличии</div>
+                <div class="item-text">Только </br> качественные запчасти</div>
+                <img src="/public/images/content/advan-1.png" alt="" class="item-img">
+            </div>
+            <div class="advantages-cards-item">
+                <div class="item-title">Ремонт на дому </br> или в сервисе</div>
+                <div class="item-text">Бесплатная доставка техники в сервисный центр</div>
+                <img src="/public/images/content/advan-2.png" alt="" class="item-img">
+            </div>
+            <div class="advantages-cards-item">
+                <div class="item-title">Фирменная гарантия </br> до 12 месяцев</div>
+                <div class="item-text">Бесплатная </br> сервисная гарантия</div>
+                <img src="/public/images/content/advan-3.png" alt="" class="item-img">
+            </div>
+            <div class="advantages-cards-item">
+                <div class="item-title">Квалифицированные специалисты</div>
+                <div class="item-text">Штатные специалисты сервисного центра</div>
+                <img src="/public/images/content/advan-4.png" alt="" class="item-img">
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="questions block">
+    <div class="container">
+        <div class="questions_inner blueBG">
+            <h2 class="title-submain mb-12 white">Остались вопросы? Нужна консультация?</h2>
+            <div class="questions-text white mb-48">Закажите бесплатную консультацию, перезвоним за 5 минут</div>
+            <form id="ques" class="form not-col" action="">
+  <div class="input-block ">
+    <div class="input-block-name">
+      <input id="name" type="text" class="white-inp white-inp-name" placeholder=" ">
+      <label class="text-form-label">Ваше имя</label>
+      <svg onclick="clearName()" class="search-close" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1.00003L13 13" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M1 13L13 1.00001" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span class="error-message" id="name-error"></span>
+    </div>
+    <div class="input-block-phone">
+      <input id="phone" type="text" class="white-inp white-inp-phone" placeholder=" ">
+      <label class="text-form-label">Ваш номер телефона</label>
+      <svg onclick="clearPhone()" class="search-close" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1.00003L13 13" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M1 13L13 1.00001" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span class="error-message" id="phone-error"></span>
+    </div>
+  </div>
+  <div class="button-block">
+    <button class="form-btn">Заказать звонок </button>
+    <div class="button-block-text text-14 w-500">
+      Отправляя, Вы соглашаетесь с </br><a class="text-14 w-500 politic" href="/politic">политикой конфиденциальности данных</a>
+    </div>
+  </div>
+</form>
+            <img src="/public/images/content/que.png" alt="" class="questions-img">
+        </div>
+    </div>
+</section>
+
+<section class="map block ">
+    <div class="container">
+        <div class="map__inner p-76">
+            <h2 class="map-title title_center mb-28 title-submain">Контакты</h2>
+            
+<div class="other_city">
+                <div class="other_city-item active">Москва</div>
+                        <a href="https://spb.re-device.ru" class="other_city-item">Санкт-Петербург</a>
+                        <a href="https://krd.re-device.ru" class="other_city-item">Краснодар</a>
+                        <a href="https://nnv.re-device.ru" class="other_city-item">Нижний Новгород</a>
+                        <a href="https://nsk.re-device.ru" class="other_city-item">Новосибирск</a>
+                        <a href="https://kzn.re-device.ru" class="other_city-item">Казань</a>
+            </div>
+
+<div id="map" itemscope itemtype="https://schema.org/LocalBusiness"
+    itemid="https://re-device.ru/#localbusiness">
+    <meta itemprop="name" content="re:device">
+    <link itemprop="url" href="https://re-device.ru/">
+    <div class="map-block contact-block">
+        <a href="tel:+74951062137" class=" contact-block-phone with-svg text-18 darkgray w-600">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M17.2777 1.97344L20.7457 2.35877C21.6754 2.46207 22.3924 3.19943 22.2947 4.12973C22.0507 6.4554 20.9013 11.0411 15.9719 15.9705C11.0426 20.8998 6.45629 22.0499 4.13019 22.2943C3.19972 22.3921 2.46212 21.6751 2.3588 20.7452L1.97351 17.2776C1.88544 16.485 2.27671 15.7158 2.96921 15.3202L5.45331 13.9011C6.23635 13.4538 7.22191 13.5858 7.85959 14.2235L8.49687 14.8608C8.96972 15.3336 9.65114 15.5337 10.2555 15.2474C10.9715 14.9082 12.0065 14.2791 13.1428 13.1427C14.2792 12.0064 14.9083 10.9715 15.2475 10.2554C15.5338 9.65107 15.3337 8.96964 14.8608 8.4968L14.2236 7.85951C13.5859 7.22184 13.4538 6.23628 13.9012 5.45323L15.3202 2.96914C15.7158 2.27664 16.4851 1.88537 17.2777 1.97344Z"
+                    stroke="url(#paint0_linear_281_7812)" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <defs>
+                    <linearGradient id="paint0_linear_281_7812" x1="-1" y1="18.8003" x2="23.9847" y2="21.7978"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#00966D" />
+                        <stop offset="1" stop-color="#4ECDC4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span itemprop="telephone">+7 (495) 106-21-37</span>
+        </a>
+
+                <a href="mailto:info@re-device.ru?subject=re-device.ru&body=Сайт-re-device.ru%0AГород-Москва" class=" contact-block-phone with-svg text-18 darkgray w-600">
+            <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 6C1 4.89543 1.89543 4 3 4H23C24.1046 4 25 4.89543 25 6V19C25 20.1046 24.1046 21 23 21H3C1.89543 21 1 20.1046 1 19V6Z" stroke="url(#paint0_linear_281_7815)" stroke-width="2" stroke-linejoin="round" />
+                <path d="M2.42131 5.30287C1.91709 4.84067 2.24409 4 2.9281 4H23.0719C23.7559 4 24.0829 4.84067 23.5787 5.30287L15.0272 13.1418C13.8802 14.1931 12.1198 14.1931 10.9728 13.1418L2.42131 5.30287Z" stroke="url(#paint1_linear_281_7815)" stroke-width="2" stroke-linejoin="round" />
+                <defs>
+                    <linearGradient id="paint0_linear_281_7815" x1="1" y1="4" x2="25.7276" y2="19.866" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#00966D" />
+                        <stop offset="1" stop-color="#4ECDC4" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_281_7815" x1="1" y1="4" x2="18.6009" y2="21.4532" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#00966D" />
+                        <stop offset="1" stop-color="#4ECDC4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            info@re-device.ru        </a>
+        <div class=" contact-block-address with-svg text-16 ">
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11C22 15.346 15.8077 20.9022 13.1687 23.0727C12.4838 23.636 11.5162 23.636 10.8313 23.0727C8.19234 20.9022 2 15.346 2 11C2 5.47715 6.47715 1 12 1C17.5228 1 22 5.47715 22 11Z" stroke="url(#paint0_linear_281_7818)" stroke-width="2" />
+                <circle cx="12" cy="11" r="3" stroke="url(#paint1_linear_281_7818)" stroke-width="2" />
+                <defs>
+                    <linearGradient id="paint0_linear_281_7818" x1="2" y1="1" x2="27.16" y2="10.9434" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#00966D" />
+                        <stop offset="1" stop-color="#4ECDC4" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_281_7818" x1="9" y1="8" x2="16.2329" y2="11.2873" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#00966D" />
+                        <stop offset="1" stop-color="#4ECDC4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <span class="green w-600">г. <span itemprop="addressLocality">Москва</span></span>,
+                <span itemprop="streetAddress"> Цветной бул., 15, стр. 1</span>
+                                <meta itemprop="addressCountry" content="RU">
+            </div>
+        </div>
+        <div class="contact-time">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="22" stroke="white" stroke-width="3" />
+                <path d="M24 14V26L29 31" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="contact-time-text">
+                <div class="text-title text-16 w-600 white">Ежедневно</div>
+                <div class="text-item text-14 w-500 white">
+                    Ежедневно с 9:00 до 21:00                </div>
+            </div>
+        </div>
+    </div>
+            <div id="n1_6aa66e2f923e7" style="display: inline-block; width: 100%; height: 441px;"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(initYandexMap_n1_6aa66e2f923e7, 5000);
+            });
+
+            document.addEventListener('scroll', initYandexMapOnEvent_n1_6aa66e2f923e7);
+            document.addEventListener('mousemove', initYandexMapOnEvent_n1_6aa66e2f923e7);
+            document.addEventListener('touchstart', initYandexMapOnEvent_n1_6aa66e2f923e7);
+
+            function initYandexMapOnEvent_n1_6aa66e2f923e7(e) {
+                initYandexMap_n1_6aa66e2f923e7();
+                e.currentTarget.removeEventListener(e.type, initYandexMapOnEvent_n1_6aa66e2f923e7);
+            }
+
+            function initYandexMap_n1_6aa66e2f923e7() {
+                if (window.yandexMapDidInit_n1_6aa66e2f923e7) {
+                    return false;
+                }
+                window.yandexMapDidInit_n1_6aa66e2f923e7 = true;
+
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.async = true;
+
+                script.src = 'https://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU&onload=init_n1_6aa66e2f923e7';
+                document.getElementsByTagName('body')[0].appendChild(script);
+            }
+
+            function init_n1_6aa66e2f923e7(){
+                var map_n1_6aa66e2f923e7 = new ymaps.Map("n1_6aa66e2f923e7", {
+                    center: [55.779919,37.601771],
+                    zoom: 16,
+                    controls: [],
+                });
+                //map_//.behaviors.get('drag').disable()
+                map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.779919,37.601771]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.794143,37.592833]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.780319,37.632098]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.791137,37.559353]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.769231,37.583373]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.749162,37.539742]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.723465,37.610269]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.710692,37.675109]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.736392,37.467383]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.738465,37.674508]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.639964,37.758213]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.913371,37.584318]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.863833,37.545581]));map_n1_6aa66e2f923e7.geoObjects.add(new ymaps.Placemark([55.718192,37.784075]));map_n1_6aa66e2f923e7.setBounds(map_n1_6aa66e2f923e7.geoObjects.getBounds());map_n1_6aa66e2f923e7.setZoom(map_n1_6aa66e2f923e7.getZoom()-1);
+                // {hintContent: "Сервисный центр"}
+            }
+        </script>
+        <style>
+            ymaps {
+                -ms-touch-action: auto !important;
+                touch-action: auto !important;
+            }
+        </style>
+        </div>
+        </div>
+    </div>
+</section></main>
+
+    
+<footer class="footer ">
+  <div class="container">
+    <div class="footer_inner">
+      <div class="footer-left">
+        <div class="logo-block">
+          <a href="/" class="logo-img">
+            <img src="/public/images/logo/logo-header.png" alt="re-device">
+          </a>
+          <div class="dropdown logo-text white text-14 w-500">
+            Сервисный центр <span class="dropbtn w-600">в Москве</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.6667 6L8.02463 10.6421L3.38252 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <div class="dropdown-content footer">
+                              <a href="https://re-device.ru" class="text-14 w-500 Gray">Москва</a>
+                              <a href="https://spb.re-device.ru" class="text-14 w-500 Gray">Санкт-Петербург</a>
+                              <a href="https://krd.re-device.ru" class="text-14 w-500 Gray">Краснодар</a>
+                              <a href="https://rnd.re-device.ru" class="text-14 w-500 Gray">Ростов-на-Дону</a>
+                              <a href="https://nnv.re-device.ru" class="text-14 w-500 Gray">Нижний Новгород</a>
+                              <a href="https://nsk.re-device.ru" class="text-14 w-500 Gray">Новосибирск</a>
+                              <a href="https://chl.re-device.ru" class="text-14 w-500 Gray">Челябинск</a>
+                              <a href="https://ekb.re-device.ru" class="text-14 w-500 Gray">Екатеринбург</a>
+                              <a href="https://kzn.re-device.ru" class="text-14 w-500 Gray">Казань</a>
+                              <a href="https://ufa.re-device.ru" class="text-14 w-500 Gray">Уфа</a>
+                              <a href="https://vrn.re-device.ru" class="text-14 w-500 Gray">Воронеж</a>
+                              <a href="https://vlg.re-device.ru" class="text-14 w-500 Gray">Волгоград</a>
+                              <a href="https://brn.re-device.ru" class="text-14 w-500 Gray">Барнаул</a>
+                              <a href="https://izh.re-device.ru" class="text-14 w-500 Gray">Ижевск</a>
+                              <a href="https://tol.re-device.ru" class="text-14 w-500 Gray">Тольятти</a>
+                              <a href="https://yrs.re-device.ru" class="text-14 w-500 Gray">Ярославль</a>
+                              <a href="https://srt.re-device.ru" class="text-14 w-500 Gray">Саратов</a>
+                              <a href="https://hbr.re-device.ru" class="text-14 w-500 Gray">Хабаровск</a>
+                              <a href="https://tms.re-device.ru" class="text-14 w-500 Gray">Томск</a>
+                              <a href="https://tmn.re-device.ru" class="text-14 w-500 Gray">Тюмень</a>
+                              <a href="https://irk.re-device.ru" class="text-14 w-500 Gray">Иркутск</a>
+                              <a href="https://smr.re-device.ru" class="text-14 w-500 Gray">Самара</a>
+                              <a href="https://oms.re-device.ru" class="text-14 w-500 Gray">Омск</a>
+                              <a href="https://krn.re-device.ru" class="text-14 w-500 Gray">Красноярск</a>
+                              <a href="https://prm.re-device.ru" class="text-14 w-500 Gray">Пермь</a>
+                              <a href="https://uly.re-device.ru" class="text-14 w-500 Gray">Ульяновск</a>
+                              <a href="https://kir.re-device.ru" class="text-14 w-500 Gray">Киров</a>
+              
+            </div>
+          </div>
+        </div>
+        <button class="top mobile-menu  burger-menu pc-none">
+          Меню
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.33325 5.83333H16.6666" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M6.66675 14.1667H16.6667" stroke="white" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div class="footer-left-text copy text-14 w-500 white">
+          Сервисный центр re:device (c) 2026        </div>
+        <nav class="footer-left-menu white">
+                    <ul class="text-14 w-600">
+                          <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <a class="text-14 white w-600" itemprop="url" href="/delivery"><span itemprop="name">Доставка</span></a>
+              </li>
+                          <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <a class="text-14 white w-600" itemprop="url" href="#"><span itemprop="name">О компании</span></a>
+              </li>
+                          <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <a class="text-14 white w-600" itemprop="url" href="/reviews"><span itemprop="name">Отзывы</span></a>
+              </li>
+                          <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <a class="text-14 white w-600" itemprop="url" href="/price"><span itemprop="name">Цены</span></a>
+              </li>
+                          <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <a class="text-14 white w-600" itemprop="url" href="/contacts"><span itemprop="name">Контакты</span></a>
+              </li>
+                          <li itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <a class="text-14 white w-600" itemprop="url" href="/sitemap-html"><span itemprop="name">Карта сайта</span></a>
+              </li>
+                      </ul>
+        </nav>
+
+        
+      </div>
+      <div class="footer-mid flex_column">
+        <div class="footer-mid-title text-16 w-600 white">Ремонт техники</div>
+        <div class="footer-mid-menu">
+          <ul class="white text-14 w-500">
+
+            
+                <li>
+                  <a class="white text-14 w-500" href="/televizor">Ремонт
+                    Телевизоров</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/kofemashina">Ремонт
+                    Кофемашин</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/robot-pylesos">Ремонт
+                    Роботов-пылесосов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/elektrosamokat">Ремонт
+                    Электросамокатов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/noutbuk">Ремонт
+                    Ноутбуков</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/netbuk">Ремонт
+                    Нетбуков</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/printer">Ремонт
+                    Принтеров</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/fotoapparat">Ремонт
+                    Фотоаппаратов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/parogenerator">Ремонт
+                    Парогенераторов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/smart-chasy">Ремонт
+                    Смарт-часов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/obektiv">Ремонт
+                    Объективов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/mfu">Ремонт
+                    МФУ</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/monitor">Ремонт
+                    Мониторов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/planshet">Ремонт
+                    Планшетов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/videokamera">Ремонт
+                    Видеокамер</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/plotter">Ремонт
+                    Плоттеров</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/istochnik-bespereboynogo-pitaniya">Ремонт
+                    Источников бесперебойного питания</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/eholot">Ремонт
+                    Эхолотов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/kvadrokopter">Ремонт
+                    Квадрокоптеров</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/opticheskiy-pricel">Ремонт
+                    Оптических прицелов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/monoblok">Ремонт
+                    Моноблоков</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/kollimatornyy-pricel">Ремонт
+                    Коллиматорных прицелов</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/naushniki">Ремонт
+                    Наушников</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/teplovizionnyy-monokulyar">Ремонт
+                    Тепловизионных монокуляров</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/videokarta">Ремонт
+                    Видеокарт</a>
+                </li>
+
+                
+                <li>
+                  <a class="white text-14 w-500" href="/teplovizor">Ремонт
+                    Тепловизоров</a>
+                </li>
+
+                
+          </ul>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="contact_block">
+          <div class="contact-phone with-svg text-18 w-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M17.2777 1.97344L20.7457 2.35877C21.6754 2.46207 22.3924 3.19943 22.2947 4.12973C22.0507 6.4554 20.9013 11.0411 15.9719 15.9705C11.0426 20.8998 6.45629 22.0499 4.13019 22.2943C3.19972 22.3921 2.46212 21.6751 2.3588 20.7452L1.97351 17.2776C1.88544 16.485 2.27671 15.7158 2.96921 15.3202L5.45331 13.9011C6.23635 13.4538 7.22191 13.5858 7.85959 14.2235L8.49687 14.8608C8.96972 15.3336 9.65114 15.5337 10.2555 15.2474C10.9715 14.9082 12.0065 14.2791 13.1428 13.1427C14.2792 12.0064 14.9083 10.9715 15.2475 10.2554C15.5338 9.65107 15.3337 8.96964 14.8608 8.4968L14.2236 7.85951C13.5859 7.22184 13.4538 6.23628 13.9012 5.45323L15.3202 2.96914C15.7158 2.27664 16.4851 1.88537 17.2777 1.97344Z"
+                stroke="url(#paint0_linear_281_7916)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <defs>
+                <linearGradient id="paint0_linear_281_7916" x1="-1" y1="18.8003" x2="23.9847" y2="21.7978"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00966D" />
+                  <stop offset="1" stop-color="#4ECDC4" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <a class="darkgray" href="tel:+74951062137">+7 (495) 106-21-37</a>
+          </div>
+          <div class="contact-mail with-svg text-18 w-600">
+            <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 6C1 4.89543 1.89543 4 3 4H23C24.1046 4 25 4.89543 25 6V19C25 20.1046 24.1046 21 23 21H3C1.89543 21 1 20.1046 1 19V6Z"
+                stroke="url(#paint0_linear_281_7919)" stroke-width="2" stroke-linejoin="round" />
+              <path
+                d="M2.42131 5.30287C1.91709 4.84067 2.24409 4 2.9281 4H23.0719C23.7559 4 24.0829 4.84067 23.5787 5.30287L15.0272 13.1418C13.8802 14.1931 12.1198 14.1931 10.9728 13.1418L2.42131 5.30287Z"
+                stroke="url(#paint1_linear_281_7919)" stroke-width="2" stroke-linejoin="round" />
+              <defs>
+                <linearGradient id="paint0_linear_281_7919" x1="1" y1="4" x2="25.7276" y2="19.866"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00966D" />
+                  <stop offset="1" stop-color="#4ECDC4" />
+                </linearGradient>
+                <linearGradient id="paint1_linear_281_7919" x1="1" y1="4" x2="18.6009" y2="21.4532"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00966D" />
+                  <stop offset="1" stop-color="#4ECDC4" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+                        <a class="darkgray" href="mailto:info@re-device.ru?subject=re-device.ru&body=Сайт-re-device.ru%0AГород-Москва">info@re-device.ru</a>
+
+          </div>
+          <div class="contact-address with-svg text-16 darkgray">
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M22 11C22 15.346 15.8077 20.9022 13.1687 23.0727C12.4838 23.636 11.5162 23.636 10.8313 23.0727C8.19234 20.9022 2 15.346 2 11C2 5.47715 6.47715 1 12 1C17.5228 1 22 5.47715 22 11Z"
+                stroke="url(#paint0_linear_281_7922)" stroke-width="2" />
+              <circle cx="12" cy="11" r="3" stroke="url(#paint1_linear_281_7922)" stroke-width="2" />
+              <defs>
+                <linearGradient id="paint0_linear_281_7922" x1="2" y1="1" x2="27.16" y2="10.9434"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00966D" />
+                  <stop offset="1" stop-color="#4ECDC4" />
+                </linearGradient>
+                <linearGradient id="paint1_linear_281_7922" x1="9" y1="8" x2="16.2329" y2="11.2873"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00966D" />
+                  <stop offset="1" stop-color="#4ECDC4" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="address-text"><span class="colored-text w-600">г. Москва</span>,
+               Цветной бул., 15, стр. 1            </div>
+          </div>
+          <div class="contact-time">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="22" stroke="white" stroke-width="3" />
+              <path d="M24 14V26L29 31" stroke="white" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <div class="contact-time-text">
+              <div class="text-title text-16 w-600 white">
+                Ежедневно
+              </div>
+              <div class="text-item text-14 w-500 white">
+                Ежедневно с 9:00 до 21:00              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="law">
+      <p><strong>Правомерная информация</strong></p>
+      <p>* - Все торговые марки, представленные на Сайте, используются в законных информационных и описательных целях.
+      </p>
+      <p>Название "Laurastar" является зарегистрированной торговой маркой LAURASTAR. Название "Bork-Import" является
+        зарегистрированной торговой маркой компании BORK.</p>
+      <p>Все товарные знаки (включая, но не ограничиваясь вышеуказанными) принадлежат их законным правообладателям и
+        отображаются на Сайте с целью информирования о предоставляемых услугах в отношении товаров правообладателей.
+        Данные услуги могут быть оказаны на месте или в неавторизованных сервисных центрах независимыми физическими и
+        юридическими лицами в гражданском обороте, связанном с товаром и включенном в статью 1487 Гражданского кодекса
+        Российской Федерации. Информация, представленная на данном сайте, носит ознакомительный характер и не является
+        публичной офертой.</p>
+      <p>Разговор может быть записан с целью повышения качества обслуживания.</p>
+      <p><strong>* - Торговые марки, представленные на этом сайте, используются в законных некоммерческих
+          целях.</strong></p>
+      <ul>
+        <li>iPhone, Macbook, iPad - правообладатель Apple Inc. (Эпл Инк.);</li>
+        <li>Huawei и Honor - правообладатель HUAWEI TECHNOLOGIES CO., LTD. (ХУАВЕЙ ТЕКНОЛОДЖИС КО., ЛТД.);</li>
+        <li>Samsung – правообладатель Samsung Electronics Co. Ltd. (Самсунг Электроникс Ко., Лтд.);</li>
+        <li>MEIZU - правообладатель MEIZU TECHNOLOGY CO., LTD.;</li>
+        <li>Nokia - правообладатель Nokia Corporation (Нокиа Корпорейшн);</li>
+        <li>Lenovo - правообладатель Lenovo (Beijing) Limited;</li>
+        <li>Xiaomi - правообладатель Xiaomi Inc.;</li>
+        <li>ZTE - правообладатель ZTE Corporation;</li>
+        <li>HTC - правообладатель HTC CORPORATION (Эйч-Ти-Си КОРПОРЕЙШН);</li>
+        <li>LG - правообладатель LG Corp. (ЭлДжи Корп.);</li>
+        <li>Philips - правообладатель Koninklijke Philips N.V. (Конинклийке Филипс Н.В.);</li>
+        <li>Sony - правообладатель Sony Corporation (Сони Корпорейшн);</li>
+        <li>ASUS - правообладатель ASUSTeK Computer Inc. (Асустек Компьютер Инкорпорейшн);</li>
+        <li>ACER - правообладатель Acer Incorporated (Эйсер Инкорпорейтед);</li>
+        <li>DELL - правообладатель Dell Inc.(Делл Инк.);</li>
+        <li>HP - правообладатель HP Hewlett-Packard Group LLC (ЭйчПи Хьюлетт Паккард Груп ЛЛК);</li>
+        <li>Toshiba - правообладатель KABUSHIKI KAISHA TOSHIBA, also trading as Toshiba Corporation (КАБУШИКИ КАЙША
+          ТОШИБА также торгующая как Тосиба Корпорейшн).</li>
+      </ul>
+      <p>Зарегистрированные товарные знаки используются для описания услуг, доступных в сети сервисных центров РЕ-ДЕВАЙС, не
+        связанных с компаниями Правообладателей товарных знаков и/или с их официальными представителями в отношении
+        товаров, которые уже введены в гражданский оборот по смыслу статьи 1487 Гражданского кодекса.</p>
+      <p><strong>** - время, необходимое для ремонта, может варьироваться в зависимости от модели устройства и сложности
+          работы.</strong></p>
+      <p>На сайте <a
+          href="https://re-device.ru">https://re-device.ru</a> доступна
+        информация о соответствующих моделях и конфигурациях, ценах, возможных выгодах, а также условиях сотрудничества.
+      </p>
+    </div>
+    <div class="footer-bot-links">
+      <a class="text-14 white w-600" itemprop="url" href="/politic">Политика
+        конфиденциальности</a>
+      <a class="text-14 white w-600" itemprop="url" href="/cookies">Соглашение о файлах
+        cookies</a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+  
+<!-- modal1 -->
+<div class="modal  modal_size_small modal_get">
+  <svg class="modal__close" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8.37356 9.84053L4.90363 6.37059L1.45959 9.81463L0.00946778 8.36451L3.45351 4.92047L0.00946778 1.47643L1.47685 0.00904844L4.92089 3.45309L8.36493 0.00904844L9.81505 1.45917L6.37101 4.90321L9.84094 8.37314L8.37356 9.84053Z" fill="#393939"></path>
+  </svg>
+  <div class="modal__container">
+    <div class="modal__title text-24 black w-700">Заказать обратный звонок</div>
+    <form id="ques-Pop" class="form modal__form text-form">
+      <input type="hidden" name="title" value="Модальная форма">
+            <input type="hidden" name="promo" id="t74-promo-field" value="">
+      <input type="hidden" name="promo_title" id="t74-promo-title" value="">
+      <div class="input-block-name">
+        <input name="your-name" id="name-Pop" type="text" class="white-inp white-inp-name-Pop" placeholder=" ">
+        <label class="text-form-label">Ваше имя</label>
+        <svg onclick="clearNamePop()" class="search-close" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1.00003L13 13" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M1 13L13 1.00001" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="error-message" id="name-error-Pop"></span>
+      </div>
+      <div class="input-block-phone">
+        <input id="phone-Pop" name="your-tel" inputmode="tel" type="text" class="white-inp white-inp-phone white-inp-phone-Pop" placeholder=" ">
+        <label class="text-form-label">Ваш номер телефона</label>
+        <svg onclick="clearPhonePop()" class="search-close" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1.00003L13 13" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M1 13L13 1.00001" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="error-message" id="phone-error-Pop"></span>
+      </div>
+      <button class="form-btn">Заказать звонок</button>
+    </form>
+    <div class="agree modal__agree">
+      <div class="agree__text text-14 gray">
+        Отправляя, Вы соглашаетесь с </br> <a href="/politika">политикой конфиденциальности данных</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="overlay"></div>
+<div class="phone_block m-none">
+    <div class="container">
+        <div class="pusle">
+            <a class="overlay_phone" href="tel:+74951062137">
+                <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.4103 28.625C22.2665 28.625 20.6599 28.2113 18.254 26.8672C15.3284 25.2266 13.0655 23.7119 10.1558 20.8098C7.3503 18.0061 5.98507 16.1908 4.07432 12.7139C1.91573 8.78809 2.2837 6.73028 2.69503 5.85079C3.18487 4.79962 3.90792 4.1709 4.84249 3.54688C5.37332 3.19909 5.93507 2.90095 6.52061 2.65626C6.57921 2.63106 6.6337 2.60704 6.68233 2.58536C6.97237 2.45469 7.41182 2.25723 7.96846 2.46817C8.33995 2.60762 8.67159 2.89297 9.19073 3.40567C10.2554 4.45567 11.7103 6.79415 12.247 7.94258C12.6073 8.71661 12.8458 9.22754 12.8464 9.80059C12.8464 10.4715 12.5089 10.9889 12.0993 11.5473C12.0226 11.6522 11.9464 11.7523 11.8726 11.8496C11.4267 12.4356 11.3288 12.6049 11.3933 12.9072C11.5239 13.5148 12.4983 15.3236 14.0997 16.9215C15.7011 18.5193 17.4577 19.4322 18.0677 19.5623C18.3829 19.6297 18.5558 19.5277 19.1605 19.066C19.2472 18.9998 19.3362 18.9313 19.4294 18.8627C20.054 18.3981 20.5474 18.0693 21.2024 18.0693H21.206C21.7761 18.0693 22.2642 18.3166 23.0728 18.7244C24.1274 19.2565 26.5362 20.6926 27.5927 21.7584C28.1065 22.2764 28.3931 22.6068 28.5331 22.9777C28.744 23.5361 28.5454 23.9738 28.4159 24.2668C28.3942 24.3154 28.3702 24.3688 28.345 24.4279C28.0984 25.0124 27.7985 25.573 27.4491 26.1025C26.8263 27.0342 26.1952 27.7555 25.1417 28.2459C24.6007 28.5018 24.0087 28.6315 23.4103 28.625Z" fill="white"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- menu -->
+<div class="menu">
+  <div class="container">
+    <div class="menu__inner">
+      <div class="menu__title">
+        <div class="right-side-text text-16 Gray w-500 links-default">
+          <img src="/public/images/icons/logo.png" alt="">
+        </div>
+        <button class="top mobile-menu  menu-close pc-none">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.33325 5.83333H16.6666" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M6.66675 14.1667H16.6667" stroke="white" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="right-side-btns mobile">
+        <div class="header-search text-16">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M22 22L18 18" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <input type="text" class="input check-input" placeholder=" ">
+          <label class="text-form-label">Поиск по сайту</label>
+          <svg onclick="clearSearch()" class="search-close" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1.00003L13 13" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M1 13L13 1.00001" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <button class="main-btn open-popup">Вызвать мастера</button>
+      </div>
+      <nav class="menu__nav">
+        <ul class="header__bottom-menu">
+
+          <!-- Каталог в мобильной версии -->
+          <li class="btn-mobile-catalog">
+            <span class="catalog-uslug">Каталог услуг</span>
+            <div class="mob-menu-catalog">
+              <ul class="uslugi__mobile">
+                                  <li class="drop-menu">
+                    <a href="#">Ремонт оргтехники</a>
+                    <div class="click__drop_menu"><span>▼</span></div>
+                    <ul class="dropDown-menu">
+
+                      
+                          <li><a href="/printer">Принтер</a></li>
+
+                      
+                          <li><a href="/mfu">МФУ</a></li>
+
+                      
+                          <li><a href="/plotter">Плоттер</a></li>
+
+                      
+                    </ul>
+                  </li>
+                                  <li class="drop-menu">
+                    <a href="#">Ремонт видеотехники</a>
+                    <div class="click__drop_menu"><span>▼</span></div>
+                    <ul class="dropDown-menu">
+
+                      
+                          <li><a href="/videokamera">Видеокамера</a></li>
+
+                      
+                          <li><a href="/ekshen-kamera">Экшен-камера</a></li>
+
+                      
+                    </ul>
+                  </li>
+                                  <li class="drop-menu">
+                    <a href="#">Ремонт бытовой техники</a>
+                    <div class="click__drop_menu"><span>▼</span></div>
+                    <ul class="dropDown-menu">
+
+                      
+                          <li><a href="/kofemashina">Кофемашина</a></li>
+
+                      
+                          <li><a href="/robot-pylesos">Робот-пылесос</a></li>
+
+                      
+                          <li><a href="/parogenerator">Парогенератор</a></li>
+
+                      
+                          <li><a href="/massazhnoe-kreslo">Массажное кресло</a></li>
+
+                      
+                          <li><a href="/ldogenerator">Льдогенератор</a></li>
+
+                      
+                          <li><a href="/sushilka-dlya-ovoschey-i-fruktov">Сушилка для овощей и фруктов</a></li>
+
+                      
+                          <li><a href="/granitor">Гранитор</a></li>
+
+                      
+                          <li><a href="/slayser">Слайсер</a></li>
+
+                      
+                          <li><a href="/ovoscherezka">Овощерезка</a></li>
+
+                      
+                          <li><a href="/parovaya-pech">Паровая печь</a></li>
+
+                      
+                          <li><a href="/massazhnyy-stol">Массажный стол</a></li>
+
+                      
+                          <li><a href="/massazher-dlya-golovy">Массажер для головы</a></li>
+
+                      
+                          <li><a href="/trenazher-dlya-pressa">Тренажер для пресса</a></li>
+
+                      
+                          <li><a href="/massazher-dlya-glaz">Массажер для глаз</a></li>
+
+                      
+                          <li><a href="/massazher-dlya-shei">Массажер для шеи</a></li>
+
+                      
+                          <li><a href="/pila-dlya-myasa">Пила для мяса</a></li>
+
+                      
+                    </ul>
+                  </li>
+                                  <li class="drop-menu">
+                    <a href="#">Ремонт электронных устройств</a>
+                    <div class="click__drop_menu"><span>▼</span></div>
+                    <ul class="dropDown-menu">
+
+                      
+                          <li><a href="/televizor">Телевизор</a></li>
+
+                      
+                          <li><a href="/elektrosamokat">Электросамокат</a></li>
+
+                      
+                          <li><a href="/smart-chasy">Смарт-часы</a></li>
+
+                      
+                          <li><a href="/planshet">Планшет</a></li>
+
+                      
+                          <li><a href="/istochnik-bespereboynogo-pitaniya">Источник бесперебойного питания</a></li>
+
+                      
+                          <li><a href="/eholot">Эхолот</a></li>
+
+                      
+                          <li><a href="/opticheskiy-pricel">Оптический прицел</a></li>
+
+                      
+                          <li><a href="/naushniki">Наушники</a></li>
+
+                      
+                          <li><a href="/teplovizor">Тепловизор</a></li>
+
+                      
+                          <li><a href="/igrovaya-pristavka">Игровая приставка</a></li>
+
+                      
+                          <li><a href="/proektor">Проектор</a></li>
+
+                      
+                          <li><a href="/elektrovelosiped">Электровелосипед</a></li>
+
+                      
+                          <li><a href="/3d-printer">3D-принтер</a></li>
+
+                      
+                          <li><a href="/cifrovoy-binokl">Цифровой бинокль</a></li>
+
+                      
+                          <li><a href="/teplovizionnye-nasadki">Тепловизионные насадки</a></li>
+
+                      
+                          <li><a href="/rubanok">Рубанок</a></li>
+
+                      
+                          <li><a href="/radar-detektor-bpla">Радар-детектор БПЛА</a></li>
+
+                      
+                          <li><a href="/teplovizionnye-ochki">Тепловизионные очки</a></li>
+
+                      
+                          <li><a href="/elektronnyy-mikroskop">Электронный микроскоп</a></li>
+
+                      
+                          <li><a href="/pricel-nochnogo-videniya">Прицел ночного видения</a></li>
+
+                      
+                          <li><a href="/smartfon">Смартфон</a></li>
+
+                      
+                    </ul>
+                  </li>
+                                  <li class="drop-menu">
+                    <a href="#">Ремонт  фототехники</a>
+                    <div class="click__drop_menu"><span>▼</span></div>
+                    <ul class="dropDown-menu">
+
+                      
+                          <li><a href="/fotoapparat">Фотоаппарат</a></li>
+
+                      
+                          <li><a href="/obektiv">Объектив</a></li>
+
+                      
+                          <li><a href="/fotovspyshka">Фотовспышка</a></li>
+
+                      
+                    </ul>
+                  </li>
+                                  <li class="drop-menu">
+                    <a href="#">Ремонт БПЛА</a>
+                    <div class="click__drop_menu"><span>▼</span></div>
+                    <ul class="dropDown-menu">
+
+                      
+                          <li><a href="/kvadrokopter">Квадрокоптер</a></li>
+
+                      
+                    </ul>
+                  </li>
+                                  <li class="drop-menu">
+                    <a href="#">Ремонт компьютерной техники</a>
+                    <div class="click__drop_menu"><span>▼</span></div>
+                    <ul class="dropDown-menu">
+
+                      
+                          <li><a href="/noutbuk">Ноутбук</a></li>
+
+                      
+                          <li><a href="/netbuk">Нетбук</a></li>
+
+                      
+                          <li><a href="/monitor">Монитор</a></li>
+
+                      
+                          <li><a href="/monoblok">Моноблок</a></li>
+
+                      
+                          <li><a href="/videokarta">Видеокарта</a></li>
+
+                      
+                          <li><a href="/server">Сервер</a></li>
+
+                      
+                          <li><a href="/pk">ПК</a></li>
+
+                      
+                          <li><a href="/mnogofunkcionalnyy-displey">Многофункциональный дисплей</a></li>
+
+                      
+                    </ul>
+                  </li>
+                              </ul>
+            </div>
+          </li>
+          <!-- **** -->
+
+          <li class="menu-item">
+            <a class="text-22 w-500 darkgray menu-link" href="/delivery">Доставка</a>
+          </li>
+          <li class="menu-item">
+            <a class="text-22 w-500 darkgray menu-link" href="/reviews">Отзывы</a>
+          </li>
+          <li class="menu-item">
+            <a class="text-22 w-500 darkgray menu-link" href="/price">Цены</a>
+          </li>
+          <li class="menu-item">
+            <a class="text-22 w-500 darkgray menu-link" href="/contacts">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+  <script src="/public/js/lazyload.min.js"></script><script src="/public/js/mask.min.js"></script><script src="/public/js/mainScript.js"></script><script src="/public/js/switcher.js"></script><script src="/public/js/swiper.js"></script><script src="/public/js/price-select.js"></script><script src="/public/js/t74-main.js"></script>
+
+      
+
+</body>
+
+</html>

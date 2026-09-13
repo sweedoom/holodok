@@ -1,0 +1,2373 @@
+/**
+ * Правки 20.08.2026 (ТЗ главная): стили новых и доработанных секций.
+ *
+ * Палитра и типографика взяты из style.css: --base #4ecdc4 — акцент,
+ * --darkgray #373737 — текст, --lightgray #eff0f6 — фон карточек.
+ * Брейкпоинты те же, что в проекте: 1200 / 1050 / 830 / 650 / 550.
+ *
+ * Активный таб в географии залит фирменным бирюзовым, а не оранжевым, как на
+ * референсе cando-service.ru: оранжевый конфликтует и с палитрой сайта,
+ * и с официальным цветом Калужско-Рижской линии в той же секции.
+ */
+
+:root {
+  --t74-accent: #4ecdc4;
+  --t74-accent-dark: #35b3aa;
+  --t74-ink: #373737;
+  --t74-muted: #7b7f8a;
+  --t74-line: #e4e6ef;
+  --t74-surface: #f7f8fc;
+}
+
+/* ---------------------------------------------------------- Общие элементы */
+
+/**
+ * В style.css есть глобальное `button { width: 100%; height: 56px; color: #fff }`.
+ * Из-за него кнопки новых секций растягивались на всю ширину контейнера и
+ * давали горизонтальный скролл страницы. Сбрасываем до нормального поведения,
+ * дальше каждый компонент задаёт свои размеры сам.
+ */
+.t74-btn,
+.t74-tabs__tab,
+.t74-faq__q,
+.t74-faq__link,
+.t74-slider__btn,
+.t74-modal__close {
+  width: auto;
+  height: auto;
+  color: inherit;
+}
+
+.t74-suptitle {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--t74-accent-dark);
+  margin-bottom: 12px;
+}
+
+.t74-h2 {
+  margin: 0 0 16px 0;
+}
+
+.t74-subtitle {
+  max-width: 760px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--t74-muted);
+}
+
+.t74-note {
+  margin: 24px auto 0 auto;
+  max-width: 900px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #9aa0ac;
+}
+
+.t74-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 14px 32px;
+  border: 1px solid transparent;
+  border-radius: 40px;
+  background: #73c5bf;
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.t74-btn:hover {
+  background: #fff;
+  border-color: #73c5bf;
+  color: #73c5bf;
+}
+
+.t74-btn--ghost {
+  background: #fff;
+  border-color: var(--t74-line);
+  color: var(--t74-ink);
+}
+
+.t74-btn--ghost:hover {
+  border-color: #73c5bf;
+  color: #73c5bf;
+}
+
+/**
+ * Слайдеры существующих секций сидят на общем правиле
+ * `.swiper { padding: 59px 80px 0 !important }` из style.css.
+ * Новым слайдерам этот отступ не нужен — гасим адресно.
+ */
+.t74-prices__slider.swiper,
+.t74-masters__slider.swiper {
+  padding: 0 !important;
+  max-width: none;
+  height: auto;
+}
+
+/* Навигация слайдеров */
+
+.t74-slider__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.t74-slider__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  padding: 0;
+  border: 1px solid var(--t74-line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--t74-ink);
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.t74-slider__btn:hover {
+  border-color: var(--t74-accent);
+  color: var(--t74-accent);
+}
+
+.t74-slider__btn.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.t74-slider__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+}
+
+.t74-slider__pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 !important;
+  background: #cfd3dd;
+  opacity: 1;
+  transition: 0.25s ease-in-out;
+}
+
+.t74-slider__pagination .swiper-pagination-bullet-active {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--t74-accent);
+}
+
+/* --------------------------------- Блок преимуществ (доработка .utp-box) */
+
+.utp-box_inner.t74-advantages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.t74-advantages__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 28px 24px;
+  border: 1px solid var(--t74-line);
+  border-radius: 20px;
+  background: #fff;
+  transition: 0.25s ease-in-out;
+}
+
+.t74-advantages__item:hover {
+  border-color: var(--t74-accent);
+  box-shadow: 0 12px 28px rgba(78, 205, 196, 0.14);
+}
+
+.t74-advantages__icon {
+  width: 44px;
+  height: 44px;
+  color: var(--t74-accent-dark);
+}
+
+.t74-advantages__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.t74-advantages__title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--t74-ink);
+}
+
+.t74-advantages__text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--t74-muted);
+}
+
+/* ------------------------- «Мы ремонтируем»: подпись «от N ₽» в карточке */
+
+.t74-cards-price {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--t74-accent-dark);
+}
+
+/* ------------------------------------ Ремонтируем технику всех марок */
+
+.t74-brands__grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 16px;
+}
+
+.t74-brands__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 18px 10px;
+  border: 1px solid var(--t74-line);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--t74-ink);
+  text-align: center;
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out,
+    border-color 0.25s ease-in-out;
+}
+
+a.t74-brands__item:hover {
+  transform: translateY(-4px);
+  border-color: var(--t74-accent);
+  box-shadow: 0 12px 24px rgba(55, 55, 55, 0.1);
+}
+
+.t74-brands__item.is-hidden {
+  display: none;
+}
+
+.t74-brands__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+}
+
+/* Логотипы приводятся к одной оптической высоте и не перекрашиваются */
+.t74-brands__logo img {
+  max-height: 40px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.t74-brands__logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--t74-ink);
+  line-height: 40px;
+}
+
+.t74-brands__name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--t74-muted);
+  line-height: 1.3;
+}
+
+.t74-brands__more {
+  display: flex;
+  margin: 28px auto 0 auto;
+}
+
+.t74-brands__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 36px;
+  padding: 24px 32px;
+  border-radius: 20px;
+  background: var(--t74-surface);
+}
+
+.t74-brands__cta-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.t74-brands__cta .t74-btn {
+  flex: 0 0 auto;
+}
+
+/* ---------------------------------------------------- Стоимость ремонта */
+
+.t74-prices__slider {
+  padding-bottom: 4px;
+}
+
+.t74-prices__slider .swiper-slide {
+  height: auto;
+}
+
+.t74-prices__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 28px 26px;
+  border: 1px solid var(--t74-line);
+  border-radius: 20px;
+  background: #fff;
+  transition: 0.25s ease-in-out;
+}
+
+.t74-prices__card:hover {
+  border-color: var(--t74-accent);
+  box-shadow: 0 14px 30px rgba(55, 55, 55, 0.08);
+}
+
+.t74-prices__title {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.t74-prices__title a {
+  color: var(--t74-ink);
+}
+
+.t74-prices__title a:hover {
+  color: var(--t74-accent-dark);
+}
+
+.t74-prices__brands {
+  margin-bottom: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--t74-muted);
+}
+
+.t74-prices__list {
+  flex: 1 1 auto;
+  margin: 0 0 18px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.t74-prices__row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f1f2f7;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.t74-prices__row:last-child {
+  border-bottom: 0;
+}
+
+.t74-prices__row-name {
+  flex: 0 1 auto;
+}
+
+/* Точечный лидер между названием работы и ценой */
+.t74-prices__row-dots {
+  flex: 1 1 auto;
+  min-width: 12px;
+  border-bottom: 1px dotted #c8ccd6;
+  transform: translateY(-3px);
+}
+
+.t74-prices__row-price {
+  flex: 0 0 auto;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--t74-ink);
+}
+
+.t74-prices__all {
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--t74-accent-dark);
+}
+
+.t74-prices__all:hover {
+  color: var(--t74-ink);
+}
+
+.t74-prices__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 36px;
+  padding: 24px 32px;
+  border-radius: 20px;
+  background: var(--t74-surface);
+}
+
+.t74-prices__cta-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.t74-prices__cta-btns {
+  display: flex;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+/* -------------------------------------------------------- Как мы работаем */
+
+.t74-steps__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.t74-steps__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px 22px 24px 22px;
+  border: 1px solid var(--t74-line);
+  border-radius: 20px;
+  background: #fff;
+  transition: 0.25s ease-in-out;
+}
+
+.t74-steps__item:hover {
+  border-color: var(--t74-accent);
+  box-shadow: 0 14px 30px rgba(55, 55, 55, 0.08);
+}
+
+.t74-steps__num {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  color: #eef0f6;
+}
+
+.t74-steps__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--t74-accent-dark);
+}
+
+.t74-steps__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.t74-steps__title {
+  margin: 4px 0 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.t74-steps__time {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--t74-accent-dark);
+}
+
+.t74-steps__text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--t74-muted);
+}
+
+.t74-steps__phone {
+  color: var(--t74-accent-dark);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.t74-steps__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+/* ------------------------------------------------------------ Наши мастера */
+
+.t74-masters__slider .swiper-slide {
+  height: auto;
+}
+
+.t74-masters__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid var(--t74-line);
+  border-radius: 20px;
+  background: #fff;
+  transition: 0.25s ease-in-out;
+}
+
+.t74-masters__card:hover {
+  border-color: var(--t74-accent);
+  box-shadow: 0 14px 30px rgba(55, 55, 55, 0.08);
+}
+
+.t74-masters__photo {
+  position: relative;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--t74-surface);
+  aspect-ratio: 4 / 5;
+}
+
+.t74-masters__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.t74-masters__photo-stub {
+  width: 100%;
+  height: 100%;
+  color: #c3c8d4;
+}
+
+.t74-masters__exp {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--t74-ink);
+}
+
+.t74-masters__name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.t74-masters__role {
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--t74-accent-dark);
+}
+
+.t74-masters__text {
+  flex: 1 1 auto;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--t74-muted);
+}
+
+.t74-masters__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.t74-masters__tag {
+  padding: 5px 12px;
+  border-radius: 40px;
+  background: var(--t74-surface);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--t74-muted);
+}
+
+/* ---------------------------------------------------------- Акции и скидки */
+
+.t74-promo__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.t74-promo__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 30px 28px;
+  border: 1px solid var(--t74-line);
+  border-radius: 20px;
+  background: #fff;
+  transition: 0.25s ease-in-out;
+}
+
+.t74-promo__card:hover {
+  border-color: var(--t74-accent);
+  box-shadow: 0 14px 30px rgba(55, 55, 55, 0.08);
+}
+
+.t74-promo__badge {
+  padding: 6px 14px;
+  border-radius: 40px;
+  background: linear-gradient(114deg, #ff6b6b 0%, #ffe66d 100%);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.t74-promo__title {
+  margin: 6px 0 0 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.t74-promo__text {
+  flex: 1 1 auto;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--t74-muted);
+}
+
+.t74-promo__btn {
+  margin-top: 8px;
+}
+
+.t74-promo__note {
+  margin-top: 24px;
+}
+
+/* -------------------------------------------------------- Частые вопросы */
+
+.t74-faq__list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.t74-faq__item {
+  border: 1px solid var(--t74-line);
+  border-radius: 16px;
+  background: #fff;
+  margin-bottom: 12px;
+  transition: border-color 0.25s ease-in-out;
+}
+
+.t74-faq__item.is-hidden {
+  display: none;
+}
+
+.t74-faq__item.is-open {
+  border-color: var(--t74-accent);
+}
+
+.t74-faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 24px;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--t74-ink);
+  cursor: pointer;
+}
+
+.t74-faq__chevron {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--t74-muted);
+  transition: transform 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+.t74-faq__chevron svg {
+  width: 100%;
+  height: 100%;
+}
+
+.t74-faq__item.is-open .t74-faq__chevron {
+  transform: rotate(180deg);
+  color: var(--t74-accent-dark);
+}
+
+/* Ответ всегда в HTML — скрываем высотой, не удалением из разметки */
+.t74-faq__a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.t74-faq__a-inner {
+  padding: 0 24px 22px 24px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--t74-muted);
+}
+
+.t74-faq__link {
+  display: block;
+  margin-top: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--t74-accent-dark);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.t74-faq__link:hover {
+  color: var(--t74-ink);
+}
+
+.t74-faq__more {
+  display: flex;
+  margin: 20px auto 0 auto;
+}
+
+.t74-faq__cta {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.t74-faq__cta a {
+  color: var(--t74-accent-dark);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------ Попап условий гарантии */
+
+.t74-modal[hidden] {
+  display: none;
+}
+
+.t74-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.t74-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 25, 35, 0.55);
+}
+
+.t74-modal__box {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 36px 36px 30px 36px;
+  border-radius: 24px;
+  background: #fff;
+}
+
+.t74-modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--t74-muted);
+  cursor: pointer;
+}
+
+.t74-modal__close svg {
+  width: 100%;
+  height: 100%;
+}
+
+.t74-modal__title {
+  margin-bottom: 20px;
+  padding-right: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+body.t74-modal-open {
+  overflow: hidden;
+}
+
+.t74-warranty__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.t74-warranty__table td {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--t74-line);
+  font-size: 15px;
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.t74-warranty__term {
+  width: 34%;
+  padding-left: 16px !important;
+  text-align: right;
+  font-weight: 700;
+  color: var(--t74-accent-dark);
+  white-space: nowrap;
+}
+
+.t74-warranty__note {
+  margin: 20px 0 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--t74-muted);
+}
+
+/* ---------------------------------------------------------- География */
+
+.t74-tabs__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.t74-tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: 40px;
+  background: var(--t74-surface);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--t74-ink);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.t74-tabs__tab .t74-tabs__label {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #c8ccd6;
+}
+
+.t74-tabs__tab:hover {
+  border-color: var(--t74-accent);
+}
+
+.t74-tabs__tab.is-active {
+  background: var(--t74-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.t74-tabs__tab.is-active .t74-tabs__label {
+  text-decoration: none;
+}
+
+.t74-tabs__tab:focus-visible {
+  outline: 2px solid var(--t74-accent-dark);
+  outline-offset: 2px;
+}
+
+/* Кружок «М» в цвете линии */
+.t74-tabs__m {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.t74-tabs__panel[hidden] {
+  display: none;
+}
+
+.t74-geo__grid {
+  display: grid;
+  gap: 10px 20px;
+}
+
+.t74-geo__grid--stations {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.t74-geo__grid--districts {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.t74-geo__grid--suburb {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.t74-geo__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--t74-ink);
+}
+
+/* Спрайт иконок: не display:none, иначе часть браузеров не резолвит <use> */
+.t74-geo__sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.t74-geo__icon {
+  flex: 0 0 16px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  color: var(--t74-muted);
+}
+
+/* Иконка станции — в цвете своей линии */
+.t74-geo__icon--line {
+  color: var(--t74-geo-accent, var(--t74-muted));
+}
+
+/* ------------------------------------------------------------- SEO-текст */
+
+.t74-seo__body {
+  position: relative;
+}
+
+.t74-seo__body.is-collapsed {
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.t74-seo__inner {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--t74-muted);
+}
+
+.t74-seo__inner p {
+  margin: 0 0 16px 0;
+}
+
+.t74-seo__h2 {
+  margin: 0 0 20px 0;
+}
+
+.t74-seo__h3 {
+  margin: 26px 0 10px 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--t74-ink);
+}
+
+.t74-seo__inner a {
+  color: var(--t74-accent-dark);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.t74-seo__fade {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 85%);
+  pointer-events: none;
+}
+
+.t74-seo__body.is-collapsed .t74-seo__fade {
+  display: block;
+}
+
+.t74-seo__toggle {
+  display: flex;
+  margin: 20px auto 0 auto;
+}
+
+/* ============================================================ Адаптив === */
+
+@media (max-width: 1200px) {
+  .t74-brands__grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .t74-geo__grid--stations {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1050px) {
+  .utp-box_inner.t74-advantages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .t74-brands__grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  /* Планшет: 3 шага в первом ряду, 2 во втором */
+  .t74-steps__list {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .t74-steps__item {
+    grid-column: span 2;
+  }
+
+  .t74-steps__item:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .t74-steps__item:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+
+  .t74-promo__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .t74-geo__grid--stations,
+  .t74-geo__grid--districts,
+  .t74-geo__grid--suburb {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 830px) {
+  .t74-brands__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .t74-brands__cta,
+  .t74-prices__cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .t74-prices__cta-btns {
+    flex-direction: column;
+  }
+
+  /* Ряд табов — горизонтальный скролл с инерцией */
+  .t74-tabs__head {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 0 16px 8px 16px;
+  }
+
+  .t74-tabs__head::-webkit-scrollbar {
+    display: none;
+  }
+
+  .t74-tabs__tab {
+    flex: 0 0 auto;
+  }
+
+  .t74-geo__grid--stations,
+  .t74-geo__grid--districts,
+  .t74-geo__grid--suburb {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .t74-brands__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .t74-steps__list {
+    grid-template-columns: 1fr;
+  }
+
+  .t74-steps__item,
+  .t74-steps__item:nth-child(4),
+  .t74-steps__item:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .t74-geo__grid--stations,
+  .t74-geo__grid--districts,
+  .t74-geo__grid--suburb {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .utp-box_inner.t74-advantages {
+    grid-template-columns: 1fr;
+  }
+
+  .t74-subtitle {
+    margin-bottom: 28px;
+    font-size: 15px;
+  }
+
+  .t74-brands__cta,
+  .t74-prices__cta {
+    padding: 20px;
+  }
+
+  .t74-prices__card,
+  .t74-promo__card {
+    padding: 22px 20px;
+  }
+
+  .t74-faq__q {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+
+  .t74-faq__a-inner {
+    padding: 0 18px 18px 18px;
+  }
+
+  .t74-modal__box {
+    padding: 28px 20px 24px 20px;
+  }
+
+  .t74-warranty__term {
+    white-space: normal;
+  }
+
+  /* Названия станций длинные — им нужна вся ширина, районам и городам хватает половины */
+  .t74-geo__grid--stations {
+    grid-template-columns: 1fr;
+  }
+
+  .t74-geo__grid--districts,
+  .t74-geo__grid--suburb {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 12px;
+  }
+}
+
+
+/* ================================================ Правки 27.08.2026 (доработка 1) === */
+
+/* ---------------------------------------- «Мы ремонтируем»: «Показать больше» */
+
+/**
+ * Кнопка не работала: разметка вешает на сетку класс .no_show_card, mainScript.js
+ * его снимает и возвращает — а правила для этого класса в проекте нет ни в одном
+ * файле (в style.css живут только .list-open и .brand-cards от других сеток).
+ * Итог: все карточки показывались сразу, кнопка щёлкала текстом впустую.
+ *
+ * Прячем всё после двух рядов. Сколько карточек в ряду — следствие flex-basis
+ * карточки и ширины .container, поэтому числа привязаны к тем же брейкпоинтам:
+ *   > 1050px  flex: 0 0 14%  → 6 в ряду → показываем 12
+ *   ≤ 1050px  flex: 0 0 32%  → 3 в ряду → показываем 6
+ *   ≤ 830px   flex: 1 0 45%  → 2 в ряду → показываем 4
+ *
+ * Всё в этом разделе адресовано .catalog .catalog-cards — сетке главной.
+ * Те же .catalog-cards используют страницы марок, моделей и каталога,
+ * их вёрстку эти правила задевать не должны.
+ */
+.catalog .catalog-cards.no_show_card .cards-item:nth-child(n + 13) {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .catalog .catalog-cards.no_show_card .cards-item:nth-child(n + 7) {
+    display: none;
+  }
+}
+
+@media (max-width: 830px) {
+  .catalog .catalog-cards.no_show_card .cards-item:nth-child(n + 5) {
+    display: none;
+  }
+}
+
+/* Кнопки нет, когда прятать нечего — класс вешает t74-main.js */
+.show-cat-card.t74-is-hidden {
+  display: none;
+}
+
+/* ---------------------------- «Мы ремонтируем»: карточки одной высоты */
+
+/**
+ * По ТЗ карточки в мобильной версии должны быть выровнены по высоте.
+ * Мешали два момента: align-items: center у сетки (карточка обжимается по
+ * своему тексту) и картинка в общем потоке — при разном числе строк подписи
+ * картинки соседних карточек стояли на разной высоте.
+ *
+ * Правим на всех разрешениях: сетка растягивает карточки ряда, картинка живёт
+ * в блоке фиксированной высоты, подпись занимает остаток. Тогда и картинки,
+ * и подписи, и цены начинаются на одной линии.
+ */
+.catalog .catalog-cards {
+  align-items: stretch;
+}
+
+.catalog .catalog-cards .cards-item {
+  justify-content: flex-start;
+}
+
+.catalog .catalog-cards .cards-item .cards-item-crop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  flex: 0 0 70px;
+  max-height: none;
+}
+
+.catalog .catalog-cards .cards-item .cards-item-crop .cards-item-img {
+  max-width: 100%;
+}
+
+.catalog .catalog-cards .cards-item .cards-item-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+/**
+ * align-items: stretch выравнивает карточки внутри ряда, но соседние ряды всё
+ * равно получались разной высоты: у названий от одной до трёх строк. На узком
+ * экране это заметнее всего, поэтому там задаём общий пол по высоте — 204px
+ * это 70px картинки + три строки названия с ценой + паддинги карточки.
+ * Название длиннее просто раздвинет свой ряд, min-height ему не мешает.
+ */
+@media (max-width: 830px) {
+  .catalog .catalog-cards .cards-item {
+    min-height: 204px;
+  }
+}
+
+/* ----------------------------------------------- Наши мастера: подложка под стаж */
+
+/**
+ * Плашка стажа белая, и на светлых фото (бухгалтер, оператор-приёмщик) она
+ * сливалась с фоном. Мягкое затемнение к низу фото — плашка читается везде.
+ */
+.t74-masters__photo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(20, 22, 28, 0) 0%, rgba(20, 22, 28, 0.28) 100%);
+  pointer-events: none;
+}
+
+/* Если фото нет и стоит SVG-плейсхолдер, затемнение ни к чему */
+.t74-masters__photo:has(.t74-masters__photo-stub)::after {
+  display: none;
+}
+
+.t74-masters__exp {
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(20, 22, 28, 0.12);
+}
+
+/* --------------------------------------------------------- Отступ перед отзывами */
+
+/**
+ * Блок отзывов шёл вплотную к бирюзовой форме консультации: у .block задан
+ * только margin-bottom, и на стыке двух секций зазора не оставалось.
+ */
+.new-rev.block {
+  margin-top: 56px;
+}
+
+@media (max-width: 830px) {
+  .new-rev.block {
+    margin-top: 40px;
+  }
+}
+
+/* ------------------------------------------- География без табов: воздух под H2 */
+
+/**
+ * Секции с табами держат ритм за счёт .t74-tabs__head (16px от H2 + 32px под
+ * табами). Там, где табов нет — «Подмосковье» и районы городов без деления на
+ * округа (СПб, Казань, Новосибирск, Н. Новгород, Краснодар, Ростов), — список
+ * прилипал к заголовку на 16px. Добираем те же 32px.
+ */
+.t74-h2 + .t74-geo__grid {
+  margin-top: 32px;
+}
+
+/* ------------------------------- Метро и районы: строкой в мобильной вёрстке */
+
+/**
+ * По ТЗ (референс cando-service.ru) станции идут по горизонтали и переносятся
+ * на новую строку, а не столбиком. Сетка так не умеет: у неё колонки равной
+ * ширины, и «Библиотека имени Ленина» задирала бы ширину колонки под самое
+ * длинное название — отсюда и одна колонка на узком экране. Поэтому на
+ * мобильном сетка меняется на поток.
+ */
+@media (max-width: 650px) {
+  .t74-geo__grid--stations,
+  .t74-geo__grid--districts,
+  .t74-geo__grid--suburb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+
+  .t74-geo__item {
+    align-items: center;
+    flex: 0 1 auto;
+    max-width: 100%;
+  }
+
+  .t74-geo__icon {
+    margin-top: 0;
+  }
+}
+
+/* Ниже по каскаду станциям возвращалась одна колонка — здесь это снимается */
+@media (max-width: 550px) {
+  .t74-geo__grid--stations,
+  .t74-geo__grid--districts,
+  .t74-geo__grid--suburb {
+    display: flex;
+    grid-template-columns: none;
+    gap: 10px 16px;
+  }
+}
+
+/* ==========================================================================
+   Правки 30.08.2026 (ТЗ страницы бренда): стили новых секций.
+   Дописываем в конец файла — t74-main.css подключён в конце <body>, и правило,
+   вставленное выше, проиграет каскад тем, что идут после него.
+   ========================================================================== */
+
+/* ------------------------------------------ Прайс: ссылки и описания услуг */
+
+/**
+ * п.4.2. Названия услуг были ссылками, но внешне не отличались от текста.
+ * Строка прайса на hover целиком заливается бирюзовым (style.css), а белый
+ * цвет ссылки в этом состоянии уже задан в custom.css — здесь только вид
+ * самой ссылки в покое и курсор.
+ */
+.price-title a {
+  color: var(--green, #00ba88);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.price-title a:hover {
+  color: var(--t74-accent-dark);
+}
+
+/**
+ * п.4.4. Описание услуги целиком лежит в HTML и обрезается по строкам.
+ * Клик по строке (JS) вешает .is-open — тогда текст разворачивается.
+ * Тултипом не показываем: на мобильных наведения нет.
+ *
+ * Правки 03.09.2026 (правки заказчика, п. «Прайс»). Было: white-space: nowrap
+ * и обрезка многоточием в одну строку. Длинное описание не помещалось, ячейка
+ * с названием раздувалась по ширине — и колонка «время» гуляла влево-вправо
+ * от строки к строке. Стало: описание переносится на вторую строку и
+ * обрезается по строкам, а не по ширине. Ширину колонок пиннит правило ниже.
+ */
+.price-table-item.t74-has-desc {
+  cursor: pointer;
+}
+
+.t74-price__desc {
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--t74-muted);
+  /* Перенос на новую строку вместо одной длинной; обрезка — по двум строкам */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  transition: color 0.25s ease;
+}
+
+.price-table-item.is-open .t74-price__desc {
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
+}
+
+.price-table-item:hover .t74-price__desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ------------------------------------------------ Неисправности: аккордеон */
+
+.t74-faults__group {
+  margin-bottom: 32px;
+}
+
+.t74-faults__group:last-child {
+  margin-bottom: 0;
+}
+
+.t74-faults__group-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--t74-ink);
+}
+
+/**
+ * Две независимые колонки, а не CSS-columns: по ТЗ раскрытие строки слева
+ * не должно двигать правую колонку. Строки распределены по колонкам в PHP,
+ * поэтому при схлопывании в одну колонку порядок сохраняется.
+ */
+.t74-faults__cols {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.t74-faults__col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.t74-fault {
+  background: #fff;
+  border: 1px solid var(--t74-line);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.t74-fault:hover {
+  border-color: var(--t74-accent);
+}
+
+.t74-fault.is-open {
+  border-color: var(--t74-accent);
+  box-shadow: 0 8px 24px rgba(78, 205, 196, 0.14);
+}
+
+.t74-fault__head {
+  padding: 18px 20px;
+  cursor: pointer;
+}
+
+.t74-fault__head:focus-visible {
+  outline: 2px solid var(--t74-accent);
+  outline-offset: -2px;
+}
+
+.t74-fault__name {
+  margin: 0 0 10px 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--t74-ink);
+}
+
+.t74-fault__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.t74-fault__price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--t74-ink);
+  white-space: nowrap;
+}
+
+.t74-fault__btn {
+  min-height: 40px;
+  padding: 10px 20px;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.t74-fault__chevron {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  color: var(--t74-muted);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.t74-fault__chevron svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.t74-fault.is-open .t74-fault__chevron {
+  transform: rotate(180deg);
+  color: var(--t74-accent-dark);
+}
+
+/* Текст раскрытия всегда в HTML — прячем высотой, а не удалением из разметки */
+.t74-fault__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.t74-fault__body-inner {
+  padding: 0 20px 20px 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #55585f;
+}
+
+.t74-fault__sub {
+  margin: 6px 0 8px 0;
+  font-weight: 600;
+  color: var(--t74-ink);
+}
+
+.t74-fault__list {
+  margin: 0 0 14px 0;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.t74-fault__list li {
+  margin-bottom: 6px;
+}
+
+.t74-fault__time {
+  font-weight: 600;
+  color: var(--t74-ink);
+}
+
+.t74-fault__note {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--t74-surface);
+  font-size: 14px;
+}
+
+/* Категория без текстов: простой список названий с ценой, без раскрытия */
+.t74-faults__plain {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+}
+
+.t74-faults__plain-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #fff;
+  border: 1px solid var(--t74-line);
+  border-radius: 14px;
+}
+
+.t74-faults__plain-name {
+  flex: 1 1 auto;
+}
+
+/* ------------------------------------------- Что не входит в услуги (п.7) */
+
+.t74-notinc__cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Приглушённый фон и без иконок — так в ТЗ */
+.t74-notinc__card {
+  padding: 24px;
+  border-radius: 18px;
+  background: var(--t74-surface);
+}
+
+.t74-notinc__title {
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--t74-ink);
+}
+
+.t74-notinc__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--t74-muted);
+}
+
+/* ------------------------------------------------------ Гарантия (п.9) */
+
+.t74-warranty__box {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid var(--t74-line);
+  border-radius: 20px;
+  background: #fff;
+}
+
+.t74-warranty__table--page {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.t74-warranty__table--page th {
+  padding: 0 0 12px 0;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--t74-muted);
+}
+
+.t74-warranty__table--page th.t74-warranty__term,
+.t74-warranty__table--page td.t74-warranty__term {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.t74-warranty__cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.t74-warranty__col-title {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--t74-ink);
+}
+
+.t74-warranty__col p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--t74-muted);
+}
+
+/* --------------------------------------- Ремонт или новое устройство (п.15) */
+
+.t74-repnew__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.t74-repnew__card {
+  padding: 28px;
+  border: 1px solid var(--t74-line);
+  border-radius: 18px;
+  background: #fff;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.t74-repnew__card:hover {
+  border-color: var(--t74-accent);
+  transform: translateY(-2px);
+}
+
+.t74-repnew__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  color: var(--t74-accent-dark);
+}
+
+.t74-repnew__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.t74-repnew__title {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--t74-ink);
+}
+
+.t74-repnew__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--t74-muted);
+}
+
+.t74-repnew__note {
+  max-width: 840px;
+  margin: 28px auto 0 auto;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--t74-ink);
+}
+
+.t74-repnew__cta {
+  margin-top: 24px;
+  text-align: center;
+}
+
+/* ------------------------------------------------ SEO: два блока (п.16) */
+
+.t74-seo--brand .t74-seo__block + .t74-seo__block {
+  margin-top: 40px;
+}
+
+/**
+ * Правки 03.09.2026 (правки заказчика, п.16): оба текстовых блока свернуты
+ * одной кнопкой, поэтому отступ теперь между заголовками внутри области,
+ * а не между отдельными .t74-seo__block.
+ */
+.t74-seo__part + .t74-seo__part {
+  margin-top: 40px;
+}
+
+/* ------------------------------------------------------ Часто ищут (п.19) */
+
+.t74-search__title {
+  margin-bottom: 24px;
+}
+
+.t74-search__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.t74-search__item {
+  padding: 10px 18px;
+  border: 1px solid var(--t74-line);
+  border-radius: 40px;
+  background: #fff;
+  font-size: 15px;
+  color: var(--t74-ink);
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+}
+
+.t74-search__item:hover {
+  border-color: var(--t74-accent);
+  color: var(--t74-accent-dark);
+}
+
+/* ------------------------------------- Примеры работ: подписи к фото (п.13) */
+
+.t74-example__caption {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--t74-muted);
+}
+
+/* --------------------------------- Условия выезда под пригородами (п.17.3) */
+
+.t74-geo__note {
+  margin-top: 20px;
+}
+
+/* ------------------------------------------ Адаптив новых секций страницы */
+
+@media (max-width: 1050px) {
+  .t74-notinc__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .t74-repnew__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .t74-repnew__card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 830px) {
+  .t74-repnew__cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .t74-repnew__card:last-child {
+    grid-column: auto;
+  }
+
+  .t74-faults__plain {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .t74-warranty__box {
+    padding: 20px;
+  }
+
+  .t74-warranty__cols {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+
+/**
+ * Одна колонка неисправностей — с 768 px, как задано в ТЗ (п.6.2), а не по
+ * ближайшему брейкпоинту проекта: на 800 px две колонки ещё читаются.
+ * Порядок строк при этом сохраняется — сначала левая колонка, потом правая:
+ * колонки собраны в PHP, а не CSS-колонками.
+ */
+@media (max-width: 767px) {
+  .t74-faults__cols {
+    display: block;
+  }
+
+  .t74-faults__col + .t74-faults__col {
+    margin-top: 12px;
+  }
+
+  .t74-faults__col {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  .t74-notinc__cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .t74-faults__group-title {
+    font-size: 18px;
+  }
+
+  .t74-fault__head {
+    padding: 16px;
+  }
+
+  .t74-fault__meta {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .t74-fault__btn {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .t74-fault__chevron {
+    margin-left: auto;
+  }
+
+  .t74-fault__body-inner {
+    padding: 0 16px 16px 16px;
+  }
+
+  .t74-warranty__table--page th,
+  .t74-warranty__table--page td {
+    font-size: 14px;
+  }
+
+  .t74-search__item {
+    font-size: 14px;
+    padding: 9px 16px;
+  }
+}
+
+/* ------------------------------------ Модели бренда на странице модели (п.6) */
+
+.t74-models__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.t74-models__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 12px;
+  border: 1px solid var(--t74-line);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--t74-ink);
+  text-decoration: none;
+  text-align: center;
+  transition: 0.25s ease-in-out;
+}
+
+.t74-models__item:hover {
+  border-color: var(--t74-accent);
+  transform: translateY(-2px);
+}
+
+/* Скрытые плитки остаются в разметке — их раскрывает кнопка */
+.t74-models__item.is-hidden {
+  display: none;
+}
+
+.t74-models__crop {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.t74-models__img {
+  max-width: 100%;
+  max-height: 110px;
+  object-fit: contain;
+}
+
+.t74-models__name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.t74-models__more {
+  display: flex;
+  margin: 28px auto 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .t74-models__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 830px) {
+  .t74-models__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .t74-models__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .t74-models__crop {
+    height: 88px;
+  }
+
+  .t74-models__img {
+    max-height: 88px;
+  }
+}
+
+/* --------------------- Карточка мастера без фото: инициалы вместо силуэта */
+
+/**
+ * Правки 30.08.2026. Восемь фотографий заказчик ещё не передал. Нейтральный
+ * силуэт в карточке читался как поломка вёрстки, инициалы — как осознанная
+ * заглушка. Появятся фото — правило просто перестанет применяться.
+ */
+.t74-masters__initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(140deg, #dff1ef 0%, #eef4f4 100%);
+}
+
+.t74-masters__initials span {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--t74-accent-dark);
+  text-transform: uppercase;
+}
+
+/**
+ * Правки 30.08.2026. Строка прайса — flex, и у ячейки с названием стоит
+ * min-width: auto по умолчанию. Из-за этого описание услуги с white-space:
+ * nowrap задавало ячейке огромную минимальную ширину: на мобильном цена
+ * и кнопка «Заказать» уезжали за правый край экрана. min-width: 0 разрешает
+ * ячейке сжаться до своей flex-basis, и многоточие наконец работает.
+ */
+.price-table-item .price-title {
+  min-width: 0;
+}
+
+/**
+ * Правки 03.09.2026 (правки заказчика, п. «Прайс»): колонка «время» не должна
+ * съезжать. Ячейки строки — flex-элементы без заданной ширины, поэтому позиция
+ * «от 60 мин» зависела от того, насколько широким получился текст слева:
+ * у одних строк время стояло в одну строку, у других переносилось на две.
+ *
+ * Пиннится тремя правилами: название занимает всё свободное место и умеет
+ * сжиматься, у времени фиксированная колонка и запрет переноса, у цены —
+ * та же ширина, что и была (custom.css), но теперь тоже без сжатия.
+ */
+.t74-price__desc {
+  max-width: 100%;
+}
+
+/* Только десктоп: с 992px и ниже строка прайса перестраивается в две строки
+   (custom.css), и фиксированные колонки там мешают. */
+@media (min-width: 993px) {
+  .price-table-item .price-title {
+    flex: 1 1 auto;
+  }
+
+  .price-table-item .price-cost {
+    flex: 0 0 96px;
+    width: 96px;
+    margin-left: auto;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .price-table-item .time-cost {
+    flex: 0 0 150px;
+  }
+}
+
+/* ------------------------- Слайдеры: лишняя высота и дыра в карточке мастера */
+
+/**
+ * Правки 30.08.2026, найдено на стенде.
+ *
+ * Swiper из CDN задаёт `.swiper-wrapper { height: 100% }`, а контейнер слайдера
+ * у нас высоты не имеет — он меряется по содержимому. Процент от контейнера,
+ * который сам зависит от этого процента, даёт петлю: за несколько проходов
+ * раскладки высота ленты раздувалась с 620 до 885 px. Карточка тянется на всю
+ * высоту слайда, описание с flex-grow заполняло разницу — и между текстом
+ * и тегами брендов зияла дыра в треть карточки.
+ *
+ * Лечится обрывом петли: лента считает высоту по самому высокому слайду.
+ */
+.t74-masters__slider .swiper-wrapper,
+.t74-prices__slider .swiper-wrapper {
+  height: auto;
+}
+
+/**
+ * Описание — ровно до четырёх строк, как требует ТЗ (п.10.2), и больше не
+ * растягивается: разницу высот между карточками забирает отступ перед тегами.
+ * max-height продублирован намеренно — на карточках без тегов брендов
+ * -webkit-line-clamp в связке с flex-элементом отрабатывает не всегда.
+ */
+.t74-masters__text {
+  flex: 0 0 auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 6.2em;
+}
+
+/* Теги брендов прижаты к низу карточки — карточки в ряду разной высоты */
+.t74-masters__tags {
+  margin-top: auto;
+}
+
+/* Аватарка отзыва: инициалы, когда фото нет (отзывы, заведённые тегом) */
+.slide-crop .t74-rev__initials {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--t74-accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ============================================ Сертификаты (п.11) ======== */
+/**
+ * Правки 03.09.2026 (правки заказчика, п.11). Лента миниатюр под текстом,
+ * клик открывает скан в лайтбоксе (public/js/t74-main.js).
+ * Логотипы производителей в блоке не используются — по требованию ТЗ.
+ */
+
+.t74-certs__intro {
+  max-width: 820px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--t74-muted);
+}
+
+.t74-certs__points {
+  max-width: 820px;
+  margin: 0 auto 16px auto;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 28px;
+}
+
+.t74-certs__points li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--t74-ink);
+}
+
+.t74-certs__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--t74-accent);
+  border-bottom: 2px solid var(--t74-accent);
+  transform: rotate(-45deg);
+}
+
+.t74-certs__note {
+  max-width: 820px;
+  margin: 0 auto 32px auto;
+  text-align: center;
+  font-size: 14px;
+  color: var(--t74-muted);
+}
+
+/* Лента: на узких экранах прокручивается вбок, а не ломает сетку */
+.t74-certs__strip {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+
+.t74-certs__item {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.t74-certs__item img {
+  width: 100%;
+  height: 270px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 0 40px rgba(17, 17, 17, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.t74-certs__item:hover img,
+.t74-certs__item:focus-visible img {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(17, 17, 17, 0.16);
+}
+
+.t74-certs__caption {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--t74-muted);
+}
+
+@media (max-width: 650px) {
+  .t74-certs__points {
+    grid-template-columns: 1fr;
+  }
+
+  .t74-certs__item {
+    width: 160px;
+  }
+
+  .t74-certs__item img {
+    height: 215px;
+  }
+}
+
+/* ------------------------------------------------------------ Лайтбокс */
+
+.t74-lightbox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.t74-lightbox[hidden] {
+  display: none;
+}
+
+.t74-lightbox__backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(17, 17, 17, 0.82);
+}
+
+.t74-lightbox__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: min(1100px, 94vw);
+  padding: 0 8px;
+}
+
+.t74-lightbox__img {
+  max-width: 78vw;
+  max-height: 86vh;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.t74-lightbox__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -34px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.t74-lightbox__close,
+.t74-lightbox__nav {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.t74-lightbox__close:hover,
+.t74-lightbox__nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.t74-lightbox__close {
+  position: absolute;
+  top: -52px;
+  right: 0;
+}
+
+@media (max-width: 650px) {
+  .t74-lightbox__img {
+    max-width: 84vw;
+  }
+
+  .t74-lightbox__close,
+  .t74-lightbox__nav {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+}
+
+/* deploy-marker: 2026-09-03 13:57:26 — метка для проверки доставки файлов на прод, можно удалить */

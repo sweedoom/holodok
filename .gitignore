@@ -1,0 +1,6 @@
+# сборщик держит docs/ как готовый к деплою, его коммитим
+docs/__pycache__/
+*.pyc
+work/
+.vscode/
+.DS_Store
