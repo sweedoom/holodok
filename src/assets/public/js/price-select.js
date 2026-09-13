@@ -46,11 +46,12 @@ function showSelectedTable() {
       selectedTable.classList.remove('hide');
     }
   }
-  
+
   // Вызываем обработчик при загрузке страницы для отображения первой таблицы
-  showSelectedTable();
-  
-  // Добавляем обработчик изменения select
-  select.addEventListener('change', showSelectedTable);
+  // PATCH: на страницах без селекта прайса элемент отсутствует — не падаем
+  if (select) {
+    showSelectedTable();
+    select.addEventListener('change', showSelectedTable);
+  }
 // price-switcher
 

@@ -175,7 +175,8 @@ var quesFormMain = document.getElementById("ques-main")
 // Переменные для главной формы Баннер
 
 // код главной формы Баннер
-if (quesFormMain === null) {
+// PATCH: name-main отсутствует на странице — иначе нативный submit-хендлер падает
+if (quesFormMain === null || nameInputMain === null) {
 
 } else {
   document.getElementById('ques-main').addEventListener('submit', function (event) {

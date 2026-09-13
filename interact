@@ -1,0 +1,98 @@
+# -*- coding: utf-8 -*-
+"""Интерактивный тест: кликаем по элементам, ловим ошибки."""
+import asyncio, sys
+from playwright.async_api import async_playwright
+
+sys.stdout.reconfigure(encoding="utf-8")
+URL = "http://127.0.0.1:8125/index.html"
+
+
+async def main():
+    errs, fails = [], []
+    async with async_playwright() as p:
+        b = await p.chromium.launch()
+        pg = await b.new_page(viewport={"width": 1440, "height": 900})
+        pg.on("console", lambda m: errs.append(m.type + ": " + m.text) if m.type == "error" else None)
+        def on_pe(e):
+            errs.append("pageerror: " + (getattr(e, "stack", None) or str(e)))
+        pg.on("pageerror", on_pe)
+        pg.on("requestfailed", lambda r: fails.append(r.url[:120] + " :: " + str(r.failure)))
+        await pg.goto(URL, wait_until="load", timeout=60000)
+        await pg.wait_for_timeout(2500)
+
+        # чтобы mailto не уводил браузер
+        await pg.evaluate("window.SITE_LEADS = {mode:'endpoint', endpoint:'/nope', telegramBotToken:'', telegramChatId:''};")
+
+        report = []
+
+        # 1. валидация телефона (короткий номер)
+        await pg.fill('#phone-main', '+7 (999) 12')
+        pg.once("dialog", lambda d: asyncio.ensure_future(d.dismiss()))
+        await pg.click('.form-btn >> nth=0')
+        await pg.wait_for_timeout(600)
+        report.append("1. валидация короткого номера: отправлена (должен быть alert)")
+
+        # 2. отправка валидного номера
+        await pg.fill('#phone-main', '+7 (999) 123-45-67')
+        pg.once("dialog", lambda d: asyncio.ensure_future(d.dismiss()))
+        await pg.click('.form-btn >> nth=0')
+        await pg.wait_for_timeout(1200)
+        report.append("2. отправка валидного номера: обработчик отработал")
+
+        # 3. FAQ-аккордеон
+        faq = await pg.query_selector('[id^="t74-brand-faq"]')
+        if faq:
+            await faq.click()
+            await pg.wait_for_timeout(400)
+            report.append("3. FAQ-аккордеон: клик OK")
+        else:
+            report.append("3. FAQ: ЭЛЕМЕНТ НЕ НАЙДЕН")
+
+        # 4. табы прайса
+        tab = await pg.query_selector('.tab-item')
+        if tab:
+            await tab.click()
+            await pg.wait_for_timeout(400)
+            report.append("4. табы прайса: клик OK")
+        else:
+            report.append("4. табы: НЕ НАЙДЕНЫ")
+
+        # 5. модалка (кнопка заказа звонка)
+        modal_btn = await pg.query_selector('[data-modal], .modal-btn, .header-btn, .btn_style_outfilled')
+        if modal_btn:
+            await modal_btn.click()
+            await pg.wait_for_timeout(700)
+            vis = await pg.evaluate("!!document.querySelector('.modal_active')")
+            report.append(f"5. модалка: открылась={vis}")
+            await pg.keyboard.press("Escape")
+        else:
+            report.append("5. модалка: кнопка НЕ НАЙДЕНА")
+
+        # 6. swiper прогрузился
+        sw = await pg.evaluate("!!document.querySelector('.swiper-initialized, .swiper-slide-active')")
+        report.append(f"6. swiper инициализирован: {sw}")
+
+        # 7. политика доступна
+        pol = await pg.evaluate("""(async()=>{const r=await fetch('politika.html');return r.status})()""")
+        report.append(f"7. politika.html статус: {pol}")
+
+        # 8. карта-iframe на месте
+        mp = await pg.evaluate("!!document.querySelector('#map iframe')")
+        report.append(f"8. iframe карты: {mp}")
+
+        # 9. ссылки на '#' (информативно)
+        hashes = await pg.evaluate("document.querySelectorAll('a[href=\"#\"]').length")
+        report.append(f"9. ссылок href='#': {hashes} (меню-заглушки)")
+
+        await pg.screenshot(path=r"G:\SlavaSaitOffer\site\preview_interact.png")
+
+        print("\n".join(report))
+        print("\nCONSOLE ERRORS:", len(errs))
+        for e in errs[:10]:
+            print("   ", e[:200])
+        print("FAILED REQUESTS:", len(fails))
+        for f in fails[:10]:
+            print("   ", f[:200])
+        await b.close()
+
+asyncio.run(main())

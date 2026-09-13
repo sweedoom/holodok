@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /public/js/
+Disallow: /public/css/
+
+Sitemap: https://USERNAME.github.io/REPO/sitemap.xml
+Host: https://USERNAME.github.io/REPO/

@@ -90,7 +90,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }
   }
 
-  header.addEventListener('click', function(event) {
+  if (header) header.addEventListener('click', function(event) {
     
       let target = event.target;
       if (target && target.classList.contains('how-switch-btn')) {
@@ -149,7 +149,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }
   
-    header.addEventListener('click', function(event) {
+    if (header) header.addEventListener('click', function(event) {
       
         let target = event.target;
         if (target && target.classList.contains('faq_cards-item')) {
@@ -210,7 +210,7 @@ window.addEventListener('DOMContentLoaded', function() {
     if(header === null){
 
     } else{
-        header.addEventListener('click', function(event) {
+        if (header) header.addEventListener('click', function(event) {
       
             let target = event.target;
             if (target && target.classList.contains('models-switcher-btn')) {
@@ -270,7 +270,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }
   
-    header.addEventListener('click', function(event) {
+    if (header) header.addEventListener('click', function(event) {
       
         let target = event.target;
         if (target && target.classList.contains('how_inner-switch')) {

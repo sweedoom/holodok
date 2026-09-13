@@ -26,8 +26,7 @@ def log(msg):
 
 # ------------------------------------------------------------------ ассеты
 def copy_assets():
-    if os.path.isdir(OUT):
-        shutil.rmtree(OUT)
+    # НЕ удаляем OUT целиком (на Windows rmtree часто блокируется) — перезаписываем
     os.makedirs(OUT, exist_ok=True)
     KEEP = {"public", "_content", "assets"}  # не тащим мусор (3d-printer, kvadrokopter, и т.п.)
     n = 0
@@ -38,7 +37,7 @@ def copy_assets():
         dname = "content" if name == "_content" else name  # GitHub Pages игнорит "_" папки
         d = os.path.join(OUT, dname)
         if os.path.isdir(s):
-            shutil.copytree(s, d)
+            shutil.copytree(s, d, dirs_exist_ok=True)
         else:
             shutil.copy2(s, d)
         n += 1
@@ -132,7 +131,12 @@ if cfg.get("map", {}).get("mode") == "iframe":
         r'<div id="n1_[0-9a-z]+" style="display: inline-block; width: 100%; height: 441px;"></div>',
         f'<iframe src="{url}" width="100%" height="441" frameborder="0" '
         f'style="border:0;display:inline-block;width:100%;height:441px" loading="lazy"></iframe>', h)
-    log("[map] режим iframe (без API-ключа)")
+    # и убираем их инициализацию Яндекс.Карт — иначе она ищет удалённый div и падает
+    n_scripts = len(re.findall(r"<script>(?:(?!</script>).)*?initYandexMap_\w+", h, flags=re.S))
+    h = re.sub(r"<script>(?:(?!</script>).)*?initYandexMap_\w+(?:(?!</script>).)*?</script>", "", h, flags=re.S)
+    h = re.sub(r'<link rel="preconnect" href="//api-maps\.yandex\.ru">', "", h)
+    h = re.sub(r'<link rel="dns-prefetch" href="//api-maps\.yandex\.ru">', "", h)
+    log(f"[map] режим iframe (без API-ключа), удалено скриптов карты: {n_scripts}")
 elif cfg.get("map", {}).get("mode") == "off":
     h = re.sub(r'<div id="map".*?</div>\s*</div>', "", h, flags=re.S)
     log("[map] отключена")
@@ -250,6 +254,7 @@ with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
 try:
     import subprocess
     subprocess.run([sys.executable, os.path.join(ROOT, "policy.py")], check=True, cwd=ROOT)
+    subprocess.run([sys.executable, os.path.join(ROOT, "seo.py")], check=True, cwd=ROOT)
     venv_py = r"C:\Users\Cypher\.workbuddy-ai\binaries\python\envs\default\Scripts\python.exe"
     if os.path.isfile(venv_py):
         subprocess.run([venv_py, os.path.join(ROOT, "render_brand.py")], check=True, cwd=ROOT)

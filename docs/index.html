@@ -3835,45 +3835,7 @@
         </div>
     </div>
             <iframe src="https://yandex.ru/map-widget/v1/?ll=37.601771,55.779919&z=16&text=Москва%20Цветной%20бул.,%2015,%20стр.%201" width="100%" height="441" frameborder="0" style="border:0;display:inline-block;width:100%;height:441px" loading="lazy"></iframe>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                setTimeout(initYandexMap_n1_6aa66de756240, 5000);
-            });
-
-            document.addEventListener('scroll', initYandexMapOnEvent_n1_6aa66de756240);
-            document.addEventListener('mousemove', initYandexMapOnEvent_n1_6aa66de756240);
-            document.addEventListener('touchstart', initYandexMapOnEvent_n1_6aa66de756240);
-
-            function initYandexMapOnEvent_n1_6aa66de756240(e) {
-                initYandexMap_n1_6aa66de756240();
-                e.currentTarget.removeEventListener(e.type, initYandexMapOnEvent_n1_6aa66de756240);
-            }
-
-            function initYandexMap_n1_6aa66de756240() {
-                if (window.yandexMapDidInit_n1_6aa66de756240) {
-                    return false;
-                }
-                window.yandexMapDidInit_n1_6aa66de756240 = true;
-
-                const script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.async = true;
-
-                script.src = 'https://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU&onload=init_n1_6aa66de756240';
-                document.getElementsByTagName('body')[0].appendChild(script);
-            }
-
-            function init_n1_6aa66de756240(){
-                var map_n1_6aa66de756240 = new ymaps.Map("n1_6aa66de756240", {
-                    center: [55.779919,37.601771],
-                    zoom: 16,
-                    controls: [],
-                });
-                //map_//.behaviors.get('drag').disable()
-                map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.779919,37.601771]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.794143,37.592833]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.780319,37.632098]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.791137,37.559353]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.769231,37.583373]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.749162,37.539742]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.723465,37.610269]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.710692,37.675109]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.736392,37.467383]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.738465,37.674508]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.639964,37.758213]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.913371,37.584318]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.863833,37.545581]));map_n1_6aa66de756240.geoObjects.add(new ymaps.Placemark([55.718192,37.784075]));map_n1_6aa66de756240.setBounds(map_n1_6aa66de756240.geoObjects.getBounds());map_n1_6aa66de756240.setZoom(map_n1_6aa66de756240.getZoom()-1);
-                // {hintContent: "Сервисный центр"}
-            }
-        </script>
+        
         <style>
             ymaps {
                 -ms-touch-action: auto !important;
