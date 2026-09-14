@@ -122,6 +122,31 @@ h = h.replace(">в Москве<", ">в %s<" % C["prep"])
 # 9. логотип
 h = h.replace("public/images/logo/logo-header.png", cfg["logo"])
 
+# 9a. гео-блоки под свой город (метро -> микрорайоны, округа -> районы, Подмосковье -> пригороды)
+CB = cfg.get("cityBlocks")
+if CB:
+    PIN = '<svg class="t74-geo__icon"><use href="#t74-ico-pin" xlink:href="#t74-ico-pin" /></svg>'
+
+    def grid(items, cls):
+        return '<div class="t74-geo__grid %s">%s</div>' % (
+            cls, "".join('<span class="t74-geo__item">%s%s</span>' % (PIN, i) for i in items))
+
+    def sec(kind, title, body):
+        return ('<section class="t74-geo t74-geo--%s block"><div class="container">'
+                '<h2 class="title-submain title_center t74-h2">%s</h2>%s</div></section>'
+                % (kind, title, body))
+
+    for kind, title, items, cls, extra in (
+        ("metro", CB["microTitle"], CB["microdistricts"], "t74-geo__grid--districts", ""),
+        ("districts", CB["districtsTitle"], CB["districts"], "t74-geo__grid--districts", ""),
+        ("suburb", CB["suburbTitle"], CB["suburbs"], "t74-geo__grid--suburb",
+         '<p class="t74-note t74-geo__note">%s</p>' % CB["suburbNote"]),
+    ):
+        new = sec(kind, title, grid(items, cls) + extra)
+        h, n = re.subn(r'<section class="t74-geo t74-geo--%s block">.*?</section>' % kind,
+                       lambda m: new, h, flags=re.S)
+        log("[geo] %s: заменён блоков %d (%d шт.)" % (kind, n, len(items)))
+
 # 10. карта
 if cfg.get("map", {}).get("mode") == "iframe":
     url = "https://yandex.ru/map-widget/v1/?ll={lon},{lat}&z=16&text={txt}".format(
@@ -240,6 +265,11 @@ h = h.replace('<a class="text-14 white w-600" itemprop="url" href="#">Полит
               '<a class="text-14 white w-600" itemprop="url" href="politika.html">Политика')
 h = h.replace('<a class="text-14 white w-600" itemprop="url" href="#">Соглашение',
               '<a class="text-14 white w-600" itemprop="url" href="soglasie.html">Соглашение')
+# ссылка на реквизиты в подвале (в разметке внутри анкора бывает перенос строки — берём regex)
+h = re.sub(r'(<a class="text-14 white w-600" itemprop="url" href="politika\.html">[^<]*</a>)',
+           r'\1\n      <a class="text-14 white w-600" itemprop="url" href="requisites.html">Реквизиты</a>', h)
+# модалка: согласие тоже ведём на политику
+h = re.sub(r'<a href="#">([^<]*политик[^<]*)</a>', r'<a href="politika.html">\1</a>', h, flags=re.I)
 
 h = h.replace("</body>", lead_js + "</body>")
 

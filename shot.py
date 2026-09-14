@@ -1,7 +1,7 @@
 import sys, asyncio
 from playwright.async_api import async_playwright
 
-URL = "http://127.0.0.1:8124/index.html"
+URL = "http://127.0.0.1:8125/index.html"
 OUT = r"G:\SlavaSaitOffer\site"
 
 async def shoot(pg, name, w, h):

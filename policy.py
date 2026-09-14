@@ -11,6 +11,9 @@ PHONE = cfg["phonePretty"]
 EMAIL = cfg["email"]
 CITY_N = cfg["city"]["nom"]
 ADDRESS = cfg["address"]
+CO = cfg.get("company", {})
+OPERATOR = CO.get("fullName", B)
+SHORT = CO.get("shortName", B)
 
 
 def shell(title, body):
@@ -35,8 +38,21 @@ def shell(title, body):
     )
 
 
+OPERATOR_BLOCK = ""
+if CO:
+    OPERATOR_BLOCK = (
+        "<h2>Сведения об операторе</h2><ul>"
+        f"<li>Полное наименование: {OPERATOR}</li>"
+        f"<li>Сокращённое наименование: {SHORT}</li>"
+        f"<li>ИНН: {CO.get('inn','')} / КПП: {CO.get('kpp','')}</li>"
+        f"<li>Адрес: {CO.get('legalAddress', ADDRESS)}</li>"
+        "</ul>"
+    )
+
 POLITIKA = (
-    "<p>Настоящая Политика обработки персональных данных составлена в соответствии с ФЗ-152 «О персональных данных» и определяет порядок обработки ПД, а также меры по обеспечению их безопасности, предпринимаемые " + B + " (далее — «Оператор»).</p>"
+    "<p>Настоящая Политика обработки персональных данных составлена в соответствии с ФЗ-152 «О персональных данных» и определяет порядок обработки ПД, а также меры по обеспечению их безопасности, предпринимаемые "
+    + OPERATOR + " (далее — «Оператор»).</p>"
+    + OPERATOR_BLOCK +
     "<h2>1. Какие данные мы обрабатываем</h2><ul>"
     "<li>Имя (при добровольном указании)</li>"
     "<li>Номер телефона</li>"
@@ -63,12 +79,48 @@ SOGLASIE = (
     "<h2>Срок действия согласия</h2><p>С момента отправки формы и до отзыва. Отзыв — письмом на " + EMAIL + ".</p>"
 )
 
+def requisites_body():
+    if not CO:
+        return "<p>Реквизиты не заполнены в config.json → блок company.</p>"
+    rows = [
+        ("Полное наименование", CO.get("fullName", "")),
+        ("Сокращённое наименование", CO.get("shortName", "")),
+        ("Юридический адрес", CO.get("legalAddress", "")),
+        ("ИНН", CO.get("inn", "")),
+        ("КПП", CO.get("kpp", "")),
+        ("Расчётный счёт", CO.get("account", "")),
+        ("Валюта", CO.get("currency", "")),
+        ("Банк", CO.get("bank", "")),
+        ("ИНН банка", CO.get("bankInn", "")),
+        ("БИК", CO.get("bik", "")),
+        ("Корреспондентский счёт", CO.get("corrAccount", "")),
+        ("Адрес банка", CO.get("bankAddress", "")),
+    ]
+    tr = "".join(f"<tr><th>{k}</th><td>{v}</td></tr>" for k, v in rows if v)
+    return (
+        '<h2>Для юридических лиц</h2>'
+        '<p>Работаем по договору, безналичный расчёт, предоставляем полный пакет '
+        'закрывающих документов (счёт, акт, счёт-фактура). Договор и счёт отправляем на email '
+        f'<a href="mailto:{EMAIL}">{EMAIL}</a>.</p>'
+        '<h2>Реквизиты</h2>'
+        '<table class="req">' + tr + "</table>"
+        f'<p style="margin-top:24px">Телефон: <a href="tel:{PHONE}">{PHONE}</a></p>'
+    )
+
+
 def main():
     open(os.path.join(OUT, "politika.html"), "w", encoding="utf-8").write(
         shell("Политика обработки персональных данных", POLITIKA))
     open(os.path.join(OUT, "soglasie.html"), "w", encoding="utf-8").write(
         shell("Согласие на обработку персональных данных", SOGLASIE))
-    print("[policy] politika.html + soglasie.html готовы")
+    if CO:
+        html = shell("Реквизиты", requisites_body())
+        html = html.replace("</style>", "table.req{border-collapse:collapse;width:100%}"
+                                        "table.req th,table.req td{border:1px solid #ddd;padding:10px 12px;"
+                                        "text-align:left;vertical-align:top}"
+                                        "table.req th{background:#f5f7f6;width:38%;font-weight:600}</style>")
+        open(os.path.join(OUT, "requisites.html"), "w", encoding="utf-8").write(html)
+    print("[policy] politika.html + soglasie.html + requisites.html готовы")
 
 if __name__ == "__main__":
     main()
