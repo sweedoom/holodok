@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://USERNAME.github.io/REPO/index.html</loc>
+    <loc>https://sweedoom.github.io/holodok/index.html</loc>
     <lastmod>2026-09-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://USERNAME.github.io/REPO/politika.html</loc>
+    <loc>https://sweedoom.github.io/holodok/politika.html</loc>
     <lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://USERNAME.github.io/REPO/soglasie.html</loc>
+    <loc>https://sweedoom.github.io/holodok/soglasie.html</loc>
     <lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>

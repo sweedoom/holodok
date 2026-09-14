@@ -5,7 +5,7 @@ set -e
 cd "$(dirname "$0")"
 
 # параметры репо — поправь на свои
-REPO=${REPO:-slavasait-offer/site}   # на github.com/USER/REPO
+REPO=${REPO:-sweedoom/holodok}   # на github.com/USER/REPO
 COMMIT="site update $(date +%Y-%m-%d-%H%M)"
 
 # проверка сборки

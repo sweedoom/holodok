@@ -3,5 +3,5 @@ Allow: /
 Disallow: /public/js/
 Disallow: /public/css/
 
-Sitemap: https://USERNAME.github.io/REPO/sitemap.xml
-Host: https://USERNAME.github.io/REPO/
+Sitemap: https://sweedoom.github.io/holodok/sitemap.xml
+Host: https://sweedoom.github.io/holodok/

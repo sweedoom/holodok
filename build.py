@@ -259,12 +259,12 @@ if head_add:
 h = re.sub(r'(<a[^>]*class="[^"]*politic[^"]*"[^>]*)href="#"', r'\1href="politika.html"', h)
 h = re.sub(r'(<a[^>]*href="#")[^>]*>Политика конфиденциальности', r'\1>Политика конфиденциальности', h)
 h = re.sub(r'href="#"[^>]*>Политика конфиденциальности', 'href="politika.html">Политика конфиденциальности', h)
-h = re.sub(r'href="#"[^>]*>Соглашение[^<]*', 'href="soglasie.html">Соглашение', h)
+h = re.sub(r'href="#"[^>]*>Соглашение[^<]*', 'href="soglasie.html">Согласие на обработку ПД', h)
 # подстраховка на любые оставшиеся footer-ссылки по тексту
 h = h.replace('<a class="text-14 white w-600" itemprop="url" href="#">Политика',
               '<a class="text-14 white w-600" itemprop="url" href="politika.html">Политика')
 h = h.replace('<a class="text-14 white w-600" itemprop="url" href="#">Соглашение',
-              '<a class="text-14 white w-600" itemprop="url" href="soglasie.html">Соглашение')
+              '<a class="text-14 white w-600" itemprop="url" href="soglasie.html">Согласие на обработку ПД')
 # ссылка на реквизиты в подвале (в разметке внутри анкора бывает перенос строки — берём regex)
 h = re.sub(r'(<a class="text-14 white w-600" itemprop="url" href="politika\.html">[^<]*</a>)',
            r'\1\n      <a class="text-14 white w-600" itemprop="url" href="requisites.html">Реквизиты</a>', h)
