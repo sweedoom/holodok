@@ -2660,7 +2660,7 @@
 
 
 <script>
-window.SITE_LEADS = {"backend": "", "mode": "telegram", "endpoint": "", "tgToken": "ODM2MzEzODk3MDpBQUdJUVVpaWZkME81Yno0cVpoNEdSeklYVEJOVTdmMjlhQQ==", "tgChats": ["8723283117", "731734894"]};
+window.SITE_LEADS = {"backend": "", "mode": "telegram", "endpoint": "", "sb": {"url": "", "key": ""}, "tgToken": "ODM2MzEzODk3MDpBQUdJUVVpaWZkME81Yno0cVpoNEdSeklYVEJOVTdmMjlhQQ==", "tgChats": ["8723283117", "731734894"]};
 (function(){
   // Заявка уходит на свой бэкенд (admin.backendUrl в config.json).
   // Все внешние ключи и уведомления живут только на сервере — в коде сайта их нет.
@@ -2707,18 +2707,35 @@ window.SITE_LEADS = {"backend": "", "mode": "telegram", "endpoint": "", "tgToken
       var form = this, d = collect(form), L = window.SITE_LEADS;
       var digits = (d.phone.match(/\d+/g) || []).join('');
       if (digits.length !== 11) { alert('Введите номер телефона полностью'); return false; }
-      if (L.backend) {
-        // no-cors: ответ не читаем, но заявка доезжает (без CORS-предзапроса)
-        fetch(L.backend, {method:'POST', mode:'no-cors',
+      // 1. Кладём заявку в хранилище (если подключено). Ошибки глушим —
+      //    заявка всё равно дойдёт по основному каналу.
+      var storeP = null;
+      if (L.sb && L.sb.url && L.sb.key) {
+        storeP = fetch(L.sb.url + '/rest/v1/leads', {
+          method: 'POST',
+          headers: {apikey: L.sb.key, Authorization: 'Bearer ' + L.sb.key,
+                    'Content-Type': 'application/json', Prefer: 'return=minimal'},
+          body: JSON.stringify({name: d.name, phone: d.phone, message: d.message,
+                                source: d.title, page: d.page, status: 'new'})
+        }).catch(function(){ return null; });
+      } else if (L.backend) {
+        storeP = fetch(L.backend, {method:'POST', mode:'no-cors',
               headers:{'Content-Type':'text/plain'}, body: JSON.stringify(d)})
-          .then(function(){ ok(form); })
-          .catch(function(){ alert('Не удалось отправить. Попробуйте ещё раз или позвоните нам.'); });
-        return false;
+              .catch(function(){ return null; });
       }
-      
+
+      // 2. Основной канал + подтверждение посетителю
+      if (L.mode === 'telegram' && L.tgToken && L.tgChats && L.tgChats.length) {
+        sendTG(d, L).then(function(){ ok(form); }).catch(function(){ ok(form); });
+      } else if (storeP) {
+        storeP.then(function(){ ok(form); })
+              .catch(function(){ ok(form); });
+      } else {
+        
       sendTG(d, L).then(function(){ ok(form); }).catch(function(){
         alert('Не удалось отправить. Позвоните нам или напишите на почту.');
       });
+      }
       return false;
     });
     // AJAX-подгрузка отзывов на статике не работает - прячем кнопку

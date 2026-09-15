@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /admin.html
+Disallow: /admin-a7f3c9.html
 Disallow: /public/js/
 Disallow: /public/css/
 

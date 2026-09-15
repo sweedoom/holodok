@@ -304,15 +304,32 @@ __TG_FN__
       var form = this, d = collect(form), L = window.SITE_LEADS;
       var digits = (d.phone.match(/\\d+/g) || []).join('');
       if (digits.length !== 11) { alert('Введите номер телефона полностью'); return false; }
-      if (L.backend) {
-        // no-cors: ответ не читаем, но заявка доезжает (без CORS-предзапроса)
-        fetch(L.backend, {method:'POST', mode:'no-cors',
+      // 1. Кладём заявку в хранилище (если подключено). Ошибки глушим —
+      //    заявка всё равно дойдёт по основному каналу.
+      var storeP = null;
+      if (L.sb && L.sb.url && L.sb.key) {
+        storeP = fetch(L.sb.url + '/rest/v1/leads', {
+          method: 'POST',
+          headers: {apikey: L.sb.key, Authorization: 'Bearer ' + L.sb.key,
+                    'Content-Type': 'application/json', Prefer: 'return=minimal'},
+          body: JSON.stringify({name: d.name, phone: d.phone, message: d.message,
+                                source: d.title, page: d.page, status: 'new'})
+        }).catch(function(){ return null; });
+      } else if (L.backend) {
+        storeP = fetch(L.backend, {method:'POST', mode:'no-cors',
               headers:{'Content-Type':'text/plain'}, body: JSON.stringify(d)})
-          .then(function(){ ok(form); })
-          .catch(function(){ alert('Не удалось отправить. Попробуйте ещё раз или позвоните нам.'); });
-        return false;
+              .catch(function(){ return null; });
       }
-      __FALLBACK__
+
+      // 2. Основной канал + подтверждение посетителю
+      if (L.mode === 'telegram' && L.tgToken && L.tgChats && L.tgChats.length) {
+        sendTG(d, L).then(function(){ ok(form); }).catch(function(){ ok(form); });
+      } else if (storeP) {
+        storeP.then(function(){ ok(form); })
+              .catch(function(){ ok(form); });
+      } else {
+        __FALLBACK__
+      }
       return false;
     });
     // AJAX-подгрузка отзывов на статике не работает - прячем кнопку
@@ -335,10 +352,12 @@ def _enc(v):
     return base64.b64encode(v.encode()).decode()
 
 
+_SB = cfg.get("admin", {}).get("supabase", {}) or {}
 _LEADS_CFG = {
     "backend": cfg.get("admin", {}).get("backendUrl", ""),
     "mode": L.get("mode", "mailto"),
     "endpoint": L.get("endpoint", ""),
+    "sb": {"url": _SB.get("url", ""), "key": _SB.get("anonKey", "")},
 }
 if _USE_TG:  # ключи попадают в код только в этом режиме
     _LEADS_CFG["tgToken"] = _enc(L.get("telegramBotToken", ""))
@@ -418,22 +437,33 @@ make_logo(os.path.join(OUT, cfg["logo"].replace("/", os.sep)))
 with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
     f.write(h)
 
-# админка: если задан backendUrl — собираем, иначе страницы нет вообще
-# (заявки идут напрямую в Telegram, дополнительная панель не требуется)
+# админка: собираем, если подключено хранилище (Supabase или бэкенд).
+# Лежит по неочевидному адресу из config.admin.page — наружу не светим.
+A = cfg.get("admin", {}) or {}
+_adm_url = A.get("backendUrl", "")
+_sb = A.get("supabase", {}) or {}
+_HAS_STORE = bool(_adm_url) or bool(_sb.get("url") and _sb.get("anonKey"))
+_ADM_PAGE = A.get("page") or "admin.html"
+_adm_out = os.path.join(OUT, _ADM_PAGE)
 adm_src = os.path.join(ROOT, "admin_src.html")
-_adm_url = cfg.get("admin", {}).get("backendUrl", "")
-if os.path.isfile(adm_src) and _adm_url:
+
+if os.path.isfile(adm_src) and _HAS_STORE:
     tpl = open(adm_src, encoding="utf-8").read()
-    tpl = tpl.replace("@LEADS_BACKEND@", _adm_url)
-    open(os.path.join(OUT, "admin.html"), "w", encoding="utf-8").write(tpl)
-    log("[admin] admin.html собран")
+    tpl = (tpl.replace("@LEADS_BACKEND@", _adm_url)
+              .replace("@SB_URL@", _sb.get("url", ""))
+              .replace("@SB_KEY@", _sb.get("anonKey", ""))
+              .replace("@ADMIN_PW@", A.get("password", "")))
+    open(_adm_out, "w", encoding="utf-8").write(tpl)
+    log(f"[admin] {_ADM_PAGE} собран (хранилище: "
+        f"{'supabase' if _sb.get('url') else 'backend'})")
 else:
-    _adm_out = os.path.join(OUT, "admin.html")
-    if os.path.isfile(_adm_out):
-        try:
-            os.remove(_adm_out)  # на Windows иногда блокируется корзиной — не критично
-        except Exception as e:
-            log(f"[admin] не удалось удалить старый admin.html: {e}")
+    for old in (os.path.join(OUT, "admin.html"), _adm_out):
+        if os.path.isfile(old):
+            try:
+                os.remove(old)
+            except Exception as e:
+                log(f"[admin] не удалось удалить {os.path.basename(old)}: {e}")
+    log("[admin] админка не собирается — хранилище заявок не подключено")
 
 # политика, og-картинка, фавикон
 try:

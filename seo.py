@@ -11,10 +11,11 @@ TODAY = date.today().isoformat()
 
 
 def main():
+    adm_page = (cfg.get("admin", {}) or {}).get("page") or "admin.html"
     robots = (
         "User-agent: *\n"
         "Allow: /\n"
-        "Disallow: /admin.html\n"
+        f"Disallow: /{adm_page}\n"
         "Disallow: /public/js/\n"
         "Disallow: /public/css/\n"
         "\n"

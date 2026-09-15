@@ -136,11 +136,62 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:5px;font-size:13px}
 
 <script>
 var BACKEND = "@LEADS_BACKEND@";
+var SB = {url: "@SB_URL@", key: "@SB_KEY@"};
+var ADMIN_PW = "@ADMIN_PW@";
 var PW = sessionStorage.getItem('leads_pw') || '';
 var LEADS = [], FILTER = 'all', QUERY = '';
 
-/* ---------- JSONP-запрос к бэкенду (работает без CORS) ---------- */
+/* ---------- запросы к хранилищу заявок ---------- */
+function fmtDate(iso){
+  if(!iso) return '';
+  var d = new Date(iso);
+  if(isNaN(d)) return String(iso).replace('T',' ').slice(0,19);
+  function p(n){ return (n<10?'0':'') + n; }
+  return d.getFullYear() + '-' + p(d.getMonth()+1) + '-' + p(d.getDate()) + ' ' +
+         p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
+}
+
+function apiSb(p){
+  var h = {apikey: SB.key, Authorization: 'Bearer ' + SB.key,
+           'Content-Type': 'application/json'};
+  var url = SB.url + '/rest/v1/leads';
+  if (p.action === 'list') {
+    return fetch(url + '?select=*&order=created_at.desc', {headers: h})
+      .then(function(r){
+        if(!r.ok) throw new Error('Ошибка ' + r.status);
+        return r.json();
+      })
+      .then(function(rows){
+        return {ok: true, leads: (rows || []).map(function(r){
+          return {date: fmtDate(r.created_at), id: r.id, name: r.name || '',
+                  phone: r.phone || '', message: r.message || '',
+                  source: r.source || '', page: r.page || '',
+                  status: r.status || 'new', comment: r.comment || '', utm: r.utm || ''};
+        })};
+      });
+  }
+  if (p.action === 'status' || p.action === 'comment') {
+    var body = {};
+    body[p.action === 'status' ? 'status' : 'comment'] = p.value;
+    return fetch(url + '?id=eq.' + p.id,
+      {method: 'PATCH', headers: h, body: JSON.stringify(body)})
+      .then(function(r){ if(!r.ok) throw new Error('Ошибка ' + r.status); return {ok: true}; });
+  }
+  if (p.action === 'delete') {
+    return fetch(url + '?id=eq.' + p.id, {method: 'DELETE', headers: h})
+      .then(function(r){ if(!r.ok) throw new Error('Ошибка ' + r.status); return {ok: true}; });
+  }
+  return Promise.reject(new Error('unknown action'));
+}
+
 function api(params){
+  if (SB.url && SB.key && params.action !== 'ping') return apiSb(params);
+  if (SB.url && SB.key && params.action === 'ping') return Promise.resolve({ok: true});
+  return apiJsonp(params);
+}
+
+/* ---------- JSONP-запрос к бэкенду (работает без CORS) ---------- */
+function apiJsonp(params){
   return new Promise(function(res, rej){
     var cb = 'cb' + Date.now() + Math.floor(Math.random()*1000);
     var q = Object.assign({callback: cb}, params);
@@ -178,15 +229,23 @@ var STATUS = {
 function render(){
   var app = document.getElementById('app');
 
-  if(!BACKEND || BACKEND.indexOf('__BACKEND__') === 0 || !BACKEND.trim()){
-    app.innerHTML = '<div class="setup"><h1>Бэкенд заявок не подключён</h1>' +
-      '<p>Чтобы админка заработала, один раз подключи бесплатный бэкенд (Google Таблица, 5 минут):</p>' +
+  var HAS_STORE = !!((SB.url && SB.key) || (BACKEND && BACKEND.trim()));
+  if(!HAS_STORE){
+    app.innerHTML = '<div class="setup"><h1>Хранилище заявок не подключено</h1>' +
+      '<p>Заявки с сайта уже приходят администраторам. Чтобы они появились и здесь, ' +
+      'нужно подключить бесплатное хранилище — один раз, ~3 минуты.</p>' +
+      '<h2 style="font-size:16px;margin:18px 0 8px">Вариант 1. Supabase (рекомендую)</h2>' +
+      '<ol><li>Зайди на <code>supabase.com</code> → Sign in with GitHub → New project ' +
+      '(бесплатный тариф, имя любое, регион Europe)</li>' +
+      '<li>Жми <b>SQL Editor</b> → New query → вставь код из файла <code>supabase.sql</code> → Run</li>' +
+      '<li>Settings → API: скопируй <b>Project URL</b> и <b>anon public</b> ключ</li>' +
+      '<li>Передай их мне — я вставлю в <code>config.json → admin.supabase</code> и задеплою</li></ol>' +
+      '<h2 style="font-size:16px;margin:18px 0 8px">Вариант 2. Google Таблица</h2>' +
       '<ol><li>Создай таблицу: <code>sheets.new</code></li>' +
       '<li>Расширения → Apps Script → вставь код из файла <code>apps_script.gs</code></li>' +
       '<li>Запусти функцию <code>setup</code>, впиши пароль админки</li>' +
       '<li>На развёртывание → Новое развёртывание → Веб-приложение, доступ: <b>Все</b></li>' +
-      '<li>Скопируй URL и вставь в <code>config.json → admin.backendUrl</code></li>' +
-      '<li>Запусти <code>python build.py && bash deploy.sh</code></li></ol></div>';
+      '<li>Скопируй URL и вставь в <code>config.json → admin.backendUrl</code></li></ol></div>';
     return;
   }
 
@@ -237,6 +296,11 @@ function renderLogin(app){
   pw.onkeydown = function(e){ if(e.key === 'Enter') go.click(); };
   go.onclick = function(){
     var v = pw.value.trim(); if(!v) return;
+    if (ADMIN_PW && v !== ADMIN_PW) {
+      var e0 = document.getElementById('err');
+      e0.textContent = 'Неверный пароль'; e0.style.display = 'block';
+      return;
+    }
     go.disabled = true; go.innerHTML = '<span class="spin"></span> Проверяем';
     api({action:'list', pw:v}).then(function(){
       PW = v; sessionStorage.setItem('leads_pw', v); render();
