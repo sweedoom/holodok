@@ -132,7 +132,8 @@
     "mode": "telegram",
     "_modes": "telegram | backend | endpoint | mailto",
     "telegramBotToken": "8363138970:AAGIQUiifd0O5bz4qZh4GRzIXTBNU7f29aA",
-    "telegramChatId": "8723283117",
+    "telegramChatIds": ["8723283117", "731734894"],
+    "_chatIds_comment": "Список получателей заявок. Добавляй/удаляй id сколько нужно — всем придёт одна и та же заявка",
     "endpoint": "",
     "_comment": "Прямая отправка в Telegram. Токен лежит в HTML — для этого проекта это приемлемо (подробности см. PROJECT.md §6)"
   },

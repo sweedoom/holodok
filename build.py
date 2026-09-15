@@ -321,7 +321,9 @@ __TG_FN__
 })();
 </script>
 """
-_USE_TG = (L.get("mode") == "telegram" and L.get("telegramBotToken") and L.get("telegramChatId"))
+_TG_CHATS = [str(c) for c in (L.get("telegramChatIds") or
+                              ([L["telegramChatId"]] if L.get("telegramChatId") else []))]
+_USE_TG = (L.get("mode") == "telegram" and L.get("telegramBotToken") and bool(_TG_CHATS))
 
 
 def _enc(v):
@@ -340,12 +342,13 @@ _LEADS_CFG = {
 }
 if _USE_TG:  # ключи попадают в код только в этом режиме
     _LEADS_CFG["tgToken"] = _enc(L.get("telegramBotToken", ""))
-    _LEADS_CFG["tgChat"] = L.get("telegramChatId", "")
+    _LEADS_CFG["tgChats"] = _TG_CHATS
+    log(f"[leads] заявки уходят в Telegram, получателей: {len(_TG_CHATS)}")
 lead_js = lead_js.replace("__LEADS__", json.dumps(_LEADS_CFG, ensure_ascii=False))
 
 # Ветка про бота попадает в код сайта ТОЛЬКО если режим явно 'telegram'.
 # Иначе слово не встречается вообще — ни один посетитель (и админ) его не увидит.
-USE_TG = (L.get("mode") == "telegram" and L.get("telegramBotToken") and L.get("telegramChatId"))
+USE_TG = _USE_TG  # одна проверка на всё, чтобы конфиг не расходился
 if USE_TG:
     tg_fn = """
   function sendTG(d, L){
@@ -354,10 +357,15 @@ if USE_TG:
                (d.message ? '\\\\nСообщение: ' + d.message : '') +
                (d.promo ? '\\\\nПромо: ' + d.promo : '') + '\\\\nСтраница: ' + d.page;
     var token = atob(L.tgToken);
-    return fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({chat_id: L.tgChat, text: text})
-    });
+    var chats = L.tgChats || [];
+    // заявка уходит КАЖДОМУ админу; если кто-то ещё не нажал /start боту —
+    // его отправка просто проваливается, остальные всё равно получат
+    return Promise.all(chats.map(function(chat){
+      return fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({chat_id: chat, text: text})
+      }).catch(function(){ return null; });
+    }));
   }"""
     fallback = """
       sendTG(d, L).then(function(){ ok(form); }).catch(function(){
@@ -410,13 +418,22 @@ make_logo(os.path.join(OUT, cfg["logo"].replace("/", os.sep)))
 with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
     f.write(h)
 
-# админка заявок (отдельная страница, в sitemap не попадает)
+# админка: если задан backendUrl — собираем, иначе страницы нет вообще
+# (заявки идут напрямую в Telegram, дополнительная панель не требуется)
 adm_src = os.path.join(ROOT, "admin_src.html")
-if os.path.isfile(adm_src):
+_adm_url = cfg.get("admin", {}).get("backendUrl", "")
+if os.path.isfile(adm_src) and _adm_url:
     tpl = open(adm_src, encoding="utf-8").read()
-    tpl = tpl.replace("@LEADS_BACKEND@", cfg.get("admin", {}).get("backendUrl", ""))
+    tpl = tpl.replace("@LEADS_BACKEND@", _adm_url)
     open(os.path.join(OUT, "admin.html"), "w", encoding="utf-8").write(tpl)
-    log("[admin] admin.html собран (вход: /admin.html)")
+    log("[admin] admin.html собран")
+else:
+    _adm_out = os.path.join(OUT, "admin.html")
+    if os.path.isfile(_adm_out):
+        try:
+            os.remove(_adm_out)  # на Windows иногда блокируется корзиной — не критично
+        except Exception as e:
+            log(f"[admin] не удалось удалить старый admin.html: {e}")
 
 # политика, og-картинка, фавикон
 try:

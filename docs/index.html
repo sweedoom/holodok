@@ -2660,7 +2660,7 @@
 
 
 <script>
-window.SITE_LEADS = {"backend": "", "mode": "telegram", "endpoint": "", "tgToken": "ODM2MzEzODk3MDpBQUdJUVVpaWZkME81Yno0cVpoNEdSeklYVEJOVTdmMjlhQQ==", "tgChat": "8723283117"};
+window.SITE_LEADS = {"backend": "", "mode": "telegram", "endpoint": "", "tgToken": "ODM2MzEzODk3MDpBQUdJUVVpaWZkME81Yno0cVpoNEdSeklYVEJOVTdmMjlhQQ==", "tgChats": ["8723283117", "731734894"]};
 (function(){
   // Заявка уходит на свой бэкенд (admin.backendUrl в config.json).
   // Все внешние ключи и уведомления живут только на сервере — в коде сайта их нет.
@@ -2691,10 +2691,15 @@ window.SITE_LEADS = {"backend": "", "mode": "telegram", "endpoint": "", "tgToken
                (d.message ? '\\nСообщение: ' + d.message : '') +
                (d.promo ? '\\nПромо: ' + d.promo : '') + '\\nСтраница: ' + d.page;
     var token = atob(L.tgToken);
-    return fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({chat_id: L.tgChat, text: text})
-    });
+    var chats = L.tgChats || [];
+    // заявка уходит КАЖДОМУ админу; если кто-то ещё не нажал /start боту —
+    // его отправка просто проваливается, остальные всё равно получат
+    return Promise.all(chats.map(function(chat){
+      return fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({chat_id: chat, text: text})
+      }).catch(function(){ return null; });
+    }));
   }
   jQuery(function($){
     $('form').off('submit').on('submit', function(e){
