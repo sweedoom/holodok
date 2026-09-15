@@ -4,5 +4,5 @@ Disallow: /admin.html
 Disallow: /public/js/
 Disallow: /public/css/
 
-Sitemap: https://sweedoom.github.io/holodok/sitemap.xml
-Host: https://sweedoom.github.io/holodok/
+Sitemap: https://tulyacenterorg.ru/sitemap.xml
+Host: https://tulyacenterorg.ru/
