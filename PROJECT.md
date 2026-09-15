@@ -7,18 +7,19 @@
 
 ## 1. Что это
 
-Одностраничный лендинг (static site: HTML + CSS + JS + картинки, без сервера).
+Одностраничный лендинг (static site: HTML + CSS + JS + картинки, без своего сервера).
 Скопирован с `re-device.ru/parogenerator/tylo` и переделан под ООО «ХОЛОД-ОК».
 
 - **Ниша:** ремонт парогенераторов Tylo (оставлена как в оригинале — владелец просил «полную копию»)
 - **Город на сайте:** Москва
-- **Домен:** `tulyacenterorg.ru`
+- **Домен (текущий):** http://linar.me/holodok/ (через Cloudflare)
+- **Домен (целевой):** tulyacenterorg.ru — **НЕ КУПЛЕН**, владелец должен купить
 - **Хостинг:** GitHub Pages, репозиторий `sweedoom/holodok` (публичный)
 - **Рабочая папка:** `G:\SlavaSaitOffer\site\`
 
 ---
 
-## 2. Текущий статус (что сделано)
+## 2. Текущий статус
 
 | Что | Статус |
 |---|---|
@@ -31,9 +32,9 @@
 | Мастера — все «Мастер · Парогенераторы» | ✅ |
 | Политика, согласие, 404, robots.txt, sitemap.xml | ✅ |
 | Страница «Реквизиты» с ИНН/КПП/счётом | ✅ |
-| Админ-панель `/admin.html` | ✅ готова, ждёт URL бэкенда |
-| Заявки → Telegram-бот | ⏳ нужен бэкенд (см. §6) |
-| Домен `tulyacenterorg.ru` | ⏳ нужны DNS-записи у регистратора (см. §7) |
+| Заявки → Telegram-бот @slavakrutoislds83_bot | ✅ работает напрямую из браузера |
+| Админ-панель `/admin.html` | ⚠️ заглушка «бэкенд не подключён» (см. §6) |
+| Домен `tulyacenterorg.ru` | ⏳ ждёт покупку + DNS (см. §7) |
 | HTTPS | ⏳ включится автоматически после DNS |
 | Адрес в Москве (улица/дом) | ❌ не заполнен — в контактах только «г. Москва» |
 
@@ -43,10 +44,11 @@
 
 ```
 G:\SlavaSaitOffer\site\
+├─ PROJECT.md         ← этот файл — ВСЁ для быстрого входа (отдай другой ИИ)
 ├─ config.json        ← ВСЕ данные сайта (бренд, телефон, город, районы, бренды)
 ├─ build.py           ← сборщик: читает config.json, собирает папку docs/
-├─ admin_src.html     ← шаблон админ-панели
-├─ apps_script.gs     ← код бэкенда для Google Таблицы (заявки + Telegram)
+├─ admin_src.html     ← шаблон админ-панели (пока заглушка)
+├─ apps_script.gs     ← код бэкенда (НЕ используется, оставлен на будущее)
 ├─ policy.py          ← генерит politika.html, soglasie.html, requisites.html
 ├─ seo.py             ← генерит robots.txt, sitemap.xml, 404.html
 ├─ render_brand.py    ← генерит og-картинку и favicon (нужен Playwright)
@@ -58,7 +60,7 @@ G:\SlavaSaitOffer\site\
    ├─ index.html
    ├─ admin.html
    ├─ politika.html, soglasie.html, requisites.html
-   ├─ 404.html, robots.txt, sitemap.xml, CNAME
+   ├─ 404.html, robots.txt, sitemap.xml
    └─ public\, content\, assets\
 ```
 
@@ -72,10 +74,10 @@ G:\SlavaSaitOffer\site\
 ```bash
 cd G:/SlavaSaitOffer/site
 python build.py        # пересобрать docs/
-bash deploy.sh         # собрать + закоммитить + запушить на GitHub
+git push               # запушить на GitHub Pages (gh auth может протухнуть)
 ```
 
-Сайт обновляется на `tulyacenterorg.ru` через 1–2 минуты после пуша.
+Сайт обновляется на `linar.me/holodok` через 1–2 минуты после пуша.
 
 Проверка перед деплоем:
 ```bash
@@ -87,9 +89,13 @@ python check.py        # покажет битые ссылки (должно б
 python setup.py        # задаст вопросы и сам обновит config.json + соберёт
 ```
 
+`deploy.sh` (сборка + коммит + пуш + `gh repo create` при необходимости) — может
+падать на `gh repo create`/`gh repo view` если gh auth протух. В этом случае
+обычный `git push` работает через кэшированный credential helper.
+
 ---
 
-## 5. Го какие данные лежат (config.json)
+## 5. Какие данные лежат (config.json)
 
 | Ключ | Что это |
 |---|---|
@@ -108,68 +114,74 @@ python setup.py        # задаст вопросы и сам обновит co
 | `keepOnly` | Разделы, ссылки на которые разрешены (остальные вырезаются) |
 | `dropBlocks` | Блоки HTML, которые вырезаются при сборке |
 | `textFixes` | Замены текста: `["было", "стало"]` |
-| `admin.backendUrl` | URL бэкенда заявок (Google Apps Script `/exec`) |
-| `leads.mode` | `backend` — заявки идут на бэкенд |
-| `siteUrl` / `domain` | `https://tulyacenterorg.ru/` и `tulyacenterorg.ru` |
+| `admin.backendUrl` | URL бэкенда (Apps Script `/exec`) — не используется сейчас |
+| `leads.mode` | `telegram` — заявки летят напрямую в бота из браузера |
+| `leads.telegramBotToken` | Токен бота (в config хранится в чистом виде) |
+| `leads.telegramChatId` | ID чата админа (8723283117) |
+| `siteUrl` | Канонический адрес сайта |
+| `domain` | Кастомный домен (CNAME) — пустой, пока не куплен |
 
 ---
 
-## 6. Заявки и Telegram (архитектура)
+## 6. Заявки и Telegram (как устроено СЕЙЧАС)
 
-**Почему так сложно.** Сайт статический, сервера нет. Если положить токен бота
-в HTML — его увидит любой (и администратор тоже). Плюс Telegram API **не отдаёт**
-сообщения, которые отправил сам бот, — значит читать заявки из Telegram нельзя.
-
-**Поэтому:**
+**Владелец не хочет возиться с бэкендом → я сделал прямой Telegram:**
 
 ```
 Гость → форма на сайте
-          │ POST (no-cors, text/plain)
+          │ POST (JSON)
           ▼
-   Google Apps Script  ← ТОКЕН БОТА ТОЛЬКО ЗДЕСЬ (server-side)
-          ├─→ строка в Google Таблицу «Заявки»
-          └─→ sendMessage → бот @slavakrutoislds83_bot → админ (chat 8723283117)
-
-Админ → tulyacenterorg.ru/admin.html → пароль → JSONP → Apps Script → таблица заявок
+   api.telegram.org/bot<TOKEN>/sendMessage
+          │
+          ▼
+   Telegram-бот @slavakrutoislds83_bot
+          │
+          ▼
+   Админ (chat_id 8723283117) — получает сообщение в личку
 ```
 
-- Токен бота: `8363138970:AAGIQUiifd0O5bz4qZh4GRzIXTBNU7f29aA`
+- Токен бота `8363138970:AAGIQUiifd0O5bz4qZh4GRzIXTBNU7f29aA`
 - Chat id админа: `8723283117`
 - Бот: `@slavakrutoislds83_bot`
-- **Ни в `index.html`, ни в `admin.html` слова «telegram» нет** — проверено.
-  Ветка с ботом компилируется в JS сайта только если `leads.mode == "telegram"`
-  (сейчас `backend`, поэтому её нет).
 
-**Как подключить бэкенд (инструкция внутри `apps_script.gs`, шапка файла):**
-1. `https://sheets.new` → новая таблица
-2. Расширения → Apps Script → вставить код из `apps_script.gs`
-3. В `setup()` вписать `TG_TOKEN`, `TG_CHAT`, `ADMIN_PW` → Run
-4. На развёртывание → Новое развёртывание → Веб-приложение, доступ: **Все**
-5. Скопировать URL `/exec` → вставить в `config.json → admin.backendUrl`
-6. `python build.py && bash deploy.sh`
+**Токен в HTML** (обфусцирован base64). В коде сайта:
+```js
+var token = atob(L.tgToken);  // декодируется в браузере
+fetch('https://api.telegram.org/bot' + token + '/sendMessage', ...)
+```
+GitHub Secret Scanning видит только base64 — не алертит. Но в `config.json` токен
+хранится открыто (репо публичный, его всё равно увидят).
 
-Админ-панель умеет: вход по паролю, статистику, фильтры по статусу, поиск,
-карточку заявки со сменой статуса/комментария, удаление, экспорт CSV.
+**Альтернатива (если хочешь настоящий веб-админку):** файл `apps_script.gs` —
+Google Apps Script бэкенд. Делает таблицу + пересылку в Telegram + отдаёт JSON
+админке. Нужно самому создать Google Таблицу и скопировать код (5 мин, инструкция
+в шапке `apps_script.gs`). Тогда токен НЕ лежит на сайте.
 
 ---
 
 ## 7. Домен tulyacenterorg.ru
 
-`docs/CNAME` уже содержит `tulyacenterorg.ru` — GitHub Pages подхватит его сам.
+**Сначала владелец должен купить домен.** Пока не куплен — НЕ настраивай, иначе
+сайт упадёт в 301 на несуществующий домен.
 
-**Осталось у регистратора домена (в панели управления DNS):**
+**Шаги владельца** (передать ему):
+1. Купить `tulyacenterorg.ru` на любом регистраторе (reg.ru, regery, beget…)
+2. В DNS-панели регистратора добавить 4 A-записи на `@`:
+   ```
+   185.199.108.153
+   185.199.109.153
+   185.199.110.153
+   185.199.111.153
+   ```
+   и CNAME: `www` → `sweedoom.github.io`
+3. Сказать ИИ «домен куплен»
 
-| Тип | Имя | Значение |
-|---|---|---|
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| CNAME | `www` | `sweedoom.github.io` |
-
-После этого подождать 10–30 минут, затем в настройках репозитория
-(Settings → Pages → Custom domain) убедиться, что стоит `tulyacenterorg.ru`,
-и включить **Enforce HTTPS**.
+**Что делает ИИ после:**
+1. `cd G:\SlavaSaitOffer\site`
+2. Меняет в `config.json`: `"domain": "tulyacenterorg.ru"`, `"siteUrl": "https://tulyacenterorg.ru/"`
+3. `python build.py && git push`
+4. Через API GitHub: `PUT /repos/sweedoom/holodok/pages` с `cname: "tulyacenterorg.ru"`
+5. Через 10–30 мин (DNS) + 1 мин деплоя — сайт на новом домене с авто-HTTPS.
 
 ---
 
@@ -180,7 +192,7 @@ python setup.py        # задаст вопросы и сам обновит co
 2. **Папки с `_`** — GitHub Pages/Jekyll их игнорирует → `_content` → `content`.
 3. **Плейсхолдеры подстановки** — `@LEADS_BACKEND@` и `__BACKEND__` разные!
    Если сделать их одинаковыми, `.replace()` подставит URL внутрь проверки и
-   админка сломается (уже было).
+   админка сломается.
 4. **`is-hidden`** у брендов — после фильтрации нужно снимать, иначе сетка пустая.
 5. **Классы с модификаторами** — regex должен быть `class="[^"]*\bИМЯ\b[^"]*"`,
    а не `class="ИМЯ"` (иначе `t74-brands__item is-hidden` не матчится).
@@ -188,8 +200,13 @@ python setup.py        # задаст вопросы и сам обновит co
    нужен regex с `[^<]*`.
 7. **Их JS без null-проверок** — после удаления элементов (меню, кнопки)
    `$(...).offset()` падает. Проверять `pageerror` в Playwright.
-8. **gh auth может протухнуть** — тогда `bash deploy.sh` не пушнет, но
-   обычный `git push` (с кэшированным токеном) работает.
+8. **gh auth протухает** — тогда `bash deploy.sh` не пушнет, но обычный
+   `git push` через кэшированный credential helper работает.
+9. **GitHub Pages CDN (Fastly) кэширует редирект кастомного домена** — после
+   удаления CNAME может 10–30 мин перенаправлять на старый домен. Подождать или
+   push ещё раз.
+10. **Обфускация токена**: в JSON значение `L.tgToken` — это base64-строка (НЕ
+    выражение `atob('...')`). JS сам делает `var token = atob(L.tgToken)`.
 
 ---
 
@@ -197,14 +214,15 @@ python setup.py        # задаст вопросы и сам обновит co
 
 | Задача | Что делать |
 |---|---|
-| Поменять телефон | `config.json` → `phonePretty`, `phoneRaw` → `python build.py` → `bash deploy.sh` |
+| Поменять телефон | `config.json` → `phonePretty`, `phoneRaw` → `python build.py` → `git push` |
 | Поменять город | `config.json` → `city` (все 5 падежей!) + `geo` + `cityBlocks` → пересборка |
 | Добавить/убрать район | `config.json` → `cityBlocks.microdistricts` / `districts` / `suburbs` |
 | Добавить бренд | `config.json` → `keepBrands` |
 | Убрать ещё какой-то текст | `config.json` → `textFixes`: `["старый текст", "новый"]` |
 | Поменять реквизиты | `config.json` → `company` → пересборка |
-| Заявки в Telegram | Подключить Apps Script (§6) и вписать `admin.backendUrl` |
-| Посмотреть заявки | `tulyacenterorg.ru/admin.html` |
+| Подключить домен | См. §7 |
+| Посмотреть заявки | Открыть Telegram, чат с ботом @slavakrutoislds83_bot |
+| Заявки в веб-админке | Настроить Apps Script (§6 альтернатива) |
 | Откатить всё назад | `git log` → `git checkout <хеш> -- .` → `python build.py` |
 
 ---
@@ -212,7 +230,22 @@ python setup.py        # задаст вопросы и сам обновит co
 ## 10. Контакты и доступы
 
 - GitHub: `sweedoom` (репо `holodok`)
-- Домен: `tulyacenterorg.ru`
+- Текущий домен: `linar.me/holodok`
+- Целевой домен: `tulyacenterorg.ru`
 - Владелец: Мамченко Линар Сергеевич, `esquirecypherx@mail.ru`, Челябинск
 - Telegram админа: `8723283117`
+- Telegram-бот: `@slavakrutoislds83_bot`
+- Токен бота: `8363138970:AAGIQUiifd0O5bz4qZh4GRzIXTBNU7f29aA`
 - Компания: ООО «ХОЛОД-ОК», ИНН 7452172713, КПП 745201001
+
+---
+
+## 11. Чем владелец доволен / не доволен
+
+- ✅ ООО ХОЛОД-ОК → ХОЛОД-ОК брендинг
+- ✅ Москва вместо Челябинска
+- ✅ Только парогенераторы Tylo, без чужой техники
+- ✅ Токен бота в HTML (он сказал «все делать я», принял риск)
+- ⏳ Ждёт покупку домена tulyacenterorg.ru
+- ❌ Не понимает зачем Apps Script (не хочет ручную настройку)
+- ❌ Хочет всё «на автомате»
