@@ -168,9 +168,11 @@ h = h.replace("МОСКВА", C["nom"].upper())
 addr = cfg["address"].strip()
 h = h.replace("Цветной бул., 15, стр. 1", addr)
 if not addr:
-    # адреса нет — убираем пустой span и ключ в JSON-LD, чтобы не было "г. Москва, "
+    # адреса нет — убираем пустой span, ключ в JSON-LD и хвост ", " в footer-контактах
     h = re.sub(r',\s*<span itemprop="streetAddress">\s*</span>', "", h)
-    h = re.sub(r'"streetAddress":\s*"",?\s*', "", h)
+    h = re.sub(r'"streetAddress":\s*"[\s]*",?\s*', "", h)
+    h = re.sub(r'(<span class="colored-text[^"]*">г\.\s*' + re.escape(C["nom"]) +
+               r'</span>),\s*</div>', r'\1</div>', h)
 h = h.replace("с 9:00 до 21:00", cfg["workHours"])
 h = h.replace("Mo-Su 09:00-21:00", cfg["openingHours"])
 h = h.replace("55.779919", str(cfg["geo"]["lat"])).replace("37.601771", str(cfg["geo"]["lon"]))
