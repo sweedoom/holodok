@@ -2033,7 +2033,7 @@
             <span itemprop="telephone">+7 (999) 584-43-58</span>
         </a>
 
-                <a href="mailto:nat89323081717@yandex.ru?subject=ХОЛОД-ОК.ru&body=Сайт-ХОЛОД-ОК.ru%0AГород-Москва" class=" contact-block-phone with-svg text-18 darkgray w-600">
+                <a href="/cdn-cgi/l/email-protection#1c727d6824252f2e2f2c242d2b2d2b5c657d72787964326e69236f697e76797f6821ccb9cc82cc87cc82cc8831cc82cc86326e693a7e73786521ccbdccaccca5cd9e31ccb9cc82cc87cc82cc8831cc82cc86326e69392c5dcc8fcca2cd9ccca2cca831cc80cca2cd9dcca6ccaeccac" class=" contact-block-phone with-svg text-18 darkgray w-600">
             <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 6C1 4.89543 1.89543 4 3 4H23C24.1046 4 25 4.89543 25 6V19C25 20.1046 24.1046 21 23 21H3C1.89543 21 1 20.1046 1 19V6Z" stroke="url(#paint0_linear_281_7815)" stroke-width="2" stroke-linejoin="round" />
                 <path d="M2.42131 5.30287C1.91709 4.84067 2.24409 4 2.9281 4H23.0719C23.7559 4 24.0829 4.84067 23.5787 5.30287L15.0272 13.1418C13.8802 14.1931 12.1198 14.1931 10.9728 13.1418L2.42131 5.30287Z" stroke="url(#paint1_linear_281_7815)" stroke-width="2" stroke-linejoin="round" />
@@ -2048,7 +2048,7 @@
                     </linearGradient>
                 </defs>
             </svg>
-            nat89323081717@yandex.ru        </a>
+            <span class="__cf_email__" data-cfemail="dcb2bda8e4e5efeeefece4edebedeb9ca5bdb2b8b9a4f2aea9">[email&#160;protected]</span>        </a>
         <div class=" contact-block-address with-svg text-16 ">
             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22 11C22 15.346 15.8077 20.9022 13.1687 23.0727C12.4838 23.636 11.5162 23.636 10.8313 23.0727C8.19234 20.9022 2 15.346 2 11C2 5.47715 6.47715 1 12 1C17.5228 1 22 5.47715 22 11Z" stroke="url(#paint0_linear_281_7818)" stroke-width="2" />
@@ -2483,7 +2483,7 @@
               </defs>
             </svg>
 
-                        <a class="darkgray" href="mailto:nat89323081717@yandex.ru?subject=ХОЛОД-ОК.ru&body=Сайт-ХОЛОД-ОК.ru%0AГород-Москва">nat89323081717@yandex.ru</a>
+                        <a class="darkgray" href="/cdn-cgi/l/email-protection#157b74612d2c262726252d24222422556c747b71706d3b67602a6660777f70766128c5b0c58bc58ec58bc58138c58bc58f3b676033777a716c28c5b4c5a5c5acc49738c5b0c58bc58ec58bc58138c58bc58f3b6760302554c586c5abc495c5abc5a138c589c5abc494c5afc5a7c5a5"><span class="__cf_email__" data-cfemail="afc1cedb97969c9d9c9f979e989e98efd6cec1cbcad781ddda">[email&#160;protected]</span></a>
 
           </div>
           <div class="contact-address with-svg text-16 darkgray">
@@ -2561,7 +2561,7 @@
 
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
@@ -2660,7 +2660,7 @@
 
 
 <script>
-window.SITE_LEADS = {"backend": "", "mode": "telegram", "endpoint": "", "tgToken": "ODM2MzEzODk3MDpBQUdJUVVpaWZkME81Yno0cVpoNEdSeklYVEJOVTdmMjlhQQ==", "tgChat": "8723283117"};
+window.SITE_LEADS = {"backend": "", "mode": "backend", "endpoint": ""};
 (function(){
   // Заявка уходит на свой бэкенд (admin.backendUrl в config.json).
   // Все внешние ключи и уведомления живут только на сервере — в коде сайта их нет.
@@ -2685,17 +2685,6 @@ window.SITE_LEADS = {"backend": "", "mode": "telegram", "endpoint": "", "tgToken
     alert('Спасибо! Заявка отправлена, мы перезвоним.');
   }
 
-  function sendTG(d, L){
-    var text = 'Заявка: ' + d.title + '\\nТелефон: ' + d.phone +
-               (d.name ? '\\nИмя: ' + d.name : '') +
-               (d.message ? '\\nСообщение: ' + d.message : '') +
-               (d.promo ? '\\nПромо: ' + d.promo : '') + '\\nСтраница: ' + d.page;
-    var token = atob(L.tgToken);
-    return fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({chat_id: L.tgChat, text: text})
-    });
-  }
   jQuery(function($){
     $('form').off('submit').on('submit', function(e){
       e.preventDefault();
@@ -2711,9 +2700,11 @@ window.SITE_LEADS = {"backend": "", "mode": "telegram", "endpoint": "", "tgToken
         return false;
       }
       
-      sendTG(d, L).then(function(){ ok(form); }).catch(function(){
-        alert('Не удалось отправить. Позвоните нам или напишите на почту.');
-      });
+      var body = encodeURIComponent('Телефон: ' + d.phone + (d.name ? ', Имя: ' + d.name : '') +
+                 (d.message ? ', Сообщение: ' + d.message : '') + '\\nСтраница: ' + d.page);
+      window.location.href = 'mailto:nat89323081717@yandex.ru?subject=' +
+        encodeURIComponent(d.title) + '&body=' + body;
+      ok(form);
       return false;
     });
     // AJAX-подгрузка отзывов на статике не работает - прячем кнопку

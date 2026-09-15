@@ -12,7 +12,7 @@ async def main():
         pg.on("dialog", lambda d: asyncio.ensure_future(d.dismiss()))
         errs = []
         pg.on("pageerror", lambda e: errs.append(str(e)))
-        await pg.goto("http://127.0.0.1:8125/index.html", wait_until="load", timeout=60000)
+        await pg.goto("http://127.0.0.1:8129/index.html", wait_until="load", timeout=60000)
         await pg.wait_for_timeout(2500)
 
         await pg.fill("#phone-main", "+7 (912) 345-67-89")
