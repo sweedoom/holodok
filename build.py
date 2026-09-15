@@ -190,12 +190,13 @@ for a, b in cfg.get("textFixes", []):
 # 8c. оставляем только бренды парогенераторов
 KB = set(cfg.get("keepBrands", []))
 if KB:
-    h = re.sub(r'<a[^>]*class="t74-brands__item"[^>]*>\s*<div class="t74-brands__logo">\s*'
-               r'<span class="t74-brands__logo-text">([^<]+)</span>\s*</div>\s*</a>',
+    h = re.sub(r'<a[^>]*class="[^"]*\bt74-brands__item\b[^"]*"[^>]*>\s*'
+               r'<div class="[^"]*\bt74-brands__logo\b[^"]*"[^>]*>\s*'
+               r'<span class="[^"]*\bt74-brands__logo-text\b[^"]*">([^<]+)</span>\s*</div>\s*</a>',
                lambda m: m.group(0) if m.group(1).strip() in KB else "", h)
-    h = re.sub(r'<span class="t74-masters__tag"[^>]*>([^<]+)</span>',
+    h = re.sub(r'<span class="[^"]*\bt74-masters__tag\b[^"]*"[^>]*>([^<]+)</span>',
                lambda m: m.group(0) if m.group(1).strip() in KB else "", h)
-    log(f"[brands] оставлено брендов: {len(KB)}")
+    log(f"[brands] keep-список: {len(KB)}")
 
 # 8d. дисклеймер по чужим торговым маркам
 for kw in cfg.get("dropListItems", []):
