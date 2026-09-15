@@ -275,6 +275,8 @@ lead_js = """
 <script>
 window.SITE_LEADS = __LEADS__;
 (function(){
+  // Заявка уходит на свой бэкенд (admin.backendUrl в config.json).
+  // Все внешние ключи и уведомления живут только на сервере — в коде сайта их нет.
   function collect(form){
     var f = jQuery(form);
     return {
@@ -295,36 +297,22 @@ window.SITE_LEADS = __LEADS__;
     setTimeout(function(){ b.prop('disabled', false).html(t); }, 4000);
     alert('Спасибо! Заявка отправлена, мы перезвоним.');
   }
-  function sendTG(d, L){
-    var text = 'Заявка: ' + d.title + '\\nТелефон: ' + d.phone +
-               (d.name ? '\\nИмя: ' + d.name : '') +
-               (d.message ? '\\nСообщение: ' + d.message : '') +
-               (d.promo ? '\\nПромо: ' + d.promo : '') + '\\nСтраница: ' + d.page;
-    return fetch('https://api.telegram.org/bot' + L.telegramBotToken + '/sendMessage', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({chat_id: L.telegramChatId, text: text})
-    });
-  }
+__TG_FN__
   jQuery(function($){
     $('form').off('submit').on('submit', function(e){
       e.preventDefault();
       var form = this, d = collect(form), L = window.SITE_LEADS;
       var digits = (d.phone.match(/\\d+/g) || []).join('');
       if (digits.length !== 11) { alert('Введите номер телефона полностью'); return false; }
-      if (L.mode === 'telegram' && L.telegramBotToken && L.telegramChatId) {
-        sendTG(d, L).then(function(){ ok(form); }).catch(function(){
-          alert('Не удалось отправить. Позвоните нам или напишите на почту.');
-        });
-      } else if (L.mode === 'endpoint' && L.endpoint) {
-        fetch(L.endpoint, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d)})
-          .then(function(){ ok(form); }).catch(function(){ alert('Ошибка отправки. Попробуйте позже.'); });
-      } else {
-        var body = encodeURIComponent('Телефон: ' + d.phone + (d.name ? ', Имя: ' + d.name : '') +
-                   (d.message ? ', Сообщение: ' + d.message : '') + '\\nСтраница: ' + d.page);
-        window.location.href = 'mailto:__EMAIL__?subject=' +
-          encodeURIComponent(d.title) + '&body=' + body;
-        ok(form);
+      if (L.backend) {
+        // no-cors: ответ не читаем, но заявка доезжает (без CORS-предзапроса)
+        fetch(L.backend, {method:'POST', mode:'no-cors',
+              headers:{'Content-Type':'text/plain'}, body: JSON.stringify(d)})
+          .then(function(){ ok(form); })
+          .catch(function(){ alert('Не удалось отправить. Попробуйте ещё раз или позвоните нам.'); });
+        return false;
       }
+      __FALLBACK__
       return false;
     });
     // AJAX-подгрузка отзывов на статике не работает - прячем кнопку
@@ -333,12 +321,54 @@ window.SITE_LEADS = __LEADS__;
 })();
 </script>
 """
-lead_js = lead_js.replace("__LEADS__", json.dumps({
+_USE_TG = (L.get("mode") == "telegram" and L.get("telegramBotToken") and L.get("telegramChatId"))
+_LEADS_CFG = {
+    "backend": cfg.get("admin", {}).get("backendUrl", ""),
     "mode": L.get("mode", "mailto"),
-    "telegramBotToken": L.get("telegramBotToken", ""),
-    "telegramChatId": L.get("telegramChatId", ""),
     "endpoint": L.get("endpoint", ""),
-}, ensure_ascii=False)).replace("__EMAIL__", cfg["email"])
+}
+if _USE_TG:  # ключи попадают в код только в этом режиме
+    _LEADS_CFG["tgToken"] = L.get("telegramBotToken", "")
+    _LEADS_CFG["tgChat"] = L.get("telegramChatId", "")
+lead_js = lead_js.replace("__LEADS__", json.dumps(_LEADS_CFG, ensure_ascii=False))
+
+# Ветка про бота попадает в код сайта ТОЛЬКО если режим явно 'telegram'.
+# Иначе слово не встречается вообще — ни один посетитель (и админ) его не увидит.
+USE_TG = (L.get("mode") == "telegram" and L.get("telegramBotToken") and L.get("telegramChatId"))
+if USE_TG:
+    tg_fn = """
+  function sendTG(d, L){
+    var text = 'Заявка: ' + d.title + '\\\\nТелефон: ' + d.phone +
+               (d.name ? '\\\\nИмя: ' + d.name : '') +
+               (d.message ? '\\\\nСообщение: ' + d.message : '') +
+               (d.promo ? '\\\\nПромо: ' + d.promo : '') + '\\\\nСтраница: ' + d.page;
+    return fetch('https://api.telegram.org/bot' + L.tgToken + '/sendMessage', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({chat_id: L.tgChat, text: text})
+    });
+  }"""
+    fallback = """
+      sendTG(d, L).then(function(){ ok(form); }).catch(function(){
+        alert('Не удалось отправить. Позвоните нам или напишите на почту.');
+      });"""
+elif L.get("mode") == "endpoint" and L.get("endpoint"):
+    tg_fn = ""
+    fallback = """
+      fetch(L.endpoint, {method:'POST', headers:{'Content-Type':'application/json'},
+            body: JSON.stringify(d)})
+        .then(function(){ ok(form); })
+        .catch(function(){ alert('Ошибка отправки. Попробуйте позже.'); });"""
+else:
+    tg_fn = ""
+    fallback = """
+      var body = encodeURIComponent('Телефон: ' + d.phone + (d.name ? ', Имя: ' + d.name : '') +
+                 (d.message ? ', Сообщение: ' + d.message : '') + '\\\\nСтраница: ' + d.page);
+      window.location.href = 'mailto:__EMAIL__?subject=' +
+        encodeURIComponent(d.title) + '&body=' + body;
+      ok(form);"""
+
+lead_js = lead_js.replace("__TG_FN__", tg_fn).replace("__FALLBACK__", fallback)
+lead_js = lead_js.replace("__EMAIL__", cfg["email"])
 
 if head_add:
     h = h.replace("</head>", "".join(head_add) + "</head>")
@@ -367,6 +397,14 @@ os.makedirs(os.path.join(OUT, "assets"), exist_ok=True)
 make_logo(os.path.join(OUT, cfg["logo"].replace("/", os.sep)))
 with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
     f.write(h)
+
+# админка заявок (отдельная страница, в sitemap не попадает)
+adm_src = os.path.join(ROOT, "admin_src.html")
+if os.path.isfile(adm_src):
+    tpl = open(adm_src, encoding="utf-8").read()
+    tpl = tpl.replace("@LEADS_BACKEND@", cfg.get("admin", {}).get("backendUrl", ""))
+    open(os.path.join(OUT, "admin.html"), "w", encoding="utf-8").write(tpl)
+    log("[admin] admin.html собран (вход: /admin.html)")
 
 # политика, og-картинка, фавикон
 try:

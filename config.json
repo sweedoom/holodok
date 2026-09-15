@@ -122,13 +122,18 @@
     "_comment": "Свои счётчики: yandex: [\"12345678\"], gtag: \"G-XXXXXXX\". Пусто = чужие счётчики вырезаны."
   },
 
+  "admin": {
+    "backendUrl": "",
+    "_comment": "URL бэкенда (Google Apps Script /exec). Заявки идут ТУДА, а он сам шлёт их в Telegram — токен бота остаётся на сервере и не светится ни в сайте, ни в админке"
+  },
+
   "leads": {
-    "mode": "mailto",
-    "_modes": "telegram | endpoint | mailto",
+    "mode": "backend",
+    "_modes": "backend | telegram | endpoint | mailto",
     "telegramBotToken": "",
     "telegramChatId": "",
     "endpoint": "",
-    "_comment": "Пути заявок: telegram (нужен токен бота + chat_id), endpoint (Formspree/свой URL), mailto (открывает почтовик)"
+    "_comment": "Режим backend — основной. Токен бота НЕ хранить здесь (репозиторий публичный!) — он лежит в Apps Script"
   },
 
   "internalLinks": "#",
