@@ -196,6 +196,8 @@ if KB:
                lambda m: m.group(0) if m.group(1).strip() in KB else "", h)
     h = re.sub(r'<span class="[^"]*\bt74-masters__tag\b[^"]*"[^>]*>([^<]+)</span>',
                lambda m: m.group(0) if m.group(1).strip() in KB else "", h)
+    # снимаем is-hidden (он был на брендах с позиций 13+, но после фильтрации они стали единственными)
+    h = re.sub(r'(<a[^>]*class="[^"]*\bt74-brands__item\b[^"]*) is-hidden"', r'\1"', h)
     log(f"[brands] keep-список: {len(KB)}")
 
 # 8d. дисклеймер по чужим торговым маркам
