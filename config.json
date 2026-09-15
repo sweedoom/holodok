@@ -3,9 +3,8 @@
 
   "brand": "ХОЛОД-ОК",
   "brandSlug": "holodok",
-  "siteUrl": "https://tulyacenterorg.ru/",
-  "domain": "tulyacenterorg.ru",
-  "_domain_comment": "Основной домен. Создаёт файл CNAME в docs/ и подставляется в sitemap/robots/og",
+  "siteUrl": "https://sweedoom.github.io/holodok/",
+  "_domain_comment": "Когда купишь домен — скажи, я пропишу его сюда (поле domain) и всё пересоберу",
 
   "phonePretty": "+7 (999) 584-43-58",
   "phoneRaw": "+79995844358",
