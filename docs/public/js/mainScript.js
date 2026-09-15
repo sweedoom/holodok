@@ -889,6 +889,8 @@ $(document).ready(function () {
 
   $(window).scroll(function () {
     var $element = $('.cat-button.has-parent'); // указать класс вашего элемента
+    // PATCH: кнопки каталога нет (меню вырезано) — выходим, иначе offset() === undefined
+    if (!$element.length) { return; }
     var distanceTop = $element.offset().top;
     var scrollTop = $(window).scrollTop();
     var distanceToTop = distanceTop - scrollTop;

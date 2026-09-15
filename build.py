@@ -84,6 +84,63 @@ for a, b in (('"/public/', '"public/'), ('"/_content/', '"content/'),
              ("url(/public/", "url(public/"), ("url(/_content/", "url(content/")):
     h = h.replace(a, b)
 
+# 4b. вырезаем блоки чужих категорий техники (каталог, меню, бургер)
+def drop_block(h, tag, cls):
+    """Удаляет <tag class="...cls...">...</tag> с учётом вложенных тегов того же типа."""
+    n = 0
+    pat = re.compile(r'<%s[^>]*class="[^"]*%s[^"]*"[^>]*>' % (tag, re.escape(cls)))
+    o_r, c_r = re.compile(r"<%s\b[^>]*>" % tag), re.compile(r"</%s\s*>" % tag)
+    while True:
+        m = pat.search(h)
+        if not m:
+            break
+        depth, pos, guard, end = 0, m.start(), 0, None
+        while guard < 50000:
+            guard += 1
+            o, c = o_r.search(h, pos), c_r.search(h, pos)
+            if not c:
+                break
+            if o and o.start() < c.start():
+                if h[o.end() - 2:o.end()] != "/>":
+                    depth += 1
+                pos = o.end()
+            else:
+                depth -= 1
+                pos = c.end()
+                if depth == 0:
+                    end = pos
+                    break
+        if end is None:
+            break
+        h = h[:m.start()] + h[pos:]
+        n += 1
+    return h, n
+
+
+for spec in cfg.get("dropBlocks", []):
+    tag, _, cls = spec.partition(".")
+    h, n = drop_block(h, tag, cls)
+    if n:
+        log(f"[clean] вырезан {spec}: {n} шт.")
+
+# 4c. ссылки на чужие разделы (телевизоры, смартфоны и т.п.)
+ALLOW = tuple(cfg.get("keepOnly", []))
+
+
+def slug_ok(href):
+    if not href.startswith("/"):
+        return True
+    return any(href == a or href.startswith(a + "/") for a in ALLOW)
+
+
+before = len(h)
+h = re.sub(r'<li[^>]*>\s*<a[^>]*href="([^"]*)"[^>]*>.*?</a>\s*</li>',
+           lambda m: m.group(0) if slug_ok(m.group(1)) else "", h, flags=re.S)
+h = re.sub(r'<a[^>]*href="([^"]*)"[^>]*>.*?</a>',
+           lambda m: m.group(0) if slug_ok(m.group(1)) else "", h, flags=re.S)
+h = re.sub(r"<ul[^>]*>\s*</ul>", "", h)
+log(f"[clean] ссылки на чужие разделы: -{before - len(h)} симв.")
+
 # 5. внутренние ссылки на несуществующие страницы
 def fix_link(m):
     url = m.group(1)
@@ -108,7 +165,12 @@ h = h.replace("Москвой", C["abl"]).replace("Москву", C["acc"]).repl
 h = h.replace("МОСКВА", C["nom"].upper())
 
 # 8. адрес / время / координаты / рейтинг
-h = h.replace("Цветной бул., 15, стр. 1", cfg["address"])
+addr = cfg["address"].strip()
+h = h.replace("Цветной бул., 15, стр. 1", addr)
+if not addr:
+    # адреса нет — убираем пустой span и ключ в JSON-LD, чтобы не было "г. Москва, "
+    h = re.sub(r',\s*<span itemprop="streetAddress">\s*</span>', "", h)
+    h = re.sub(r'"streetAddress":\s*"",?\s*', "", h)
 h = h.replace("с 9:00 до 21:00", cfg["workHours"])
 h = h.replace("Mo-Su 09:00-21:00", cfg["openingHours"])
 h = h.replace("55.779919", str(cfg["geo"]["lat"])).replace("37.601771", str(cfg["geo"]["lon"]))
@@ -119,12 +181,33 @@ h = h.replace("738 оценок", "%s оценок" % cfg["reviews"])
 h = h.replace("Сервисный центр в Москве", "%s в %s" % (cfg.get("tagline", "Сервисный центр"), C["prep"]))
 h = h.replace(">в Москве<", ">в %s<" % C["prep"])
 
+# 8b. текстовые правки (подмена/удаление упоминаний другой техники)
+for a, b in cfg.get("textFixes", []):
+    if a in h:
+        h = h.replace(a, b)
+        log(f"[text] «{a[:38]}…» → «{b[:38]}…»")
+
+# 8c. оставляем только бренды парогенераторов
+KB = set(cfg.get("keepBrands", []))
+if KB:
+    h = re.sub(r'<a[^>]*class="t74-brands__item"[^>]*>\s*<div class="t74-brands__logo">\s*'
+               r'<span class="t74-brands__logo-text">([^<]+)</span>\s*</div>\s*</a>',
+               lambda m: m.group(0) if m.group(1).strip() in KB else "", h)
+    h = re.sub(r'<span class="t74-masters__tag"[^>]*>([^<]+)</span>',
+               lambda m: m.group(0) if m.group(1).strip() in KB else "", h)
+    log(f"[brands] оставлено брендов: {len(KB)}")
+
+# 8d. дисклеймер по чужим торговым маркам
+for kw in cfg.get("dropListItems", []):
+    h = re.sub(r"<li[^>]*>[^<]*" + re.escape(kw) + r".*?</li>", "", h, flags=re.S)
+h = re.sub(r"<ul[^>]*>\s*</ul>", "", h)
+
 # 9. логотип
 h = h.replace("public/images/logo/logo-header.png", cfg["logo"])
 
 # 9a. гео-блоки под свой город (метро -> микрорайоны, округа -> районы, Подмосковье -> пригороды)
 CB = cfg.get("cityBlocks")
-if CB:
+if CB and CB.get("enabled", True):
     PIN = '<svg class="t74-geo__icon"><use href="#t74-ico-pin" xlink:href="#t74-ico-pin" /></svg>'
 
     def grid(items, cls):
