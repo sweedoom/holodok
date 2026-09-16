@@ -157,15 +157,17 @@ python setup.py        # задаст вопросы и сам обновит co
 - Вход по паролю `holodok2026` (дополнительная защита)
 - **В админке НИ СЛОВА про Telegram, Supabase, бота** — только логотип ХО, таблица заявок, фильтры, статистика, экспорт CSV, изменение статусов/комментариев
 
-**Как подключить Supabase (один раз, ~3 мин):**
-1. Зайди на https://supabase.com → Sign in with GitHub (у тебя GitHub Education)
-2. New project: имя `holodok-leads`, пароль БД любой, регион Europe
-3. SQL Editor → New query → вставь код из файла `supabase.sql` → Run
-4. Settings → API: скопируй **Project URL** и **anon public** ключ
-5. Передай мне эти 2 строки (можно прямо в этот чат)
-6. Я вставлю в `config.json → admin.supabase`, пересоберу и задеплою за 1 минуту
+**Supabase уже подключён и проверен (16.09.2026):**
+- Project URL: `https://wedeflvoryfdkzuodgzg.supabase.co`
+- Таблица `public.leads` создана, RLS включён
+- RPC `admin_leads` создан: веб-админка не читает таблицу напрямую, а работает через закрытую функцию с паролем
+- В конфиге хранится только publishable/anon ключ; secret key на сайт не попадал
+- Тест: заявка записалась в Supabase (HTTP 201), Telegram дал 200 первому админу и 400 второму до `/start`; ошибка второго не блокирует первого
+- Тестовые строки после проверки удалены
 
-После этого заявки появятся в админке, и заработает параллельная отправка.
+**Чтобы открыть панель:**
+`http://linar.me/holodok/admin-a7f3c9.html` → пароль `holodok2026`.
+После покупки домена адрес будет `https://tulyacenterorg.ru/admin-a7f3c9.html`.
 
 **Если нужен Apps Script вместо Supabase** (старая схема, оставлена на всякий случай):
 файл `apps_script.gs` — Google Таблица + пересылка + JSON API. Работает, но требует

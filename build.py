@@ -449,9 +449,11 @@ adm_src = os.path.join(ROOT, "admin_src.html")
 
 if os.path.isfile(adm_src) and _HAS_STORE:
     tpl = open(adm_src, encoding="utf-8").read()
+    import base64
+    _sb64 = lambda x: base64.b64encode(str(x).encode()).decode()
     tpl = (tpl.replace("@LEADS_BACKEND@", _adm_url)
-              .replace("@SB_URL@", _sb.get("url", ""))
-              .replace("@SB_KEY@", _sb.get("anonKey", ""))
+              .replace("@SB_URL_B64@", _sb64(_sb.get("url", "")))
+              .replace("@SB_KEY_B64@", _sb64(_sb.get("anonKey", "")))
               .replace("@ADMIN_PW@", A.get("password", "")))
     open(_adm_out, "w", encoding="utf-8").write(tpl)
     log(f"[admin] {_ADM_PAGE} собран (хранилище: "

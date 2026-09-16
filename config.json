@@ -181,8 +181,8 @@
     "password": "holodok2026",
     "_password_comment": "Пароль входа в админку. Основная защита — неочевидный адрес страницы",
     "supabase": {
-      "url": "",
-      "anonKey": ""
+      "url": "https://wedeflvoryfdkzuodgzg.supabase.co",
+      "anonKey": "sb_publishable_6MB90Z-Ms5wFxAMtRMPa2w_6-ce8Qov"
     },
     "_supabase_comment": "Supabase: Project URL + anon public ключ. Как получить — в supabase.sql и PROJECT.md §6",
     "backendUrl": "",
