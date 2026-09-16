@@ -141,6 +141,14 @@ h = re.sub(r'<a[^>]*href="([^"]*)"[^>]*>.*?</a>',
 h = re.sub(r"<ul[^>]*>\s*</ul>", "", h)
 log(f"[clean] ссылки на чужие разделы: -{before - len(h)} симв.")
 
+# 4d. убираем пустые preload hints и дублирующийся id телефона
+h = re.sub(r'<link[^>]+(?:rel="preconnect"|rel="dns-prefetch")[^>]+href="#"[^>]*>', '', h)
+_phone_id = 'id="phone-main"'
+_first_phone = h.find(_phone_id)
+_second_phone = h.find(_phone_id, _first_phone + len(_phone_id)) if _first_phone >= 0 else -1
+if _second_phone >= 0:
+    h = h[:_second_phone] + 'id="phone-main-2"' + h[_second_phone + len(_phone_id):]
+
 # 5. внутренние ссылки на несуществующие страницы
 def fix_link(m):
     url = m.group(1)
@@ -173,6 +181,10 @@ if not addr:
     h = re.sub(r'"streetAddress":\s*"[\s]*",?\s*', "", h)
     h = re.sub(r'(<span class="colored-text[^"]*">г\.\s*' + re.escape(C["nom"]) +
                r'</span>),\s*</div>', r'\1</div>', h)
+    # В шапке нельзя оставлять одну иконку-пин без подписи: показываем город.
+    h = re.sub(r'<div class="address-block text-14 w-500">.*?</div>',
+               '<div class="address-block text-14 w-500"><span class="colored-text">г. %s</span></div>' % C["nom"],
+               h, count=1, flags=re.S)
 h = h.replace("с 9:00 до 21:00", cfg["workHours"])
 h = h.replace("Mo-Su 09:00-21:00", cfg["openingHours"])
 h = h.replace("55.779919", str(cfg["geo"]["lat"])).replace("37.601771", str(cfg["geo"]["lon"]))
@@ -198,11 +210,53 @@ if KB:
                lambda m: m.group(0) if m.group(1).strip() in KB else "", h)
     h = re.sub(r'<span class="[^"]*\bt74-masters__tag\b[^"]*"[^>]*>([^<]+)</span>',
                lambda m: m.group(0) if m.group(1).strip() in KB else "", h)
+    # Бренды здесь — информационные плашки, а не ссылки. Убираем href="#",
+    # чтобы клик не прыгал в начало страницы.
+    h = re.sub(r'(<a\b[^>]*class="[^"]*\bt74-brands__item\b[^"]*"[^>]*)',
+               lambda m: re.sub(r'\s+href="#"', '', m.group(1)), h)
     # снимаем is-hidden (он был на брендах с позиций 13+, но после фильтрации они стали единственными)
     h = re.sub(r'(<a[^>]*class="[^"]*\bt74-brands__item\b[^"]*) is-hidden"', r'\1"', h)
     log(f"[brands] keep-список: {len(KB)}")
 
-# 8d. дисклеймер по чужим торговым маркам
+# 8d. городское меню: на узком лендинге оставляем только текущий город.
+# Иначе в скрытом выпадающем списке остаются Челябинск и десятки чужих городов.
+def only_current_city(m):
+    block = m.group(0)
+    return re.sub(r'<a\b[^>]*>.*?</a>',
+                  lambda a: a.group(0) if re.sub(r'<[^>]+>', '', a.group(0)).strip().endswith(C["nom"]) else '',
+                  block, flags=re.S)
+
+h = re.sub(r'<div class="dropdown-content (?:header|footer)">.*?</div>', only_current_city, h, flags=re.S)
+# Один город — не показываем нерабочий переключатель Санкт-Петербург/Казань и т.п.
+# Удаляем только неактивные ссылки: у блока есть вложенный div с текущим городом.
+h = re.sub(r'<a href="#" class="other_city-item">.*?</a>', '', h, flags=re.S)
+
+# Меню должно прокручивать к реальным блокам, а не вести на href="#".
+h = h.replace('<section class="t74-steps t74-steps--brand block"',
+              '<section id="steps" class="t74-steps t74-steps--brand block"')
+h = h.replace('<section class="t74-masters block"',
+              '<section id="about" class="t74-masters block"')
+h = h.replace('<section class="new-rev block "',
+              '<section id="reviews" class="new-rev block "')
+h = h.replace('<section class="map block "',
+              '<section id="contacts" class="map block "')
+
+_NAV_TARGETS = {
+    "Доставка": "#steps", "О компании": "#about", "Отзывы": "#reviews",
+    "Цены": "#price", "Контакты": "#contacts", "Ремонт Парогенераторов": "index.html"
+}
+def fix_nav_hash(m):
+    txt = re.sub(r'<[^>]+>', '', m.group(0))
+    txt = re.sub(r'\s+', ' ', txt).strip()
+    for label, target in _NAV_TARGETS.items():
+        if txt == label:
+            return m.group(0).replace('href="#"', 'href="%s"' % target, 1)
+    return m.group(0)
+h = re.sub(r'<a\b[^>]*href="#"[^>]*>.*?</a>', fix_nav_hash, h, flags=re.S)
+# Поисковые карточки на статике ведут к прайсу, а не прыгают наверх.
+h = re.sub(r'(<a\b[^>]*class="[^"]*\bt74-search__item\b[^"]*"[^>]*)href="#"', r'\1href="#price"', h)
+
+# 8e. дисклеймер по чужим торговым маркам
 for kw in cfg.get("dropListItems", []):
     h = re.sub(r"<li[^>]*>[^<]*" + re.escape(kw) + r".*?</li>", "", h, flags=re.S)
 h = re.sub(r"<ul[^>]*>\s*</ul>", "", h)
@@ -411,6 +465,8 @@ lead_js = lead_js.replace("__EMAIL__", cfg["email"])
 
 if head_add:
     h = h.replace("</head>", "".join(head_add) + "</head>")
+# Финальная санитарная проверка head: шаблон иногда возвращает пустые preconnect hints.
+h = re.sub(r'<link[^>]+href="#"[^>]*>', '', h)
 
 # 12. ссылки на политику/согласие (были #) -> реальные страницы
 h = re.sub(r'(<a[^>]*class="[^"]*politic[^"]*"[^>]*)href="#"', r'\1href="politika.html"', h)
