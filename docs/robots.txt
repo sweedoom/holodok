@@ -4,5 +4,5 @@ Disallow: /admin-a7f3c9.html
 Disallow: /public/js/
 Disallow: /public/css/
 
-Sitemap: https://tulyacenterorg.ru/sitemap.xml
-Host: https://tulyacenterorg.ru/
+Sitemap: https://www.tulyacenterorg.ru/sitemap.xml
+Host: https://www.tulyacenterorg.ru/
