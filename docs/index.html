@@ -2643,91 +2643,149 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://www.tulyacenterorg.ru/#localbusiness","name":"ХОЛОД-ОК","url":"https://www.tulyacenterorg.ru/","telephone":"+79995844358","email":"nat89323081717@yandex.ru","address":{"@type":"PostalAddress","addressLocality":"Москва","addressCountry":"RU"},"openingHours":"Mo-Su 09:00-21:00","geo":{"@type":"GeoCoordinates","latitude":55.7558,"longitude":37.6173},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":738,"bestRating":"5"}}</script>
 
 
-
 <script>
-window.SITE_LEADS = {"backend": "", "mode": "telegram", "endpoint": "", "sb": {"url": "https://wedeflvoryfdkzuodgzg.supabase.co", "key": "sb_publishable_6MB90Z-Ms5wFxAMtRMPa2w_6-ce8Qov"}, "tgToken": "ODM2MzEzODk3MDpBQUdJUVVpaWZkME81Yno0cVpoNEdSeklYVEJOVTdmMjlhQQ==", "tgChats": ["8723283117", "731734894"]};
-(function(){
-  // Заявка уходит на свой бэкенд (admin.backendUrl в config.json).
-  // Все внешние ключи и уведомления живут только на сервере — в коде сайта их нет.
-  function collect(form){
-    var f = jQuery(form);
-    return {
-      title: f.find('input[name="title"]').val() || 'Заявка с сайта',
-      name: f.find('input[name="your-name"]').val() || '',
-      phone: f.find('input[name="your-tel"]').val() || '',
-      message: f.find('[name="your-textarea"]').val() || '',
-      select: f.find('input[name="select"]').val() || '',
-      promo: f.find('input[name="promo"]').val() || '',
-      page: location.href
-    };
-  }
-  function ok(form){
-    jQuery('.overlay').removeClass('overlay_active');
-    jQuery('.modal_size_small').removeClass('modal_active');
-    var b = jQuery(form).find('button');
-    var t = b.html(); b.prop('disabled', true).html('Отправлено');
-    setTimeout(function(){ b.prop('disabled', false).html(t); }, 4000);
-    alert('Спасибо! Заявка отправлена, мы перезвоним.');
-  }
+window.SITE_LEADS = {"mode": "telegram", "tgToken": "ODM2MzEzODk3MDpBQUdJUVVpaWZkME81Yno0cVpoNEdSeklYVEJOVTdmMjlhQQ==", "tgChats": ["8723283117", "731734894"], "sourceName": "Сайт Tylo (Челябинск)", "sb": {"url": "https://wedeflvoryfdkzuodgzg.supabase.co", "key": "sb_publishable_6MB90Z-Ms5wFxAMtRMPa2w_6-ce8Qov"}, "site": "holodok", "phone": "+7 (999) 584-43-58"};
+/* Public forms client. Two independent channels, no server needed:
+   1) Telegram sendMessage to each admin chat (token is base64 in cfg);
+   2) Supabase REST insert into public.leads (anon key, insert-only RLS).
+   Each channel fails silently on its own — the visitor sees success if at
+   least one channel accepted the lead. Site tag goes into `utm` (legacy
+   scheme) so each admin panel can pick out its own leads. */
+(function () {
+  'use strict';
+  var cfg = window.SITE_LEADS || {};
+  function b64d(s) { try { return s ? atob(s) : ''; } catch (e) { return ''; } }
+  var TG_TOKEN = b64d(cfg.tgToken);
+  var CHATS = Array.isArray(cfg.tgChats) ? cfg.tgChats : [];
 
-  function sendTG(d, L){
-    var text = 'Заявка: ' + d.title + '\\nТелефон: ' + d.phone +
-               (d.name ? '\\nИмя: ' + d.name : '') +
-               (d.message ? '\\nСообщение: ' + d.message : '') +
-               (d.promo ? '\\nПромо: ' + d.promo : '') + '\\nСтраница: ' + d.page;
-    var token = atob(L.tgToken);
-    var chats = L.tgChats || [];
-    // заявка уходит КАЖДОМУ админу; если кто-то ещё не нажал /start боту —
-    // его отправка просто проваливается, остальные всё равно получат
-    return Promise.all(chats.map(function(chat){
-      return fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({chat_id: chat, text: text})
-      }).catch(function(){ return null; });
-    }));
+  function field(form, selector) {
+    var el = form.querySelector(selector);
+    return el ? String(el.value || '').trim() : '';
   }
-  jQuery(function($){
-    $('form').off('submit').on('submit', function(e){
-      e.preventDefault();
-      var form = this, d = collect(form), L = window.SITE_LEADS;
-      var digits = (d.phone.match(/\d+/g) || []).join('');
-      if (digits.length !== 11) { alert('Введите номер телефона полностью'); return false; }
-      // 1. Кладём заявку в хранилище (если подключено). Ошибки глушим —
-      //    заявка всё равно дойдёт по основному каналу.
-      var storeP = null;
-      if (L.sb && L.sb.url && L.sb.key) {
-        storeP = fetch(L.sb.url + '/rest/v1/leads', {
-          method: 'POST',
-          headers: {apikey: L.sb.key, Authorization: 'Bearer ' + L.sb.key,
-                    'Content-Type': 'application/json', Prefer: 'return=minimal'},
-          body: JSON.stringify({name: d.name, phone: d.phone, message: d.message,
-                                source: d.title, page: d.page, status: 'new'})
-        }).catch(function(){ return null; });
-      } else if (L.backend) {
-        storeP = fetch(L.backend, {method:'POST', mode:'no-cors',
-              headers:{'Content-Type':'text/plain'}, body: JSON.stringify(d)})
-              .catch(function(){ return null; });
+  function status(form, text, success) {
+    var el = form.querySelector('[data-lead-status]');
+    if (!el) {
+      el = document.createElement('div'); el.dataset.leadStatus = '1';
+      el.setAttribute('role', 'status'); el.setAttribute('aria-live', 'polite');
+      el.style.cssText = 'padding:12px 0;font-size:15px;line-height:1.5;white-space:normal';
+      form.appendChild(el);
+    }
+    el.className = success ? 'thanks_form' : 'lead-error';
+    el.style.color = success ? '#15723d' : '#b42318'; el.textContent = text;
+  }
+  function eligible(form) {
+    return form.matches('form.feedback') || !!form.querySelector('[name="your-tel"]');
+  }
+  function prepare() {
+    document.querySelectorAll('form').forEach(function (form) {
+      if (!eligible(form) || form.dataset.leadPrepared) return;
+      form.dataset.leadPrepared = '1';
+      var phone = form.querySelector('[name="form_phone"], [name="your-tel"]');
+      if (phone) { phone.required = true; phone.setAttribute('autocomplete', 'tel'); phone.setAttribute('inputmode', 'tel'); }
+      var checks = form.querySelectorAll('input[type="checkbox"]');
+      checks.forEach(function (check) { check.required = true; check.checked = false; });
+      if (!checks.length) {
+        var label = document.createElement('label');
+        label.style.cssText = 'display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.5;margin:14px 0';
+        var check = document.createElement('input'); check.type = 'checkbox'; check.name = 'consent'; check.required = true;
+        check.style.cssText = 'width:18px;height:18px;flex:none;appearance:auto';
+        label.appendChild(check);
+        var text = document.createElement('span'); text.appendChild(document.createTextNode('Согласен на '));
+        var link = document.createElement('a'); link.href = 'politika.html'; link.target = '_blank'; link.rel = 'noopener';
+        link.textContent = 'обработку персональных данных'; text.appendChild(link); label.appendChild(text);
+        form.appendChild(label);
       }
-
-      // 2. Основной канал + подтверждение посетителю
-      if (L.mode === 'telegram' && L.tgToken && L.tgChats && L.tgChats.length) {
-        sendTG(d, L).then(function(){ ok(form); }).catch(function(){ ok(form); });
-      } else if (storeP) {
-        storeP.then(function(){ ok(form); })
-              .catch(function(){ ok(form); });
-      } else {
-        
-      sendTG(d, L).then(function(){ ok(form); }).catch(function(){
-        alert('Не удалось отправить. Позвоните нам или напишите на почту.');
-      });
-      }
-      return false;
+      var trap = document.createElement('input');
+      trap.type = 'text'; trap.name = 'website'; trap.tabIndex = -1; trap.autocomplete = 'off';
+      trap.setAttribute('aria-hidden', 'true');
+      trap.style.cssText = 'position:absolute;left:-10000px;width:1px;height:1px;opacity:0';
+      form.appendChild(trap);
     });
-    // AJAX-подгрузка отзывов на статике не работает - прячем кнопку
-    if (!$('#url-review').val().match(/^https?:/)) { $('.new-rev').hide(); }
-  });
+  }
+
+  function tgText(d) {
+    return 'Новая заявка\n' +
+      'Источник: ' + (cfg.sourceName || cfg.site || '—') + '\n' +
+      'Форма: ' + (d.source || '—') + '\n' +
+      'Телефон: ' + d.phone +
+      (d.name ? '\nИмя: ' + d.name : '') +
+      (d.message ? '\nСообщение: ' + d.message : '') +
+      (d.page ? '\nСтраница: ' + d.page : '');
+  }
+  /* Telegram: каждому админу; кто ещё не нажал /start боту — его отправка
+     просто проваливается, остальные всё равно получат. */
+  function sendTG(d) {
+    if (!TG_TOKEN || !CHATS.length) return Promise.resolve(0);
+    var text = tgText(d);
+    return Promise.all(CHATS.map(function (chat) {
+      return fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chat, text: text })
+      }).then(function (r) { return r.ok ? 1 : 0; }).catch(function () { return 0; });
+    })).then(function (a) { return a.reduce(function (x, y) { return x + y; }, 0); });
+  }
+  /* Supabase: общее хранилище заявок. Тег сайта кладём в utm (старая схема —
+     колонки site в таблице нет, admin-панели опознают свои заявки по тегу). */
+  function sendSB(d) {
+    var sb = cfg.sb || {};
+    if (!sb.url || !sb.key) return Promise.resolve(0);
+    return fetch(sb.url + '/rest/v1/leads', {
+      method: 'POST',
+      headers: { apikey: sb.key, Authorization: 'Bearer ' + sb.key,
+                 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+      body: JSON.stringify({ name: d.name, phone: d.phone, message: d.message,
+                             source: d.source, page: d.page, status: 'new',
+                             utm: cfg.site || '' })
+    }).then(function (r) { return r.ok ? 1 : 0; }).catch(function () { return 0; });
+  }
+
+  document.addEventListener('submit', async function (event) {
+    var form = event.target;
+    if (!eligible(form)) return;
+    event.preventDefault(); event.stopImmediatePropagation();
+    if (form.dataset.leadBusy === '1' || form.dataset.leadDone === '1') return;
+    if (!form.reportValidity()) return;
+    var consent = Array.from(form.querySelectorAll('input[type="checkbox"]'));
+    if (!consent.length || consent.some(function (check) { return !check.checked; })) {
+      status(form, 'Подтвердите согласие на обработку персональных данных.', false); return;
+    }
+    var phone = field(form, '[name="form_phone"], [name="your-tel"]');
+    var digits = phone.replace(/\D/g, '');
+    if (digits.length !== 11 || !/^[78]/.test(digits)) {
+      status(form, 'Введите телефон полностью: +7 и ещё 10 цифр.', false); return;
+    }
+    if (field(form, '[name="website"]')) return;   // honeypot
+    var titleEl = form.querySelector('.title');
+    var title = field(form, '[name="title"]') || (titleEl ? titleEl.textContent.trim() : '') || 'Заявка с сайта';
+    if (!form._leadPayload) {
+      var extras = [field(form, '[name="select"]'), field(form, '[name="promo"]')].filter(Boolean);
+      form._leadPayload = {
+        name: field(form, '[name="form_name"], [name="your-name"]'),
+        phone: '+7' + digits.slice(1),
+        message: [field(form, '[name="form_message"], [name="your-textarea"]')].concat(extras).filter(Boolean).join('\n').slice(0, 2000),
+        source: title.slice(0, 120), page: (location.origin + location.pathname).slice(0, 500)
+      };
+    }
+    var buttons = Array.from(form.querySelectorAll('button[type="submit"], input[type="submit"], button:not([type])'));
+    buttons.forEach(function (button) { button.disabled = true; });
+    form.dataset.leadBusy = '1'; form.setAttribute('aria-busy', 'true');
+    status(form, 'Отправляем заявку…', false);
+    try {
+      var results = await Promise.all([sendTG(form._leadPayload), sendSB(form._leadPayload)]);
+      if (results[0] + results[1] < 1) throw new Error('failed');
+      form.dataset.leadDone = '1';
+      status(form, 'Спасибо! Заявка отправлена. Мы свяжемся с вами.', true);
+      form.querySelectorAll('input, textarea, select').forEach(function (el) { el.disabled = true; });
+    } catch (error) {
+      status(form, 'Не удалось отправить. Попробуйте ещё раз или позвоните: ' + (cfg.phone || ''), false);
+    } finally {
+      form.dataset.leadBusy = '0'; form.removeAttribute('aria-busy');
+      if (form.dataset.leadDone !== '1') buttons.forEach(function (button) { button.disabled = false; });
+    }
+  }, true);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', prepare);
+  else prepare();
 })();
-</script>
-</body>
+</script></body>
 
 </html>

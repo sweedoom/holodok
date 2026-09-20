@@ -5,7 +5,14 @@
 
 Запуск:  python build.py        (Windows: py build.py)
 """
-import json, os, re, shutil, sys
+import json, os, re, shutil, sys, subprocess
+from pathlib import Path
+# Общий помощник сборки: клиент заявок и админка. Подключается по пути
+# ../backend ТОЛЬКО во время сборки (в docs/ из backend ничего не копируется).
+_BACKEND_DIR = Path(__file__).resolve().parent.parent / "backend"
+if str(_BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(_BACKEND_DIR))
+import build_clients  # noqa: E402
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
@@ -46,16 +53,36 @@ def copy_assets():
 
 
 def make_logo(path):
+    """Точная подгонка текста через logo.py (браузер считает реальную ширину).
+    Нет Playwright — считаем грубо, но с выравниванием по ширине блока."""
+    py = sys.executable  # тот же интерпретатор, что запустил build.py
+    try:
+        r = subprocess.run([py, os.path.join(ROOT, "logo.py")],
+                           check=True, cwd=ROOT, capture_output=True, text=True)
+        for line in (r.stdout or "").strip().splitlines():
+            log("  " + line.strip())
+        if os.path.isfile(path):
+            log("[logo] создан (точная подгонка)")
+            return
+    except Exception as e:
+        log("[logo] logo.py недоступен (%s) — грубый расчёт" % str(e)[:80])
+
     brand = cfg["brand"]
+    _th = cfg.get("theme", {}) or {}
+    accent = _th.get("accent") or "#2f81f7"
+    fs = 20
+    w = max(200, 32 + len(brand) * int(fs * 0.68))
+    tl = min(len(brand) * fs * 0.68, w - 32)
     svg = (
-        '<svg xmlns="http://www.w3.org/2000/svg" width="220" height="48" viewBox="0 0 220 48">'
-        '<rect width="220" height="48" rx="8" fill="#00966D"/>'
-        f'<text x="16" y="31" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">{brand}</text>'
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="48" viewBox="0 0 {w} 48">'
+        f'<rect width="{w}" height="48" rx="10" fill="{accent}"/>'
+        f'<text x="16" y="31" font-family="Arial, sans-serif" font-size="{fs}" font-weight="700" '
+        f'fill="#ffffff" textLength="{tl:.0f}" lengthAdjust="spacing">{brand}</text>'
         "</svg>"
     )
     with open(path, "w", encoding="utf-8") as f:
         f.write(svg)
-    log("[logo] создан assets/logo.svg")
+    log("[logo] создан (fallback)")
 
 
 # ------------------------------------------------------------------ html
@@ -325,143 +352,9 @@ if cfg["counters"].get("gtag"):
                     f'<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'
                     f'gtag("js",new Date());gtag("config","{g}");</script>')
 
-lead_js = """
-<script>
-window.SITE_LEADS = __LEADS__;
-(function(){
-  // Заявка уходит на свой бэкенд (admin.backendUrl в config.json).
-  // Все внешние ключи и уведомления живут только на сервере — в коде сайта их нет.
-  function collect(form){
-    var f = jQuery(form);
-    return {
-      title: f.find('input[name="title"]').val() || 'Заявка с сайта',
-      name: f.find('input[name="your-name"]').val() || '',
-      phone: f.find('input[name="your-tel"]').val() || '',
-      message: f.find('[name="your-textarea"]').val() || '',
-      select: f.find('input[name="select"]').val() || '',
-      promo: f.find('input[name="promo"]').val() || '',
-      page: location.href
-    };
-  }
-  function ok(form){
-    jQuery('.overlay').removeClass('overlay_active');
-    jQuery('.modal_size_small').removeClass('modal_active');
-    var b = jQuery(form).find('button');
-    var t = b.html(); b.prop('disabled', true).html('Отправлено');
-    setTimeout(function(){ b.prop('disabled', false).html(t); }, 4000);
-    alert('Спасибо! Заявка отправлена, мы перезвоним.');
-  }
-__TG_FN__
-  jQuery(function($){
-    $('form').off('submit').on('submit', function(e){
-      e.preventDefault();
-      var form = this, d = collect(form), L = window.SITE_LEADS;
-      var digits = (d.phone.match(/\\d+/g) || []).join('');
-      if (digits.length !== 11) { alert('Введите номер телефона полностью'); return false; }
-      // 1. Кладём заявку в хранилище (если подключено). Ошибки глушим —
-      //    заявка всё равно дойдёт по основному каналу.
-      var storeP = null;
-      if (L.sb && L.sb.url && L.sb.key) {
-        storeP = fetch(L.sb.url + '/rest/v1/leads', {
-          method: 'POST',
-          headers: {apikey: L.sb.key, Authorization: 'Bearer ' + L.sb.key,
-                    'Content-Type': 'application/json', Prefer: 'return=minimal'},
-          body: JSON.stringify({name: d.name, phone: d.phone, message: d.message,
-                                source: d.title, page: d.page, status: 'new'})
-        }).catch(function(){ return null; });
-      } else if (L.backend) {
-        storeP = fetch(L.backend, {method:'POST', mode:'no-cors',
-              headers:{'Content-Type':'text/plain'}, body: JSON.stringify(d)})
-              .catch(function(){ return null; });
-      }
-
-      // 2. Основной канал + подтверждение посетителю
-      if (L.mode === 'telegram' && L.tgToken && L.tgChats && L.tgChats.length) {
-        sendTG(d, L).then(function(){ ok(form); }).catch(function(){ ok(form); });
-      } else if (storeP) {
-        storeP.then(function(){ ok(form); })
-              .catch(function(){ ok(form); });
-      } else {
-        __FALLBACK__
-      }
-      return false;
-    });
-    // AJAX-подгрузка отзывов на статике не работает - прячем кнопку
-    if (!$('#url-review').val().match(/^https?:/)) { $('.new-rev').hide(); }
-  });
-})();
-</script>
-"""
-_TG_CHATS = [str(c) for c in (L.get("telegramChatIds") or
-                              ([L["telegramChatId"]] if L.get("telegramChatId") else []))]
-_USE_TG = (L.get("mode") == "telegram" and L.get("telegramBotToken") and bool(_TG_CHATS))
-
-
-def _enc(v):
-    """Обфускация токена, чтобы GitHub Secret Scanning его не ловил.
-    В HTML попадает только base64; браузер декодирует через atob()."""
-    import base64
-    if not v:
-        return ""
-    return base64.b64encode(v.encode()).decode()
-
-
-_SB = cfg.get("admin", {}).get("supabase", {}) or {}
-_LEADS_CFG = {
-    "backend": cfg.get("admin", {}).get("backendUrl", ""),
-    "mode": L.get("mode", "mailto"),
-    "endpoint": L.get("endpoint", ""),
-    "sb": {"url": _SB.get("url", ""), "key": _SB.get("anonKey", "")},
-}
-if _USE_TG:  # ключи попадают в код только в этом режиме
-    _LEADS_CFG["tgToken"] = _enc(L.get("telegramBotToken", ""))
-    _LEADS_CFG["tgChats"] = _TG_CHATS
-    log(f"[leads] заявки уходят в Telegram, получателей: {len(_TG_CHATS)}")
-lead_js = lead_js.replace("__LEADS__", json.dumps(_LEADS_CFG, ensure_ascii=False))
-
-# Ветка про бота попадает в код сайта ТОЛЬКО если режим явно 'telegram'.
-# Иначе слово не встречается вообще — ни один посетитель (и админ) его не увидит.
-USE_TG = _USE_TG  # одна проверка на всё, чтобы конфиг не расходился
-if USE_TG:
-    tg_fn = """
-  function sendTG(d, L){
-    var text = 'Заявка: ' + d.title + '\\\\nТелефон: ' + d.phone +
-               (d.name ? '\\\\nИмя: ' + d.name : '') +
-               (d.message ? '\\\\nСообщение: ' + d.message : '') +
-               (d.promo ? '\\\\nПромо: ' + d.promo : '') + '\\\\nСтраница: ' + d.page;
-    var token = atob(L.tgToken);
-    var chats = L.tgChats || [];
-    // заявка уходит КАЖДОМУ админу; если кто-то ещё не нажал /start боту —
-    // его отправка просто проваливается, остальные всё равно получат
-    return Promise.all(chats.map(function(chat){
-      return fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({chat_id: chat, text: text})
-      }).catch(function(){ return null; });
-    }));
-  }"""
-    fallback = """
-      sendTG(d, L).then(function(){ ok(form); }).catch(function(){
-        alert('Не удалось отправить. Позвоните нам или напишите на почту.');
-      });"""
-elif L.get("mode") == "endpoint" and L.get("endpoint"):
-    tg_fn = ""
-    fallback = """
-      fetch(L.endpoint, {method:'POST', headers:{'Content-Type':'application/json'},
-            body: JSON.stringify(d)})
-        .then(function(){ ok(form); })
-        .catch(function(){ alert('Ошибка отправки. Попробуйте позже.'); });"""
-else:
-    tg_fn = ""
-    fallback = """
-      var body = encodeURIComponent('Телефон: ' + d.phone + (d.name ? ', Имя: ' + d.name : '') +
-                 (d.message ? ', Сообщение: ' + d.message : '') + '\\\\nСтраница: ' + d.page);
-      window.location.href = 'mailto:__EMAIL__?subject=' +
-        encodeURIComponent(d.title) + '&body=' + body;
-      ok(form);"""
-
-lead_js = lead_js.replace("__TG_FN__", tg_fn).replace("__FALLBACK__", fallback)
-lead_js = lead_js.replace("__EMAIL__", cfg["email"])
+lead_html = build_clients.make_lead_script(cfg)
+log("[leads] клиент заявок подключён (endpoint: %s)"
+    % (build_clients.leads_endpoint(cfg) or "не настроен"))
 
 if head_add:
     h = h.replace("</head>", "".join(head_add) + "</head>")
@@ -484,7 +377,7 @@ h = re.sub(r'(<a class="text-14 white w-600" itemprop="url" href="politika\.html
 # модалка: согласие тоже ведём на политику
 h = re.sub(r'<a href="#">([^<]*политик[^<]*)</a>', r'<a href="politika.html">\1</a>', h, flags=re.I)
 
-h = h.replace("</body>", lead_js + "</body>")
+h = h.replace("</body>", lead_html + "</body>")
 
 # ------------------------------------------------------------------ запись
 copy_assets()
@@ -493,46 +386,20 @@ make_logo(os.path.join(OUT, cfg["logo"].replace("/", os.sep)))
 with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
     f.write(h)
 
-# админка: собираем, если подключено хранилище (Supabase или бэкенд).
-# Лежит по неочевидному адресу из config.admin.page — наружу не светим.
-A = cfg.get("admin", {}) or {}
-_adm_url = A.get("backendUrl", "")
-_sb = A.get("supabase", {}) or {}
-_HAS_STORE = bool(_adm_url) or bool(_sb.get("url") and _sb.get("anonKey"))
-_ADM_PAGE = A.get("page") or "admin.html"
-_adm_out = os.path.join(OUT, _ADM_PAGE)
-adm_src = os.path.join(ROOT, "admin_src.html")
-
-if os.path.isfile(adm_src) and _HAS_STORE:
-    tpl = open(adm_src, encoding="utf-8").read()
-    import base64
-    _sb64 = lambda x: base64.b64encode(str(x).encode()).decode()
-    tpl = (tpl.replace("@LEADS_BACKEND@", _adm_url)
-              .replace("@SB_URL_B64@", _sb64(_sb.get("url", "")))
-              .replace("@SB_KEY_B64@", _sb64(_sb.get("anonKey", "")))
-              .replace("@ADMIN_PW@", A.get("password", "")))
-    open(_adm_out, "w", encoding="utf-8").write(tpl)
-    log(f"[admin] {_ADM_PAGE} собран (хранилище: "
-        f"{'supabase' if _sb.get('url') else 'backend'})")
+# админка: страница-шаблон admin_src.html + assets/admin-app.js.
+# Отдельного admin/config.js нет — конфигурация уже внутри страницы.
+_adm_dst = build_clients.render_admin(ROOT, OUT, cfg)
+if _adm_dst:
+    log("[admin] %s собран" % os.path.basename(_adm_dst))
 else:
-    for old in (os.path.join(OUT, "admin.html"), _adm_out):
-        if os.path.isfile(old):
-            try:
-                os.remove(old)
-            except Exception as e:
-                log(f"[admin] не удалось удалить {os.path.basename(old)}: {e}")
-    log("[admin] админка не собирается — хранилище заявок не подключено")
+    log("[admin] нет шаблона admin_src.html")
 
 # политика, og-картинка, фавикон
 try:
     import subprocess
     subprocess.run([sys.executable, os.path.join(ROOT, "policy.py")], check=True, cwd=ROOT)
     subprocess.run([sys.executable, os.path.join(ROOT, "seo.py")], check=True, cwd=ROOT)
-    venv_py = r"C:\Users\Cypher\.workbuddy-ai\binaries\python\envs\default\Scripts\python.exe"
-    if os.path.isfile(venv_py):
-        subprocess.run([venv_py, os.path.join(ROOT, "render_brand.py")], check=True, cwd=ROOT)
-    else:
-        log("[render] пропущен — не найден venv-python")
+    subprocess.run([sys.executable, os.path.join(ROOT, "render_brand.py")], check=True, cwd=ROOT)
 except Exception as e:
     log("[render] ошибка: %s" % e)
 open(os.path.join(OUT, ".nojekyll"), "w").write("")

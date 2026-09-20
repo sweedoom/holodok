@@ -15,7 +15,7 @@ def main():
     robots = (
         "User-agent: *\n"
         "Allow: /\n"
-        f"Disallow: /{adm_page}\n"
+        f"Disallow: /{adm_page.strip('/')}/\n"
         "Disallow: /public/js/\n"
         "Disallow: /public/css/\n"
         "\n"

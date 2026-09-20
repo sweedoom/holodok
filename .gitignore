@@ -4,3 +4,12 @@ docs/__pycache__/
 work/
 .vscode/
 .DS_Store
+.env
+.env.*
+!.env.example
+*.secrets.*# dev-артефакты (не уходят на хостинг)
+live.html
+shot_*.png
+adm_*.png
+layout_*.png
+audit_*.png

@@ -2,6 +2,14 @@
   "_comment": "ВСЕ ТВОИ ДАННЫЕ ЗДЕСЬ. Поменял -> запустил build.py -> залил на GitHub. Ничего больше трогать не надо.",
   "brand": "ХОЛОД-ОК",
   "brandSlug": "holodok",
+  "siteName": "Ремонт парогенераторов Tylo",
+  "siteTag": "holodok",
+  "_siteTag_comment": "Короткий тег сайта - в заявке видно, откуда она пришла (у бота уже несколько сайтов)",
+  "theme": {
+    "accent": "#2f81f7",
+    "accentDark": "#1f6feb",
+    "_comment": "Акцент этого сайта и его админки (тёмная). У miele своя тема - красная"
+  },
   "siteUrl": "https://www.tulyacenterorg.ru/",
   "domain": "www.tulyacenterorg.ru",
   "_domain_comment": "Основной домен GitHub Pages. CNAME создаётся автоматически при сборке.",
@@ -26,6 +34,8 @@
   "rating": 4.9,
   "reviews": 738,
   "logo": "assets/logo.svg",
+  "logoWidth": 200,
+  "logoPad": 12,
   "tagline": "Сервисный центр",
   "policyDate": "2026-09-14",
   "company": {
@@ -177,29 +187,32 @@
     "_comment": "Свои счётчики: yandex: [\"12345678\"], gtag: \"G-XXXXXXX\". Пусто = чужие счётчики вырезаны."
   },
   "admin": {
-    "page": "admin-a7f3c9.html",
-    "_page_comment": "Адрес админки. Специально неочевидный — её никто не найдёт. Можешь поменять на любой",
-    "password": "holodok2026",
-    "_password_comment": "Пароль входа в админку. Основная защита — неочевидный адрес страницы",
+    "page": "admin/",
+    "_page_comment": "Адрес админки ЭТОГО сайта. У каждого сайта свой адрес и свой вид; бот один на всех",
+    "shortName": "Tylo",
+    "_shortName_comment": "Короткая надпись в сайдбаре админки",
+    "password": "T4@nX8%bWq1!sJf6",
+    "_password_comment": "Пароль входа в админку ЭТОГО сайта (у каждого сайта свой). В html попадает как есть - адрес админки нигде не публикуется",
+    "siteMark": "holodok|tulyacenter|tylo|parogenerator",
+    "_siteMark_comment": "Как опознать СВОИ старые заявки (до введения тегов) - по словам в адресе страницы. Только про этот сайт, чужих упоминаний тут нет",
     "supabase": {
       "url": "https://wedeflvoryfdkzuodgzg.supabase.co",
       "anonKey": "sb_publishable_6MB90Z-Ms5wFxAMtRMPa2w_6-ce8Qov"
     },
-    "_supabase_comment": "Supabase: Project URL + anon public ключ. Как получить — в supabase.sql и PROJECT.md §6",
-    "backendUrl": "",
-    "_comment": "Альтернатива Supabase — Google Apps Script /exec"
+    "_supabase_comment": "Supabase: общее хранилище заявок (Project URL + anon public ключ). Чтение только через rpc admin_leads c паролем"
   },
   "leads": {
     "mode": "telegram",
-    "_modes": "telegram | backend | endpoint | mailto",
+    "_mode_comment": "telegram = заявка уходит из браузера двумя каналами: Telegram-бот + вставка в Supabase. Сервер не нужен",
     "telegramBotToken": "8363138970:AAGIQUiifd0O5bz4qZh4GRzIXTBNU7f29aA",
     "telegramChatIds": [
       "8723283117",
       "731734894"
     ],
-    "_chatIds_comment": "Список получателей заявок. Добавляй/удаляй id сколько нужно — всем придёт одна и та же заявка",
-    "endpoint": "",
-    "_comment": "Прямая отправка в Telegram. Токен лежит в HTML — для этого проекта это приемлемо (подробности см. PROJECT.md §6)"
+    "_chatIds_comment": "Кому приходят заявки в Telegram (один бот на оба сайта)",
+    "sourceName": "Сайт Tylo (Челябинск)",
+    "_sourceName_comment": "Строка «Источник» в сообщении бота — отличаем этот сайт от других, подключённых к тому же боту",
+    "endpoint": ""
   },
   "internalLinks": "#",
   "_internalLinks_comment": "Куда ведут ссылки меню на НЕсуществующие страницы (прайсы других брендов и т.п.). '#' = никуда."
