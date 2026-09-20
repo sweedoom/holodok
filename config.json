@@ -188,30 +188,21 @@
   },
   "admin": {
     "page": "admin/",
-    "_page_comment": "Адрес админки ЭТОГО сайта. У каждого сайта свой адрес и свой вид; бот один на всех",
+    "_page_comment": "Адрес админки ЭТОГО сайта. У каждого сайта свой адрес и свой вид",
     "shortName": "Tylo",
     "_shortName_comment": "Короткая надпись в сайдбаре админки",
-    "password": "T4@nX8%bWq1!sJf6",
-    "_password_comment": "Пароль входа в админку ЭТОГО сайта (у каждого сайта свой). В html попадает как есть - адрес админки нигде не публикуется",
+    "_password_comment": "Пароль админки хранится ТОЛЬКО на сервере Supabase (private.admin_auth), в коде сайта его НЕТ. Смена: UPDATE private.admin_auth SET pw='новый' WHERE site='holodok'",
     "siteMark": "holodok|tulyacenter|tylo|parogenerator",
     "_siteMark_comment": "Как опознать СВОИ старые заявки (до введения тегов) - по словам в адресе страницы. Только про этот сайт, чужих упоминаний тут нет",
     "supabase": {
       "url": "https://wedeflvoryfdkzuodgzg.supabase.co",
       "anonKey": "sb_publishable_6MB90Z-Ms5wFxAMtRMPa2w_6-ce8Qov"
     },
-    "_supabase_comment": "Supabase: общее хранилище заявок (Project URL + anon public ключ). Чтение только через rpc admin_leads c паролем"
+    "_supabase_comment": "Supabase: общее хранилище заявок (Project URL + anon public ключ - он публичный, это нормально). Чтение только через rpc admin_leads_site, пароль проверяется на сервере"
   },
   "leads": {
-    "mode": "telegram",
-    "_mode_comment": "telegram = заявка уходит из браузера двумя каналами: Telegram-бот + вставка в Supabase. Сервер не нужен",
-    "telegramBotToken": "8363138970:AAH9KDBbakho_DwuUyb2_CXXA8C0uJnP13Q",
-    "telegramChatIds": [
-      "8723283117",
-      "731734894"
-    ],
-    "_chatIds_comment": "Кому приходят заявки в Telegram (один бот на оба сайта)",
-    "sourceName": "Сайт Tylo (Челябинск)",
-    "_sourceName_comment": "Строка «Источник» в сообщении бота — отличаем этот сайт от других, подключённых к тому же боту",
+    "mode": "supabase",
+    "_mode_comment": "supabase = заявка уходит из браузера ТОЛЬКО в хранилище (публичный anon-ключ, секретов в коде нет). Пароли админок и всё остальное - на сервере Supabase",
     "endpoint": ""
   },
   "internalLinks": "#",

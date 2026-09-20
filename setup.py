@@ -77,16 +77,9 @@ cfg["workHours"] = ask("Время работы (текстом)", cfg["workHour
 cfg["openingHours"] = ask("Время работы для schema.org (Mo-Su 09:00-21:00)", cfg["openingHours"])
 
 print("\nКУДА ПРИСЫЛАТЬ ЗАЯВКИ:")
-print("  1) telegram — в бота (нужны токен и chat_id)")
-print("  2) endpoint — POST на свой URL (Formspree и т.п.)")
-print("  3) mailto   — открывать почтовик")
-mode = ask("Режим (1/2/3)", "1")
-cfg["leads"]["mode"] = {"1": "telegram", "2": "endpoint", "3": "mailto"}.get(mode, "telegram")
-if cfg["leads"]["mode"] == "telegram":
-    cfg["leads"]["telegramBotToken"] = ask("  Токен бота (@BotFather)", cfg["leads"]["telegramBotToken"])
-    cfg["leads"]["telegramChatId"] = ask("  Chat ID (@userinfobot)", cfg["leads"]["telegramChatId"])
-elif cfg["leads"]["mode"] == "endpoint":
-    cfg["leads"]["endpoint"] = ask("  URL для POST", cfg["leads"]["endpoint"])
+print("  Заявки уезжают в хранилище Supabase (настройки в config.json → admin.supabase).")
+print("  Токены и пароли в config.json НЕ хранятся — они на сервере Supabase.")
+cfg["leads"] = {"mode": "supabase", "endpoint": ""}
 
 site = ask("Адрес сайта (https://логин.github.io/репо/)", cfg["siteUrl"])
 cfg["siteUrl"] = site if site.endswith("/") else site + "/"

@@ -37,7 +37,7 @@
 function setup() {
   PropertiesService.getScriptProperties().setProperties({
     TG_TOKEN: 'ВСТАВИТЬ_ТОКЕН_БОТА',
-    TG_CHAT:  '8723283117',
+    TG_CHAT:  '_CHAT_ID_',
     ADMIN_PW: 'придумай_пароль_админки'
   }, true);
   ensureHeaders();
