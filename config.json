@@ -207,7 +207,7 @@
     "_page_comment": "Адрес админки ЭТОГО сайта. У каждого сайта свой адрес и свой вид",
     "shortName": "Tylo",
     "_shortName_comment": "Короткая надпись в сайдбаре админки",
-    "_password_comment": "Пароль админки хранится ТОЛЬКО на сервере Supabase (private.admin_auth), в коде сайта его НЕТ. Смена: UPDATE private.admin_auth SET pw='новый' WHERE site='holodok'",
+    "_password_comment": "Пароль админки хранится ТОЛЬКО на сервере Supabase. Смена: UPDATE private.admin_auth SET pw=encode(sha256(('holodok:' || 'НОВЫЙ_ПАРОЛЬ')::bytea),'hex') WHERE site='holodok'; затем DELETE FROM private.admin_lockout WHERE site='holodok';",
     "siteMark": "holodok|tulyacenter|tylo|parogenerator",
     "_siteMark_comment": "Как опознать СВОИ старые заявки (до введения тегов) - по словам в адресе страницы. Только про этот сайт, чужих упоминаний тут нет",
     "supabase": {

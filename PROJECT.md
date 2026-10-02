@@ -137,8 +137,9 @@ python setup.py        # задаст вопросы и сам обновит co
 - В браузере нет никаких секретов — только публичный anon-ключ.
 - Пароли админок и служебные настройки хранятся на сервере Supabase
   (`private`-схема, извне недоступна), в коде сайта их нет.
-- Смена пароля админки: `UPDATE private.admin_auth SET pw='новый' WHERE site='holodok';`
-  (SQL-редактор Supabase).
+- Пароль админки хранится в `private.admin_auth` как SHA-256 от `holodok:<пароль>`.
+  Смена в SQL-редакторе Supabase: `UPDATE private.admin_auth SET pw=encode(sha256(('holodok:' || 'НОВЫЙ_ПАРОЛЬ')::bytea),'hex') WHERE site='holodok';`
+  При необходимости снять блокировку входа: `DELETE FROM private.admin_lockout WHERE site='holodok';`.
 
 **Веб-админка:**
 - Заявки читаются из таблицы `leads` только через закрытую серверную функцию

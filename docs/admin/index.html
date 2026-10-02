@@ -594,7 +594,16 @@ function enter(){
   rpc("list", null, null, pw).then(function(){
     SESS_PW = pw; afterEnter();
   }).catch(function(e){
-    $("#loginErr").textContent = /парол/i.test(String(e && e.message)) ? "Неверный пароль" : "Хранилище недоступно";
+    var msg = String((e && e.message) || "");
+    if (/парол/i.test(msg)) {
+      $("#loginErr").textContent = "Неверный пароль";
+    } else if (/слишком много попыток/i.test(msg)) {
+      $("#loginErr").textContent = "Слишком много попыток входа. Подождите 15 минут и попробуйте снова.";
+    } else if (/failed to fetch|networkerror|load failed/i.test(msg)) {
+      $("#loginErr").textContent = "Нет связи с хранилищем. Проверьте подключение и попробуйте позже.";
+    } else {
+      $("#loginErr").textContent = "Хранилище недоступно";
+    }
   });
 }
 function afterEnter(){
